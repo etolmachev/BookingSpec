@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookingSpecBindings.TestBase.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using BookingSpecBindings.TestBase.Pages;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -12,13 +6,32 @@ namespace BookingSpecBindings.Bindings
 	[Binding]
 	class MainPageBindings
 	{
-		MainPage page = new MainPage();
+        MainPage page = new MainPage();
+	    
 
-		[When(@"I click Sign In button")]
+
+        [When(@"I click Sign In button")]
 		public void WhenIClickSignInButton()
 		{
 			page.clickSignIn();
 		}
 
-	}
+	    [When(@"I write my email ""(.*)""")]
+	    public void WhenIWriteMyEmail(string email)
+	    {
+	        page.typeEmail(email);
+	    }
+	    [When(@"I write my password ""(.*)""")]
+	    public void WhenIWriteMyPassword(string pass)
+	    {
+	        page.typePass(pass);
+        }
+	   [When(@"I click on PopUp Sign In button")]
+	    public void WhenIClickOnPopUpSignInButton()
+	    {
+	        page.clickToSubmit();
+	    }
+
+
+    }
 }

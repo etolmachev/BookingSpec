@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using BookingSpecBindings.TestBase;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings
@@ -29,5 +30,5 @@ namespace BookingSpecBindings
 		{
 			Thread.Sleep(TimeSpan.FromSeconds(seconds));
 		}
-	}
+    }
 }
