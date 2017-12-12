@@ -6,11 +6,8 @@
 Scenario: Open Main Page and Click Sign In Button
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	Then I wait for 5 seconds
 	When I click Sign In button
-	Then I wait for 5 seconds
-	When I write my email "krasnobelmovv@gmail.com"
-	And I write my password "dude2dTFrus"
-	Then I wait for 5 seconds
+	When I write my email "testmirantistest@gmail.com"
+	And I write my password "1234qweR"
 	When I click on PopUp Sign In button
-	Then I wait for 5 seconds
+	
