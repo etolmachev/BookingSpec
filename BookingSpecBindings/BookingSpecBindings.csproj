@@ -85,10 +85,12 @@
   <ItemGroup>
     <Compile Include="Bindings\CommonBindings.cs" />
     <Compile Include="Bindings\MainPageBindings.cs" />
+    <Compile Include="Bindings\SignInPopUpBindings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase\Browser.cs" />
     <Compile Include="TestBase\Cleanup.cs" />
     <Compile Include="TestBase\HtmlElement.cs" />
+    <Compile Include="TestBase\Pages\SignInPopUp.cs" />
     <Compile Include="TestBase\Pages\MainPage.cs" />
   </ItemGroup>
   <ItemGroup />

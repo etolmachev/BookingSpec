@@ -84,6 +84,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I write my password \"1234qweR\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.When("I click on PopUp Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("I wait for 5 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
