@@ -10,5 +10,5 @@ Scenario: Open Main Page and Click Sign In Button
 	When I write my email "testmirantistest@gmail.com"
 	And I write my password "1234qweR"
 	When I click on PopUp Sign In button
-	Then I wait for 5 seconds
+
 	
