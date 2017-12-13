@@ -78,11 +78,19 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.When("I click Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "Email",
+                        "testmirantistest@gmail.com"});
+            table1.AddRow(new string[] {
+                        "Password",
+                        "1234qweR"});
 #line 10
- testRunner.When("I write my email \"testmirantistest@gmail.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.And("I write my password \"1234qweR\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+ testRunner.When("I set following parameters on SignInPopUp", ((string)(null)), table1, "When ");
+#line 14
  testRunner.When("I click on PopUp Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();

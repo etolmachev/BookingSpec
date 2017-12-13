@@ -1,4 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Collections.Generic;
+using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.TestBase.Pages
 {
@@ -21,17 +24,17 @@ namespace BookingSpecBindings.TestBase.Pages
             PassField = new HtmlElement(By.CssSelector(passFieldLocator));
             PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
         }
-        public void typeEmail(string email)
+        public void TypeEmail(string email)
         {
             EmailField.SendKeys(email);
         }
 
-        public void typePass(string pass)
+        public void TypePass(string pass)
         {
             PassField.SendKeys(pass);
         }
 
-        public void clickToSubmit()
+        public void ClickToSubmit()
         {
             PopUpButton.Click();
 

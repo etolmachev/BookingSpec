@@ -86,9 +86,14 @@ namespace BookingSpecBindings.TestBase
 			}
 		}
 
-		//Implement Interface properties and methods
-		#region
-		public void Click()
+        internal void SendKeys()
+        {
+            throw new NotImplementedException();
+        }
+
+        //Implement Interface properties and methods
+        #region
+        public void Click()
 		{
 			WrappedElement.Click();
 		}

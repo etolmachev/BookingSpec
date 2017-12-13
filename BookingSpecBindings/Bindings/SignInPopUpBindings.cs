@@ -1,4 +1,5 @@
-﻿using BookingSpecBindings.TestBase.Pages;
+﻿using System;
+using BookingSpecBindings.TestBase.Pages;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -7,20 +8,34 @@ namespace BookingSpecBindings.Bindings
     {
         SignInPopUp signPage = new SignInPopUp();
 
-        [When(@"I write my email ""(.*)""")]
-        public void WhenIWriteMyEmail(string email)
+        [When(@"I set following parameters on SignInPopUp")]
+        public void WhenISetFollowingParametersOnSignInPopUp(Table table)
         {
-            signPage.typeEmail(email);
-        }
-        [When(@"I write my password ""(.*)""")]
-        public void WhenIWriteMyPassword(string pass)
-        {
-            signPage.typePass(pass);
+            foreach (var row in table.Rows)
+            {
+                string key = row["Field"];
+
+                switch (key)
+
+                {
+                    case "Email":
+                        signPage.TypeEmail(row["Value"]);
+                        break;
+
+                    case "Password":
+                        signPage.TypePass(row["Value"]);
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+
         }
         [When(@"I click on PopUp Sign In button")]
         public void WhenIClickOnPopUpSignInButton()
         {
-            signPage.clickToSubmit();
+            signPage.ClickToSubmit();
         }
     }
 }
