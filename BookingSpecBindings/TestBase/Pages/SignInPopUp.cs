@@ -6,7 +6,8 @@ using TechTalk.SpecFlow;
 namespace BookingSpecBindings.TestBase.Pages
 {
      public class SignInPopUp
-    {
+     {
+        private string MsgErrorLocator = ".form-shown-section .alert-error";
 
         private string emailFieldLocator = "form.js-user-access-form--signin input[name='username']";
 
@@ -17,6 +18,7 @@ namespace BookingSpecBindings.TestBase.Pages
         public HtmlElement EmailField;
         public HtmlElement PassField;
         public HtmlElement PopUpButton;
+        public HtmlElement MsgError;
 
         public SignInPopUp()
         {
@@ -39,5 +41,12 @@ namespace BookingSpecBindings.TestBase.Pages
             PopUpButton.Click();
 
         }
+
+         public string GetErrorText()
+         {
+             MsgError = new HtmlElement(By.CssSelector(MsgErrorLocator));
+             string Error = MsgError.Text;
+             return Error;
+         }
     }
 }

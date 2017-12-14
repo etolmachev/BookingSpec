@@ -1,5 +1,6 @@
 ﻿using System;
 using BookingSpecBindings.TestBase.Pages;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -8,7 +9,7 @@ namespace BookingSpecBindings.Bindings
     {
         SignInPopUp signPage = new SignInPopUp();
 
-        [When(@"I set following parameters on SignInPopUp")]
+        [When(@"I set following parameters on Sign In Pop Up dialog")]
         public void WhenISetFollowingParametersOnSignInPopUp(Table table)
         {
             foreach (var row in table.Rows)
@@ -32,10 +33,16 @@ namespace BookingSpecBindings.Bindings
             }
 
         }
-        [When(@"I click on PopUp Sign In button")]
+        [When(@"I click Sign In button on PopUp")]
         public void WhenIClickOnPopUpSignInButton()
         {
             signPage.ClickToSubmit();
         }
+        [Then(@"I see message error with (.*)")]
+        public void ThenISeeMessageErrorWith(string message)
+        {
+            Assert.That(signPage.GetErrorText().Contains(message), Is.True);
+        }
+
     }
 }

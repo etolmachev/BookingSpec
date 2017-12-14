@@ -3,12 +3,117 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-Scenario: Open Main Page and Click Sign In Button
+Scenario Template: Attempt to Sign In using Invalid combinations of email and password
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
+	When I set following parameters on Sign In Pop Up dialog
+		| Field    | Value      |
+		| Email    | <Email>    |
+		| Password | <Password> |
+	When I click Sign In button on PopUp
+    #Then I see that i am not Signed In
+    Then I see message error with <Message>
+	Scenarios: 
+		| Email                      | Password  | Message                                                               |
+		| testmirantistest@gmail.com | wrongpass | You entered an email address/password combination that doesn't match. |
+		| invalidEmail@g.com         | 1234qweR  | You entered an email address/password combination that doesn't match. |
+		| invalidEmail@g.com         | wrongpass | You entered an email address/password combination that doesn't match. |
+		|                            | 1234qweR  | Please enter a valid email address.                                   |
+		| testmirantistest@gmail.com |           | Please add a password                                                 |
+		|                            |           | Please enter a valid email address.                                   |
+	
+			
+	Scenario: Input in email field more than 80 chars and assert that there only 80 chars
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	And I write email with length 90
+	Then I assert that length of email is 80
+
+	Scenario: Assert that text of tip of Stay Signed In feature is correct
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	Then I assert that tip text is correct
+
+	Scenario: Attempt to recover password with invalid email
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	When I click Forgot Your Password button
+	And I write email "estmirantistest@gmail.com"
+	And I Click button Send
+	Then I see an error on PopUp
+
+	Scenario: Cancel recover password and Sign in
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	When I click Forgot Your Password button
+	And I write email "testmirantistest@gmail.com"
+	And I Click button Cancel
 	When I set following parameters on SignInPopUp
-		| Field | Value                      |
+		| Field | Value |
 		| Email | testmirantistest@gmail.com |
-		| Password  | 1234qweR                   |
-	When I click on PopUp Sign In button  	
+		| Password  | 1234qwER |
+	And I click Sign In button on PopUp
+	Then I see that i am Signed In 
+
+	Scenario: Recover Password by use link from email
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	When I click Forgot Your Password button
+	And I write email "testmirantistest@gmail.com"
+	And I Click button Send
+	Then I click on the link in email
+	And I change my password "1234qwER"
+	When I set following parameters on SignInPopUp
+		| Field | Value |
+		| Email | testmirantistest@gmail.com |
+		| Password  | 1234qwER |
+	And I click Sign In button on PopUp
+	Then I see that i am Signed In 
+
+	Scenario: Click on recover password and Sign In with old password
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	When I click Forgot Your Password button
+	And I write email "testmirantistest@gmail.com"
+	And I Click button Send
+	Then I click on Cancel button
+	When I set following parameters on SignInPopUp
+		| Field | Value |
+		| Email | testmirantistest@gmail.com |
+		| Password  | 1234qwER |
+	And I click Sign In button on PopUp
+	Then I see that i am Signed In 
+
+	Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign In
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	And I set following parameters on SignInPopUp
+		| Field | Value |
+		| Email | testmirantistest@gmail.com |
+		| Password  | 1234qwER |
+	Then I click on X button
+	And  I click Sign In button
+	When I click Sign In button on PopUp
+	Then I see that i am Signed In 
+
+	Scenario: Input Valid Email and Pass Refresh and attempt to Sign In
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	And I set following parameters on SignInPopUp
+		| Field | Value |
+		| Email | testmirantistest@gmail.com |
+		| Password  | 1234qwER |
+	Then I click on X button
+	When I refresh page
+	And  I click Sign In button
+	When I click Sign In button on PopUp
+	Then I see that i am not Signed In 
