@@ -30,5 +30,5 @@ namespace BookingSpecBindings
 		{
 			Thread.Sleep(TimeSpan.FromSeconds(seconds));
 		}
-    }
+	}
 }

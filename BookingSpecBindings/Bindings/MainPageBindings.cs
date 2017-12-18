@@ -6,12 +6,18 @@ namespace BookingSpecBindings.Bindings
 	[Binding]
 	class MainPageBindings
 	{
-        MainPage page = new MainPage();
+		MainPage page = new MainPage();
 
-        [When(@"I click Sign In button")]
+		[When(@"I click Sign In button")]
 		public void WhenIClickSignInButton()
 		{
 			page.clickSignIn();
 		}
-    }
+
+		[Then(@"I hover mouse over Sign in button")]
+		public void ThenIHoverMouseOverSignInButton()
+		{
+			page.hoverAndClickSignInButton();
+		}
+	}
 }

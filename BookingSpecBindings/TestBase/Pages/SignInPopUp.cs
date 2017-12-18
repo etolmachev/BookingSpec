@@ -1,52 +1,79 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Threading;
 using OpenQA.Selenium;
-using TechTalk.SpecFlow;
+using OpenQA.Selenium.Interactions;
 
 namespace BookingSpecBindings.TestBase.Pages
 {
-     public class SignInPopUp
-     {
-        private string MsgErrorLocator = ".form-shown-section .alert-error";
+	public class SignInPopUp
+		{
+		private string MsgErrorLocator = ".form-shown-section .alert-error";
 
-        private string emailFieldLocator = "form.js-user-access-form--signin input[name='username']";
+		private string emailFieldLocator = "form.js-user-access-form--signin input[name='username']";
 
-        private string passFieldLocator = "form.js-user-access-form--signin input[name='password']";
+		private string passFieldLocator = "form.js-user-access-form--signin input[name='password']";
 
-        private string popUpButtonLocator = "form.js-user-access-form--signin input[value='Sign in']";
+		private string popUpButtonLocator = "form.js-user-access-form--signin input[value='Sign in']";
 
-        public HtmlElement EmailField;
-        public HtmlElement PassField;
-        public HtmlElement PopUpButton;
-        public HtmlElement MsgError;
+		private string tipElementLocator = ".user_access_menu_checkbox.bicon - question"; 
 
-        public SignInPopUp()
-        {
-            EmailField = new HtmlElement(By.CssSelector(emailFieldLocator));
-            PassField = new HtmlElement(By.CssSelector(passFieldLocator));
-            PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
-        }
-        public void TypeEmail(string email)
-        {
-            EmailField.SendKeys(email);
-        }
+		public HtmlElement EmailField;
+		public HtmlElement PassField;
+		public HtmlElement PopUpButton;
+		public HtmlElement MsgError;
+		public HtmlElement TipElement;
+		public SignInPopUp()
+		{
+			EmailField = new HtmlElement(By.CssSelector(emailFieldLocator));
+			PassField = new HtmlElement(By.CssSelector(passFieldLocator));
+			PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
+			TipElement = new HtmlElement(By.CssSelector(tipElementLocator));
+		}
+		public void TypeEmail(string email)
+		{
+			EmailField.SendKeys(email);
+		}
+		public void TypePass(string pass)
+		{
+			PassField.SendKeys(pass);
+		}
+		public void ClickToSubmit()
+		{
+			PopUpButton.Click();
+		}
+		public string TipHold()
+		{
+			//var el = new HtmlElement();
+			//Actions builder = new Actions(Browser.Driver);
+			string tipText = TipElement.GetAttribute("value");
+			return tipText;
+		}
+		public string GetErrorText()
+		{
+			return new HtmlElement(By.CssSelector(MsgErrorLocator)).Text;
+		}
+		public string GetEmailText()
+		{
+			string EmailValue = EmailField.GetAttribute("value");
+			return EmailValue;
+		}
 
-        public void TypePass(string pass)
-        {
-            PassField.SendKeys(pass);
-        }
+		public bool waitLoading(int timeout = 30)
+		{
+			var el = new HtmlElement(By.CssSelector(".user_access_signin_menu .form-loading"));
 
-        public void ClickToSubmit()
-        {
-            PopUpButton.Click();
+			while (timeout > 0)
+			{
+				Console.WriteLine(el.GetAttribute("style"));
 
-        }
-
-         public string GetErrorText()
-         {
-             MsgError = new HtmlElement(By.CssSelector(MsgErrorLocator));
-             string Error = MsgError.Text;
-             return Error;
-         }
-    }
+				if (el.GetAttribute("style") != "display: block;")
+				{
+					return true;
+				}
+				timeout--;
+				Thread.Sleep(1000);
+			}
+			throw new Exception("still loading");
+		}
+	}
 }

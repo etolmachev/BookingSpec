@@ -12,9 +12,10 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 		| Email    | <Email>    |
 		| Password | <Password> |
 	When I click Sign In button on PopUp
-    #Then I see that i am not Signed In
-    Then I see message error with <Message>
-	Scenarios: 
+	#Then I see that i am not Signed In
+	Then I wait while page popup is working
+	Then I see message error with "<Message>"
+Scenarios: 
 		| Email                      | Password  | Message                                                               |
 		| testmirantistest@gmail.com | wrongpass | You entered an email address/password combination that doesn't match. |
 		| invalidEmail@g.com         | 1234qweR  | You entered an email address/password combination that doesn't match. |
@@ -23,21 +24,20 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 		| testmirantistest@gmail.com |           | Please add a password                                                 |
 		|                            |           | Please enter a valid email address.                                   |
 	
-			
-	Scenario: Input in email field more than 80 chars and assert that there only 80 chars
+Scenario: Input in email field more than 80 chars and assert that there only 80 chars
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
-	And I write email with length 90
-	Then I assert that length of email is 80
+	And I write email with length ninety chars "testmirantistesttestmirantistesttestmirantistesttestmirantistesttestmirantistest@gmail.ru"
+	Then I assert that length of email is eighty chars
 
-	Scenario: Assert that text of tip of Stay Signed In feature is correct
+Scenario: Assert that text of tip of Stay Signed In feature is correct
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
 	Then I assert that tip text is correct
 
-	Scenario: Attempt to recover password with invalid email
+Scenario: Attempt to recover password with invalid email
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -46,7 +46,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And I Click button Send
 	Then I see an error on PopUp
 
-	Scenario: Cancel recover password and Sign in
+Scenario: Cancel recover password and Sign in
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -60,7 +60,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And I click Sign In button on PopUp
 	Then I see that i am Signed In 
 
-	Scenario: Recover Password by use link from email
+Scenario: Recover Password by use link from email
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -76,7 +76,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And I click Sign In button on PopUp
 	Then I see that i am Signed In 
 
-	Scenario: Click on recover password and Sign In with old password
+Scenario: Click on recover password and Sign In with old password
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -91,7 +91,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And I click Sign In button on PopUp
 	Then I see that i am Signed In 
 
-	Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign In
+Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign In
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -104,7 +104,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	When I click Sign In button on PopUp
 	Then I see that i am Signed In 
 
-	Scenario: Input Valid Email and Pass Refresh and attempt to Sign In
+Scenario: Input Valid Email and Pass Refresh and attempt to Sign In
 	Given I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button
@@ -117,3 +117,9 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And  I click Sign In button
 	When I click Sign In button on PopUp
 	Then I see that i am not Signed In 
+
+Scenario: hover
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	Then I hover mouse over Sign in button
+	#When I click Sign In button
