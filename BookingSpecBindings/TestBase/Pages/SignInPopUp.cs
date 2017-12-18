@@ -15,19 +15,19 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		private string popUpButtonLocator = "form.js-user-access-form--signin input[value='Sign in']";
 
-		private string tipElementLocator = ".user_access_menu_checkbox.bicon - question"; 
+		private string forgotPassLocator = ".user_access_form .forgot_pass_trigger";
 
 		public HtmlElement EmailField;
 		public HtmlElement PassField;
 		public HtmlElement PopUpButton;
 		public HtmlElement MsgError;
-		public HtmlElement TipElement;
+		public HtmlElement ForgotPassButton;
 		public SignInPopUp()
 		{
 			EmailField = new HtmlElement(By.CssSelector(emailFieldLocator));
 			PassField = new HtmlElement(By.CssSelector(passFieldLocator));
 			PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
-			TipElement = new HtmlElement(By.CssSelector(tipElementLocator));
+			ForgotPassButton = new HtmlElement(By.CssSelector(forgotPassLocator));
 		}
 		public void TypeEmail(string email)
 		{
@@ -41,12 +41,9 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			PopUpButton.Click();
 		}
-		public string TipHold()
+		public void ClickForgotPass()
 		{
-			//var el = new HtmlElement();
-			//Actions builder = new Actions(Browser.Driver);
-			string tipText = TipElement.GetAttribute("value");
-			return tipText;
+			ForgotPassButton.Click();
 		}
 		public string GetErrorText()
 		{

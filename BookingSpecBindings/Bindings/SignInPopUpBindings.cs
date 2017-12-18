@@ -54,8 +54,9 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.EmailField.SendKeys(email);
 		}
+
 		[Then(@"I check that length of email is (.*) chars")]
-		public void ThenIAssertThatLengthOfEmailIsEightyChars(int charsCount)
+		public void ThenICheckThatLengthOfEmailIsEightyChars(int charsCount)
 		{
 			Assert.AreEqual(signPage.GetEmailText().Length, charsCount);
 		}
@@ -63,6 +64,11 @@ namespace BookingSpecBindings.Bindings
 		public void ThenIWaitWhilePagePopupIsWorking()
 		{
 			signPage.waitLoading();
+		}
+		[When(@"I click Forgot Your Password button")]
+		public void WhenIClickForgotYourPasswordButton()
+		{
+			signPage.ClickForgotPass();
 		}
 	}
 }

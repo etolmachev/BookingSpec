@@ -13,6 +13,12 @@ namespace BookingSpecBindings.Bindings
 		{
 			page.clickSignIn();
 		}
+		[Then(@"I see that i am Signed In")]
+		public void ThenISeeThatIAmSignedIn()
+		{
+			page.SignInCheck();
+		}
+
 
 		[Then(@"I hover mouse over Sign in button")]
 		public void ThenIHoverMouseOverSignInButton()
