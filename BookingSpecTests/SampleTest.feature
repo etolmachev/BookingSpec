@@ -96,20 +96,20 @@ Scenario: Input Valid Email and Pass then Refresh and attempt to Sign In
 	When I refresh page
 	And  I click Sign In button
 	When I click Sign In button on PopUp
-	Then I see that i am not Signed In 
+	Then I see an error on Sign In PopUp
 
-Scenario: Recover Password by use link from email
-	Given I open browser
-	And I navigate to url "https://booking.com"
-	When I click Sign In button
-	When I click Forgot Your Password button
-	And I write email "testmirantistest@gmail.com"
-	And I Click button Send
-	Then I click on the link in email
-	And I change my password "1234qwER"
-	When I set following parameters on Sign In Pop Up dialog
-		| Field | Value |
-		| Email | testmirantistest@gmail.com |
-		| Password  | 1234qwER |
-	And I click Sign In button on PopUp
-	Then I see that i am Signed In 
+#Scenario: Recover Password by use link from email
+#	Given I open browser
+#	And I navigate to url "https://booking.com"
+#	When I click Sign In button
+#	When I click Forgot Your Password button
+#	And I write email "testmirantistest@gmail.com"
+#	And I Click button Send
+#	Then I click on the link in email
+#	And I change my password "1234qwER"
+#	When I set following parameters on Sign In Pop Up dialog
+#		| Field | Value |
+#		| Email | testmirantistest@gmail.com |
+#		| Password  | 1234qwER |
+#	And I click Sign In button on PopUp
+#	Then I see that i am Signed In 
