@@ -24,6 +24,15 @@ Scenarios:
 		| testmirantistest@gmail.com |           | Please add a password                                                 |
 		|                            |           | Please enter a valid email address.                                   |
 
+	Scenario: Input valid credintials to Sign In
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button
+	And I write email on Sign in PopUp "testmirantistest@gmail.com"
+	And I write password "1234qweR"
+	And I click Sign In button on PopUp
+	Then I see that i am Signed In
+
 Scenario: Input in email field more than 80 chars and assert that there only 80 chars
 	Given I open browser
 	And I navigate to url "https://booking.com"
