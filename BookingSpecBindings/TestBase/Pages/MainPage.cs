@@ -14,7 +14,7 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		public HtmlElement SignInbutton;
 		public HtmlElement AccountName;
-		
+
 		public MainPage()
 		{
 			SignInbutton = new HtmlElement(By.XPath(signInButtonLocator));
@@ -28,16 +28,7 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		public string SignInCheck()
 		{
-			Assert.AreEqual(AccountName.Text, "Your Account");
 			return AccountName.Text;
-		}
-
-		public void hoverAndClickSignInButton()
-		{
-			Actions builder = new Actions(Browser.Driver);
-			builder.MoveToElement(SignInbutton.WrappedElement).Build().Perform();
-			Thread.Sleep(2000);
-			SignInbutton.Click();
 		}
 	}
 }
