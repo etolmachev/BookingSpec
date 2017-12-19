@@ -259,7 +259,7 @@ this.ScenarioSetup(scenarioInfo);
                         "testmirantistest@gmail.com"});
             table4.AddRow(new string[] {
                         "Password",
-                        "1234qwER"});
+                        "1234qweR"});
 #line 78
  testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table4, "When ");
 #line 82
@@ -352,23 +352,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
  testRunner.Then("I see that i am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("hover")]
-        public virtual void Hover()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("hover", ((string[])(null)));
-#line 117
-this.ScenarioSetup(scenarioInfo);
-#line 118
- testRunner.Given("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 119
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.Then("I hover mouse over Sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -78,7 +78,7 @@ Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign 
 	When I set following parameters on Sign In Pop Up dialog
 		| Field | Value |
 		| Email | testmirantistest@gmail.com |
-		| Password  | 1234qwER |
+		| Password  | 1234qweR |
 	Then I click on X button
 	And  I click Sign In button
 	When I click Sign In button on PopUp
@@ -113,9 +113,3 @@ Scenario: Recover Password by use link from email
 		| Password  | 1234qwER |
 	And I click Sign In button on PopUp
 	Then I see that i am Signed In 
-
-Scenario: hover
-	Given I open browser
-	And I navigate to url "https://booking.com"
-	Then I hover mouse over Sign in button
-	#When I click Sign In button

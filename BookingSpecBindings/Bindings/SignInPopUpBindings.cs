@@ -19,19 +19,15 @@ namespace BookingSpecBindings.Bindings
 		{
 			foreach (var row in table.Rows)
 			{
-					string key = row["Field"];
-
+				string key = row["Field"];
 				switch (key)
-
 				{
 					case "Email":
 					signPage.TypeEmail(row["Value"]);
 						break;
-
 					case "Password":
 						signPage.TypePass(row["Value"]);
 						break;
-
 					default:
 						throw new NotImplementedException();
 				}
@@ -42,11 +38,14 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.ClickToSubmit();
 		}
+		[Then(@"I click on X button")]
+		public void ThenIClickOnXButton()
+		{
+			signPage.CloseSignInPopUp();
+		}
 		[Then(@"I see message error with ""(.*)""")]
 		public void ThenISeeMessageErrorWith(string message)
 		{
-			Console.WriteLine(signPage.GetErrorText());
-			Console.WriteLine(message);
 			Assert.That(signPage.GetErrorText().Contains(message), Is.True);
 		}
 		[When(@"I write email with length ninety chars ""(.*)""")]
@@ -54,7 +53,6 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.EmailField.SendKeys(email);
 		}
-
 		[Then(@"I check that length of email is (.*) chars")]
 		public void ThenICheckThatLengthOfEmailIsEightyChars(int charsCount)
 		{

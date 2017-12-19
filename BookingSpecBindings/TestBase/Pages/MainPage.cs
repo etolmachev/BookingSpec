@@ -26,9 +26,10 @@ namespace BookingSpecBindings.TestBase.Pages
 			SignInbutton.Click();
 		}
 
-		public void SignInCheck()
+		public string SignInCheck()
 		{
 			Assert.AreEqual(AccountName.Text, "Your Account");
+			return AccountName.Text;
 		}
 
 		public void hoverAndClickSignInButton()

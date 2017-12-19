@@ -1,4 +1,5 @@
 ﻿using BookingSpecBindings.TestBase.Pages;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -13,17 +14,17 @@ namespace BookingSpecBindings.Bindings
 		{
 			page.clickSignIn();
 		}
+
+		[Then(@"I click Sign In button")]
+		public void ThenIClickSignInButton()
+		{
+			page.clickSignIn();
+		}
+
 		[Then(@"I see that i am Signed In")]
 		public void ThenISeeThatIAmSignedIn()
 		{
-			page.SignInCheck();
-		}
-
-
-		[Then(@"I hover mouse over Sign in button")]
-		public void ThenIHoverMouseOverSignInButton()
-		{
-			page.hoverAndClickSignInButton();
+			Assert.AreEqual(page.SignInCheck(), "Your Account");
 		}
 	}
 }

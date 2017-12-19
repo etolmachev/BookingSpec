@@ -17,17 +17,21 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		private string forgotPassLocator = ".user_access_form .forgot_pass_trigger";
 
+		private string XmarkButtonLocator = ".modal-mask-closeBtn";
+
 		public HtmlElement EmailField;
 		public HtmlElement PassField;
 		public HtmlElement PopUpButton;
 		public HtmlElement MsgError;
 		public HtmlElement ForgotPassButton;
+		public HtmlElement XmarkButton;
 		public SignInPopUp()
 		{
 			EmailField = new HtmlElement(By.CssSelector(emailFieldLocator));
 			PassField = new HtmlElement(By.CssSelector(passFieldLocator));
 			PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
 			ForgotPassButton = new HtmlElement(By.CssSelector(forgotPassLocator));
+			XmarkButton = new HtmlElement(By.CssSelector(XmarkButtonLocator));
 		}
 		public void TypeEmail(string email)
 		{
@@ -40,6 +44,10 @@ namespace BookingSpecBindings.TestBase.Pages
 		public void ClickToSubmit()
 		{
 			PopUpButton.Click();
+		}
+		public void CloseSignInPopUp()
+		{
+			XmarkButton.Click();
 		}
 		public void ClickForgotPass()
 		{
@@ -61,8 +69,6 @@ namespace BookingSpecBindings.TestBase.Pages
 
 			while (timeout > 0)
 			{
-				Console.WriteLine(el.GetAttribute("style"));
-
 				if (el.GetAttribute("style") != "display: block;")
 				{
 					return true;
@@ -70,7 +76,7 @@ namespace BookingSpecBindings.TestBase.Pages
 				timeout--;
 				Thread.Sleep(1000);
 			}
-			throw new Exception("still loading");
+			throw new Exception("Sign in popup didn't load in settings.");
 		}
 	}
 }

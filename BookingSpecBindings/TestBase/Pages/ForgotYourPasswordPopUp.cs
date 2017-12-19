@@ -55,8 +55,6 @@ namespace BookingSpecBindings.TestBase.Pages
 
 			while (timeout > 0)
 			{
-				Console.WriteLine(el.GetAttribute("style"));
-
 				if (el.GetAttribute("style") != "display: block;")
 				{
 					return true;
@@ -64,7 +62,7 @@ namespace BookingSpecBindings.TestBase.Pages
 				timeout--;
 				Thread.Sleep(1000);
 			}
-			throw new Exception("still loading");
+			throw new Exception("Forgot your password popup didn't load in settings.");
 		}
 	}
 }
