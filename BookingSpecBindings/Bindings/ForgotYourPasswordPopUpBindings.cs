@@ -30,12 +30,6 @@ namespace BookingSpecBindings.Bindings
 				}
 			}
 		}
-		
-		[When(@"I Click button Send on Forgot Your Password PopUp")]
-		public void WhenIClickButtonSend()
-		{
-			forgotPage.clickSendButton();
-		}
 		[When(@"I wait while page popup is loading")]
 		public void WhenIWaitWhilePagePopupIsLoading()
 		{
@@ -52,15 +46,24 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(forgotPage.GetErrorText(), error);
 		}
-		[Then(@"I click button Cancel on Forgot Your Password PopUp")]
-		public void WhenIClickButtonCancel()
+		[Then(@"I click button (Cancel|Send|Back To Sign In) on Forgot Your Password PopUp")]
+		public void WhenIClickButtonCancel(string buttonname)
 		{
-			forgotPage.clickCancelButton();
-		}
-		[Then(@"I click button Back To Sign In on Forgot Your Password PopUp")]
-		public void ThenIClickButtonBackToSignInOnForgotYourPasswordPopUp()
-		{
-			forgotPage.clickBackToSignInButton();
+			switch (buttonname)
+			{
+				case "Cancel":
+					forgotPage.clickCancelButton();
+					break;
+				case "Send":
+					forgotPage.clickSendButton();
+					break;
+				case "Back To Sign In":
+					forgotPage.clickBackToSignInButton();
+					break;
+				default:
+					throw new NotImplementedException();
+			}
+			
 		}
 	}
 }

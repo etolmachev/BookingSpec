@@ -68,11 +68,12 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.ClickForgotPass();
 		}
-		[Then(@"I see an error on Sign In PopUp")]
-		public void ThenISeeAnErrorOnSignInPopUp()
+		[Then(@"I see error message ""(.*)"" on Sign In PopUp")]
+		public void ThenISeeErrorMessageOnSignInPopUp(string error)
 		{
-			Assert.AreEqual(signPage.GetErrorText(), "Please enter a valid email address.");
+			Assert.AreEqual(signPage.GetErrorText(), error);
 		}
+		
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)
 		{

@@ -155,16 +155,16 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table3.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "estmirantistest@gmail.com"});
 #line 38
  testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table3, "When ");
 #line 41
- testRunner.And("I Click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 42
- testRunner.Then("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.Then("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
-                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
+                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -240,7 +240,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 66
  testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table6, "When ");
 #line 69
- testRunner.And("I Click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
  testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
@@ -336,7 +336,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 103
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
- testRunner.Then("I see an error on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see error message \"Please enter a valid email address.\" on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -368,7 +368,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 113
  testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table10, "When ");
 #line 116
- testRunner.And("I Click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 117
  testRunner.Then("I click on the link in email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 118

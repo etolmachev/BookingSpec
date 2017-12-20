@@ -37,10 +37,10 @@ Scenario: Attempt to recover password with invalid email
 	And I click Forgot Your Password button
 	When I set following parameters on Forgot Your Password Pop Up dialog
 		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-	And I Click button Send on Forgot Your Password PopUp
-	Then I wait while page popup is loading
-	Then I see error message "Oops! We can't find a profile registered with that name." on Forgot Your Password PopUp
+		| Email    | estmirantistest@gmail.com |
+	Then I click button Send on Forgot Your Password PopUp
+	And I wait while page popup is loading
+	And I see error message "Oops! We can't find a profile registered with that name." on Forgot Your Password PopUp
 
 Scenario: Cancel recover password and Sign in
 	When I open browser
@@ -66,7 +66,7 @@ Scenario: Click on recover password and Sign In with old password
 	When I set following parameters on Forgot Your Password Pop Up dialog
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
-	And I Click button Send on Forgot Your Password PopUp
+	Then I click button Send on Forgot Your Password PopUp
 	And I wait while page popup is loading
 	Then I click button Back To Sign In on Forgot Your Password PopUp
 	When I set following parameters on Sign In Pop Up dialog
@@ -101,7 +101,7 @@ Scenario: Check that previous values in PopUp fields are not saved
 	And I refresh page
 	And  I click Sign In button on Ribbon menu
 	When I click Sign In button on PopUp
-	Then I see an error on Sign In PopUp
+	Then I see error message "Please enter a valid email address." on Sign In PopUp
 
 @Ignore
 #("This scenario implementation is coming soon")
@@ -113,7 +113,7 @@ Scenario: Recover Password by use link from email
 	When I set following parameters on Forgot Your Password Pop Up dialog
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
-	And I Click button Send on Forgot Your Password PopUp
+	Then I click button Send on Forgot Your Password PopUp
 	Then I click on the link in email
 	And I change my password "1234qwER"
 	When I set following parameters on Sign In Pop Up dialog
