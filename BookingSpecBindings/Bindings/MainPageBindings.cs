@@ -9,19 +9,23 @@ namespace BookingSpecBindings.Bindings
 	{
 		MainPage page = new MainPage();
 
-		[When(@"I click Sign In button")]
+		[When(@"I click Sign In button on Ribbon menu")]
 		public void WhenIClickSignInButton()
 		{
 			page.clickSignIn();
 		}
-
+		[Then(@"I click Sign In button on Ribbon menu")]
+		public void ClickSignInButton()
+		{
+			page.clickSignIn();
+		}
 		[Then(@"I click Sign In button")]
 		public void ThenIClickSignInButton()
 		{
 			page.clickSignIn();
 		}
 
-		[Then(@"I see that i am Signed In")]
+		[Then(@"I see that I am Signed In")]
 		public void ThenISeeThatIAmSignedIn()
 		{
 			Assert.AreEqual(page.SignInCheck(), "Your Account");

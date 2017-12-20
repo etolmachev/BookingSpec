@@ -53,8 +53,8 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.EmailField.SendKeys(email);
 		}
-		[Then(@"I check that length of email is (.*) chars")]
-		public void ThenICheckThatLengthOfEmailIsEightyChars(int charsCount)
+		[Then(@"I see that value of email field consists of (.*) chars on Sign In Pop Up dialog")]
+		public void ThenISeeThatValueOfEmailFieldConsistsOfCharsOnSignInPopUpDialog(int charsCount)
 		{
 			Assert.AreEqual(signPage.GetEmailText().Length, charsCount);
 		}

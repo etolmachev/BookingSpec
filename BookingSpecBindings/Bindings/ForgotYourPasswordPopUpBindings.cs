@@ -36,7 +36,7 @@ namespace BookingSpecBindings.Bindings
 			forgotPage.waitLoading();
 		}
 
-		[Then(@"I see an error on ForgotYourPasswordPopUp")]
+		[Then(@"I see an error on Forgot Your Password PopUp")]
 		public void ThenISeeAnErrorOnForgotYourPasswordPopUp()
 		{
 			Assert.AreEqual(forgotPage.GetErrorText(), "Oops! We can\'t find a profile registered with that name.");

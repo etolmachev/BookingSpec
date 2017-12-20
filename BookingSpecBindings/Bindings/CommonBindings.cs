@@ -28,7 +28,7 @@ namespace BookingSpecBindings
 		{
 			Thread.Sleep(TimeSpan.FromSeconds(seconds));
 		}
-		[When(@"I refresh page")]
+		[Then(@"I refresh page")]
 		public void WhenIRefreshPage()
 		{
 			Browser.Driver.Navigate().Refresh();

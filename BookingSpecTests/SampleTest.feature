@@ -6,7 +6,7 @@
 Scenario Template: Attempt to Sign In using Invalid combinations of email and password
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	And I set following parameters on Sign In Pop Up dialog
 		| Field    | Value      |
 		| Email    | <Email>    |
@@ -24,36 +24,36 @@ Scenarios:
 		| testmirantistest@gmail.com |           | Please add a password                                                 |
 		|                            |           | Please enter a valid email address.                                   |
 
-	Scenario: Input valid credintials to Sign In
+	Scenario: Input valid credentials to Sign In
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	And I write email on Sign in PopUp "testmirantistest@gmail.com"
 	And I write password "1234qweR"
 	And I click Sign In button on PopUp
-	Then I see that i am Signed In
+	Then I see that I am Signed In
 
-Scenario: Input in email field more than 80 chars and assert that there only 80 chars
+Scenario: Check maximum length for email field on Sign In
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	And I write email with length ninety chars "testmirantistesttestmirantistesttestmirantistesttestmirantistesttestmirantistest@gmail.ru"
-	Then I check that length of email is 80 chars
+	Then I see that value of email field consists of 80 chars on Sign In Pop Up dialog
 
 Scenario: Attempt to recover password with invalid email
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
-	When I click Forgot Your Password button
+	When I click Sign In button on Ribbon menu
+	And I click Forgot Your Password button
 	And I write email "estmirantistest@gmail.com"
 	And I Click button Send
 	Then I wait while page popup is loading
-	Then I see an error on ForgotYourPasswordPopUp
+	Then I see an error on Forgot Your Password PopUp
 
 Scenario: Cancel recover password and Sign in
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	When I click Forgot Your Password button
 	And I write email "testmirantistest@gmail.com"
 	Then I click button Cancel
@@ -62,28 +62,28 @@ Scenario: Cancel recover password and Sign in
 		| Email | testmirantistest@gmail.com |
 		| Password  | 1234qweR |
 	And I click Sign In button on PopUp
-	Then I see that i am Signed In
+	Then I see that I am Signed In
 
 Scenario: Click on recover password and Sign In with old password
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	When I click Forgot Your Password button
 	And I write email "testmirantistest@gmail.com"
 	And I Click button Send
 	And I wait while page popup is loading
-	Then I click button Back to sign in
+	Then I click button "Back to sign in"
 	When I set following parameters on Sign In Pop Up dialog
 		| Field | Value |
 		| Email | testmirantistest@gmail.com |
 		| Password  | 1234qweR |
 	And I click Sign In button on PopUp
-	Then I see that i am Signed In 
+	Then I see that I am Signed In 
 
-Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign In
+Scenario: Check that Pop Up fields are not clear after closing them
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	When I set following parameters on Sign In Pop Up dialog
 		| Field | Value |
 		| Email | testmirantistest@gmail.com |
@@ -91,34 +91,36 @@ Scenario: Input Valid Email and Pass close PopUp after that open PopUp and Sign 
 	Then I click on X button
 	And  I click Sign In button
 	When I click Sign In button on PopUp
-	Then I see that i am Signed In 
+	Then I see that I am Signed In 
 
 Scenario: Input Valid Email and Pass then Refresh and attempt to Sign In
 	Given I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
+	When I click Sign In button on Ribbon menu
 	When I set following parameters on Sign In Pop Up dialog
 		| Field | Value |
 		| Email | testmirantistest@gmail.com |
 		| Password  | 1234qwER |
 	Then I click on X button
-	When I refresh page
-	And  I click Sign In button
+	And I refresh page
+	And  I click Sign In button on Ribbon menu
 	When I click Sign In button on PopUp
 	Then I see an error on Sign In PopUp
 
-#Scenario: Recover Password by use link from email
-#	Given I open browser
-#	And I navigate to url "https://booking.com"
-#	When I click Sign In button
-#	When I click Forgot Your Password button
-#	And I write email "testmirantistest@gmail.com"
-#	And I Click button Send
-#	Then I click on the link in email
-#	And I change my password "1234qwER"
-#	When I set following parameters on Sign In Pop Up dialog
-#		| Field | Value |
-#		| Email | testmirantistest@gmail.com |
-#		| Password  | 1234qwER |
-#	And I click Sign In button on PopUp
-#	Then I see that i am Signed In 
+@ignore
+Scenario: Recover Password by use link from email
+	Given I open browser
+	And I navigate to url "https://booking.com"
+	When I click Sign In button on Ribbon menu
+	When I click Forgot Your Password button
+	And I write email "testmirantistest@gmail.com"
+	And I Click button Send
+	Then I click on the link in email
+	And I change my password "1234qwER"
+	When I set following parameters on Sign In Pop Up dialog
+		| Field | Value |
+		| Email | testmirantistest@gmail.com |
+		| Password  | 1234qwER |
+	And I click Sign In button on PopUp
+	Then I see that I am Signed In 
+	# ("This scenario implementation is coming soon")
