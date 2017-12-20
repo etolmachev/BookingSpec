@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookingSpecBindings.TestBase.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using BookingSpecBindings.TestBase.Pages;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -14,11 +9,26 @@ namespace BookingSpecBindings.Bindings
 	{
 		MainPage page = new MainPage();
 
-		[When(@"I click Sign In button")]
+		[When(@"I click Sign In button on Ribbon menu")]
 		public void WhenIClickSignInButton()
 		{
 			page.clickSignIn();
 		}
+		[Then(@"I click Sign In button on Ribbon menu")]
+		public void ClickSignInButton()
+		{
+			page.clickSignIn();
+		}
+		[Then(@"I click Sign In button")]
+		public void ThenIClickSignInButton()
+		{
+			page.clickSignIn();
+		}
 
+		[Then(@"I see that I am Signed In")]
+		public void ThenISeeThatIAmSignedIn()
+		{
+			Assert.AreEqual(page.SignInCheck(), "Your Account");
+		}
 	}
 }
