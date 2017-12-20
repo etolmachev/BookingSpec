@@ -23,11 +23,16 @@ namespace BookingSpecBindings
 		{
 			Browser.Driver.Navigate().GoToUrl(url);
 		}
-
 		[Then(@"I wait for (.*) seconds")]
 		public void IWait(int seconds)
 		{
 			Thread.Sleep(TimeSpan.FromSeconds(seconds));
 		}
-    }
+		[Then(@"I refresh page")]
+		public void WhenIRefreshPage()
+		{
+			Browser.Driver.Navigate().Refresh();
+		}
+
+	}
 }
