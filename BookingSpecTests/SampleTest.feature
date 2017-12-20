@@ -3,12 +3,11 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-Scenario: Open Main Page and Click Sign In Button
-	Given I open browser
+Scenario: Input valid credentials to Sign In
+	When I open browser
 	And I navigate to url "https://booking.com"
-	When I click Sign In button
-	When I write my email "testmirantistest@gmail.com"
-	And I write my password "1234qweR"
-	When I click on PopUp Sign In button
-
-	
+	When I click Sign In button on Ribbon menu
+	And I write email on Sign in PopUp "testmirantistest@gmail.com"
+	And I write password "1234qweR"
+	And I click Sign In button on PopUp
+	Then I see that I am Signed In

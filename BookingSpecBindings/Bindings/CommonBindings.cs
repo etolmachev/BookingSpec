@@ -9,7 +9,7 @@ namespace BookingSpecBindings
 	[Binding]
 	public class CommonBindings
 	{
-		[Given(@"I open browser")]
+		[When(@"I open browser")]
 		public void IOpenBrowser()
 		{
 			if (!Browser.IsInitialized)
@@ -18,8 +18,7 @@ namespace BookingSpecBindings
 				Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 			}
 		}
-
-		[Given(@"I navigate to url ""(.*)""")]
+		[When(@"I navigate to url ""(.*)""")]
 		public void GivenNavigateToUrl(string url)
 		{
 			Browser.Driver.Navigate().GoToUrl(url);

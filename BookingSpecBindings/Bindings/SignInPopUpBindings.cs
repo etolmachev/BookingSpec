@@ -24,3 +24,13 @@ namespace BookingSpecBindings.Bindings
         }
     }
 }
+		[When(@"I write password ""(.*)""")]
+		public void WhenIWritePassword(string pass)
+		{
+			signPage.TypePass(pass);
+		}
+		[When(@"I write email on Sign in PopUp ""(.*)""")]
+		public void WhenIWriteEmailOnSignInPopUp(string email)
+		{
+			signPage.TypeEmail(email);
+		}
