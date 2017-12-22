@@ -84,7 +84,5 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.TypeEmail(email);
 		}
-
-
 	}
 }

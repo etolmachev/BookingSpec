@@ -6,7 +6,7 @@ using OpenQA.Selenium.Interactions;
 namespace BookingSpecBindings.TestBase.Pages
 {
 	public class SignInPopUp
-		{
+	{
 		private string MsgErrorLocator = ".form-shown-section .alert-error";
 
 		private string emailFieldLocator = "form.js-user-access-form--signin input[name='username']";
