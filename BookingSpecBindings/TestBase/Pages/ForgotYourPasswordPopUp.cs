@@ -52,7 +52,6 @@ namespace BookingSpecBindings.TestBase.Pages
 		public bool waitLoading(int timeout = 30)
 		{
 			var el = new HtmlElement(By.CssSelector(".user_access_menu .form-loading"));
-
 			while (timeout > 0)
 			{
 				if (el.GetAttribute("style") != "display: block;")
