@@ -70,7 +70,6 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			return IForgot.Text;
 		}
-
 		public bool waitLoading(int timeout = 30)
 		{
 			var el = new HtmlElement(By.CssSelector(".user_access_signin_menu .form-loading"));

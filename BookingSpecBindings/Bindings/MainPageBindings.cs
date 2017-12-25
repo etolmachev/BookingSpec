@@ -24,6 +24,11 @@ namespace BookingSpecBindings.Bindings
 		{
 			page.clickSignIn();
 		}
+		[Then(@"I click Register button")]
+		public void ThenIClickRegisterButton()
+		{
+			page.clickRegister();
+		}
 
 		[Then(@"I see that I am Signed In")]
 		public void ThenISeeThatIAmSignedIn()

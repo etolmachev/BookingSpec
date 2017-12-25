@@ -87,6 +87,11 @@
       <DependentUpon>LoginFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationFeature.feature</DependentUpon>
+    </Compile>
     <Compile Include="SampleTest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +103,10 @@
     <None Include="LoginFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LoginFeature1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="RegistrationFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RegistrationFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="SampleTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
