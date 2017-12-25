@@ -19,12 +19,15 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		private string XmarkButtonLocator = ".modal-mask-closeBtn";
 
+		private string IForgotLocator = ".forgot_pass_trigger";
+
 		public HtmlElement EmailField;
 		public HtmlElement PassField;
 		public HtmlElement PopUpButton;
 		public HtmlElement MsgError;
 		public HtmlElement ForgotPassButton;
 		public HtmlElement XmarkButton;
+		public HtmlElement IForgot;
 		public SignInPopUp()
 		{
 			EmailField = new HtmlElement(By.CssSelector(emailFieldLocator));
@@ -32,6 +35,7 @@ namespace BookingSpecBindings.TestBase.Pages
 			PopUpButton = new HtmlElement(By.CssSelector(popUpButtonLocator));
 			ForgotPassButton = new HtmlElement(By.CssSelector(forgotPassLocator));
 			XmarkButton = new HtmlElement(By.CssSelector(XmarkButtonLocator));
+			IForgot = new HtmlElement(By.CssSelector(IForgotLocator));
 		}
 		public void TypeEmail(string email)
 		{
@@ -61,6 +65,10 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			string EmailValue = EmailField.GetAttribute("value");
 			return EmailValue;
+		}
+		public string GetIForgotText()
+		{
+			return IForgot.Text;
 		}
 
 		public bool waitLoading(int timeout = 30)

@@ -38,7 +38,7 @@ namespace BookingSpecBindings.Bindings
 		{
 			signPage.ClickToSubmit();
 		}
-		[Then(@"I click on X button")]
+		[When(@"I click on X button")]
 		public void ThenIClickOnXButton()
 		{
 			signPage.CloseSignInPopUp();
@@ -46,7 +46,9 @@ namespace BookingSpecBindings.Bindings
 		[Then(@"I see message error with ""(.*)""")]
 		public void ThenISeeMessageErrorWith(string message)
 		{
-			Assert.That(signPage.GetErrorText().Contains(message), Is.True);
+			Assert.AreEqual(signPage.GetErrorText(), message);
+			if (signPage.GetErrorText().Contains("You"))
+			Assert.AreEqual(signPage.GetIForgotText(), "I forgot");
 		}
 		[When(@"I write email with length ninety chars ""(.*)""")]
 		public void WhenIWriteEmailWithLengthNinetyChars(string email)
@@ -73,7 +75,11 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(signPage.GetErrorText(), error);
 		}
-		
+		[Then(@"I see that credential values are saved in Sign In PopUp fields")]
+		public void ThenISeeThatCredentialValuesAreSavedInSignInPopUpFields()
+		{
+			Assert.AreEqual(signPage.GetEmailText(), "testmirantistest@gmail.com");
+		}
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)
 		{
@@ -83,6 +89,17 @@ namespace BookingSpecBindings.Bindings
 		public void WhenIWriteEmailOnSignInPopUp(string email)
 		{
 			signPage.TypeEmail(email);
+		}
+		[Then(@"I see Sign In PopUp dialog")]
+		public bool ThenISeeSignInPopUpDialog()
+		{
+			Console.WriteLine(signPage.PopUpButton.Displayed);
+			return signPage.PopUpButton.Displayed;
+		}
+		[Then(@"I see that credential values are not saved in Sign In PopUp fields")]
+		public void ThenISeeThatCredentialValuesAreNotSavedInSignInPopUpFields()
+		{
+			Assert.AreEqual(signPage.GetEmailText().Length, 0);
 		}
 	}
 }

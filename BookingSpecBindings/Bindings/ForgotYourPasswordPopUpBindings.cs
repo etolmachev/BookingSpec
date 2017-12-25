@@ -46,7 +46,7 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(forgotPage.GetErrorText(), error);
 		}
-		[Then(@"I click button (Cancel|Send|Back To Sign In) on Forgot Your Password PopUp")]
+		[When(@"I click button (Cancel|Send|Back To Sign In) on Forgot Your Password PopUp")]
 		public void WhenIClickButtonCancel(string buttonname)
 		{
 			switch (buttonname)

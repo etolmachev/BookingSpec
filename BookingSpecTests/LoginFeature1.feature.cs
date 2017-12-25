@@ -66,9 +66,9 @@ namespace BookingSpecTests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Attempt to Sign In using Invalid combinations of email and password")]
-        [NUnit.Framework.TestCaseAttribute("testmirantistest@gmail.com", "wrongpass", "You entered an email address/password combination that doesn\'t match.", null)]
-        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "1234qweR", "You entered an email address/password combination that doesn\'t match.", null)]
-        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "wrongpass", "You entered an email address/password combination that doesn\'t match.", null)]
+        [NUnit.Framework.TestCaseAttribute("testmirantistest@gmail.com", "wrongpass", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
+        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "1234qweR", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
+        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "wrongpass", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
         [NUnit.Framework.TestCaseAttribute("", "1234qweR", "Please enter a valid email address.", null)]
         [NUnit.Framework.TestCaseAttribute("testmirantistest@gmail.com", "", "Please add a password", null)]
         [NUnit.Framework.TestCaseAttribute("", "", "Please enter a valid email address.", null)]
@@ -82,7 +82,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -117,7 +117,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -146,7 +146,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 35
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.And("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -157,14 +157,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Email",
                         "estmirantistest@gmail.com"});
 #line 38
- testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table3, "When ");
+ testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table3, "And ");
 #line 41
- testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
  testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
-                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
+                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -181,9 +181,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 47
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.When("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -192,9 +192,11 @@ this.ScenarioSetup(scenarioInfo);
                         "Email",
                         "testmirantistest@gmail.com"});
 #line 50
- testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table4, "When ");
+ testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table4, "And ");
 #line 53
- testRunner.Then("I click button Cancel on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I click button Cancel on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.Then("I see Sign In PopUp dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -205,11 +207,11 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "Password",
                         "1234qweR"});
-#line 54
+#line 55
  testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table5, "When ");
-#line 58
- testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
+ testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
  testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -220,16 +222,16 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ClickOnRecoverPasswordAndSignInWithOldPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click on recover password and Sign In with old password", ((string[])(null)));
-#line 61
-this.ScenarioSetup(scenarioInfo);
 #line 62
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 63
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.When("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -237,14 +239,14 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "Email",
                         "testmirantistest@gmail.com"});
-#line 66
- testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table6, "When ");
-#line 69
- testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 67
+ testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table6, "And ");
 #line 70
- testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.Then("I click button Back To Sign In on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("I click button Back To Sign In on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -255,11 +257,11 @@ this.ScenarioSetup(scenarioInfo);
             table7.AddRow(new string[] {
                         "Password",
                         "1234qweR"});
-#line 72
- testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table7, "When ");
-#line 76
- testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table7, "And ");
 #line 77
+ testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
  testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -270,14 +272,14 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatPreviousValuesInPopUpFieldsAreSaved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that previous values in PopUp fields are saved", ((string[])(null)));
-#line 79
-this.ScenarioSetup(scenarioInfo);
 #line 80
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 81
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -288,15 +290,17 @@ this.ScenarioSetup(scenarioInfo);
             table8.AddRow(new string[] {
                         "Password",
                         "1234qweR"});
-#line 83
- testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table8, "When ");
-#line 87
- testRunner.Then("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 84
+ testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table8, "And ");
 #line 88
- testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
- testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
+ testRunner.Then("I see that credential values are saved in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 91
+ testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 92
  testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -307,14 +311,14 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatPreviousValuesInPopUpFieldsAreNotSaved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that previous values in PopUp fields are not saved", ((string[])(null)));
-#line 92
-this.ScenarioSetup(scenarioInfo);
-#line 93
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 95
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 96
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -325,17 +329,19 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "Password",
                         "1234qwER"});
-#line 96
- testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table9, "When ");
-#line 100
- testRunner.Then("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 101
- testRunner.And("I refresh page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table9, "And ");
 #line 102
- testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
- testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I refresh page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.Then("I see that credential values are not saved in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 106
+ testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
  testRunner.Then("I see error message \"Please enter a valid email address.\" on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -348,16 +354,16 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recover Password by use link from email", new string[] {
                         "Ignore"});
-#line 108
-this.ScenarioSetup(scenarioInfo);
-#line 109
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
- testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 112
- testRunner.When("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 113
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("I click Forgot Your Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -365,13 +371,13 @@ this.ScenarioSetup(scenarioInfo);
             table10.AddRow(new string[] {
                         "Email",
                         "testmirantistest@gmail.com"});
-#line 113
- testRunner.When("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table10, "When ");
 #line 116
- testRunner.Then("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 117
- testRunner.Then("I click on the link in email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 118
+ testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table10, "And ");
+#line 119
+ testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("I click on the link in email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
  testRunner.And("I change my password \"1234qwER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -383,11 +389,11 @@ this.ScenarioSetup(scenarioInfo);
             table11.AddRow(new string[] {
                         "Password",
                         "1234qwER"});
-#line 119
- testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table11, "When ");
-#line 123
+#line 122
+ testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table11, "And ");
+#line 126
  testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 127
  testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
