@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Threading;
 using BookingSpecBindings.TestBase.Pages;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -23,7 +19,7 @@ namespace BookingSpecBindings.Bindings
 				switch (key)
 				{
 					case "Email":
-					signPage.TypeEmail(row["Value"]);
+						signPage.TypeEmail(row["Value"]);
 						break;
 					case "Password":
 						signPage.TypePass(row["Value"]);
@@ -79,6 +75,7 @@ namespace BookingSpecBindings.Bindings
 		public void ThenISeeThatCredentialValuesAreSavedInSignInPopUpFields()
 		{
 			Assert.AreEqual(signPage.GetEmailText(), "testmirantistest@gmail.com");
+			Assert.AreEqual(signPage.GetPassText(), "1234qweR");
 		}
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)
@@ -100,6 +97,27 @@ namespace BookingSpecBindings.Bindings
 		public void ThenISeeThatCredentialValuesAreNotSavedInSignInPopUpFields()
 		{
 			Assert.AreEqual(signPage.GetEmailText().Length, 0);
+			Assert.AreEqual(signPage.GetPassText().Length, 0);
+		}
+		[Then(@"I check that I am not Registered")]
+		public void ThenICheckThatIAmNotRegistered(Table table)
+		{
+			foreach (var row in table.Rows)
+			{
+				string key = row["Field"];
+				switch (key)
+				{
+					case "Email":
+						signPage.TypeEmail(row["Value"]);
+						break;
+					case "Password":
+						signPage.TypePass(row["Value"]);
+						break;
+					default:
+						throw new NotImplementedException();
+				}
+			}
+			signPage.ClickToSubmit();
 		}
 	}
 }

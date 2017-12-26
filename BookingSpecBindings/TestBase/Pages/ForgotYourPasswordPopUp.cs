@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.TestBase.Pages
 {

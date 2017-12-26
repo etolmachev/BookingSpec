@@ -50,5 +50,10 @@ namespace BookingSpecBindings.TestBase.Pages
 			string EmailValue = EmailField.GetAttribute("value");
 			return EmailValue;
 		}
+		public string GetPassText()
+		{
+			string PassValue = PassField.GetAttribute("value");
+			return PassValue;
+		}
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace BookingSpecBindings.TestBase.Pages
 {
@@ -65,6 +64,11 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			string EmailValue = EmailField.GetAttribute("value");
 			return EmailValue;
+		}
+		public string GetPassText()
+		{
+			string PassValue = PassField.GetAttribute("value");
+			return PassValue;
 		}
 		public string GetIForgotText()
 		{

@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.Then("I see that I am Registered and Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -139,10 +139,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Input email and pass that already registered and make sure that I am signed in")]
-        public virtual void InputEmailAndPassThatAlreadyRegisteredAndMakeSureThatIAmSignedIn()
+        [NUnit.Framework.DescriptionAttribute("Try to register as already registered user")]
+        public virtual void TryToRegisterAsAlreadyRegisteredUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Input email and pass that already registered and make sure that I am signed in", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to register as already registered user", ((string[])(null)));
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 36
@@ -172,12 +172,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Input email that already registered and invalid pass to make sure that I am not r" +
-            "egistered and not signed in")]
-        public virtual void InputEmailThatAlreadyRegisteredAndInvalidPassToMakeSureThatIAmNotRegisteredAndNotSignedIn()
+        [NUnit.Framework.DescriptionAttribute("Attempt to register with already used email")]
+        public virtual void AttemptToRegisterWithAlreadyUsedEmail()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Input email that already registered and invalid pass to make sure that I am not r" +
-                    "egistered and not signed in", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempt to register with already used email", ((string[])(null)));
 #line 46
 this.ScenarioSetup(scenarioInfo);
 #line 47
@@ -201,7 +199,33 @@ this.ScenarioSetup(scenarioInfo);
 #line 54
  testRunner.And("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
- testRunner.Then("I see that I am not Signed In and not Registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 56
+ testRunner.Then("I see error message \"You entered an email address/password combination that doesn" +
+                    "\'t match. I forgot\" on Register PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 57
+ testRunner.When("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 58
+ testRunner.Then("I see that I am not Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
+ testRunner.When("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table5.AddRow(new string[] {
+                        "Email",
+                        "testmirantistest@gmail.com"});
+            table5.AddRow(new string[] {
+                        "Password",
+                        "12341234"});
+#line 60
+ testRunner.Then("I check that I am not Registered", ((string)(null)), table5, "Then ");
+#line 64
+ testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
+ testRunner.And("I see error message \"You entered an email address/password combination that doesn" +
+                    "\'t match. I forgot\" on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -211,25 +235,25 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckMaximumLengthForEmailFieldOnRegisterPopUp()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check maximum length for email field on Register PopUp", ((string[])(null)));
-#line 57
+#line 67
 this.ScenarioSetup(scenarioInfo);
-#line 58
+#line 68
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 69
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 70
  testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Email",
                         "testmirantistesttestmirantistesttestmirantistesttestmirantistesttestmirantistest@" +
                             "gmail.ru"});
-#line 61
- testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table5, "And ");
-#line 64
+#line 71
+ testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table6, "And ");
+#line 74
  testRunner.Then("I see that value of email field consists of 80 chars on Register Pop Up dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -240,52 +264,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatPreviousValuesInRegisterPopUpFieldsAreSaved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that previous values in Register PopUp fields are saved", ((string[])(null)));
-#line 66
-this.ScenarioSetup(scenarioInfo);
-#line 67
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table6.AddRow(new string[] {
-                        "Email",
-                        "testmirantistest@gmail.com"});
-            table6.AddRow(new string[] {
-                        "Password",
-                        "1234qweR"});
-#line 70
- testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table6, "And ");
-#line 74
- testRunner.And("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.Then("I see that credential values are saved in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 77
- testRunner.When("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
- testRunner.Then("I see that I am Signed In and Registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check that previous values in Register PopUp fields are not saved")]
-        public virtual void CheckThatPreviousValuesInRegisterPopUpFieldsAreNotSaved()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that previous values in Register PopUp fields are not saved", ((string[])(null)));
-#line 80
 this.ScenarioSetup(scenarioInfo);
-#line 81
+#line 77
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 78
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 79
  testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -296,20 +281,59 @@ this.ScenarioSetup(scenarioInfo);
                         "testmirantistest@gmail.com"});
             table7.AddRow(new string[] {
                         "Password",
-                        "1234qwER"});
-#line 84
+                        "1234qweR"});
+#line 80
  testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table7, "And ");
-#line 88
+#line 84
  testRunner.And("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And("I refresh page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 85
  testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
- testRunner.Then("I see that credential values are not saved in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 92
+#line 86
+ testRunner.Then("I see that credential values are \"saved\" in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 87
  testRunner.When("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check that previous values in Register PopUp fields are not saved")]
+        public virtual void CheckThatPreviousValuesInRegisterPopUpFieldsAreNotSaved()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that previous values in Register PopUp fields are not saved", ((string[])(null)));
+#line 90
+this.ScenarioSetup(scenarioInfo);
+#line 91
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 92
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
+ testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "Email",
+                        "testmirantistest@gmail.com"});
+            table8.AddRow(new string[] {
+                        "Password",
+                        "1234qweR"});
+#line 94
+ testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table8, "And ");
+#line 98
+ testRunner.And("I click on X button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I refresh page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.Then("I see that credential values are \"not saved\" in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 102
+ testRunner.When("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
  testRunner.Then("I see error message \"Please enter a valid email address.\" on Register PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -98,7 +98,7 @@ Scenario: Check that previous values in PopUp fields are not saved
 	And I set following parameters on Sign In Pop Up dialog
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qwER                   |
+		| Password | 1234qweR                   |
 	And I click on X button
 	And I refresh page
 	And  I click Sign In button on Ribbon menu

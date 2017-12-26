@@ -1,7 +1,4 @@
-﻿using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+﻿using OpenQA.Selenium;
 
 namespace BookingSpecBindings.TestBase.Pages
 {
@@ -9,7 +6,7 @@ namespace BookingSpecBindings.TestBase.Pages
 	{
 
 		private string signInButtonLocator = "//span[contains(text(), \'Sign in\')]";
-		private string RegisterButtonLocator = "//span[contains(text(), \'Register\')]";
+		private string RegisterButtonLocator = "//span[contains(text(), 'Register') or contains(text(), 'Create Account')]";
 		private string accountNameLocator = "//span[contains (text(), 'Your Account')]";
 
 		public HtmlElement SignInbutton;

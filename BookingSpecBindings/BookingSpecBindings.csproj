@@ -96,6 +96,7 @@
     <Compile Include="TestBase\Pages\RegisterPopUp.cs" />
     <Compile Include="TestBase\Pages\SignInPopUp.cs" />
     <Compile Include="TestBase\Pages\MainPage.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

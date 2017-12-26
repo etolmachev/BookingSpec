@@ -24,8 +24,8 @@ namespace BookingSpecBindings.Bindings
 		{
 			page.clickSignIn();
 		}
-		[Then(@"I click Register button")]
-		public void ThenIClickRegisterButton()
+		[When(@"I click Register button on Ribbon menu")]
+		public void WhenIClickRegisterButtonOnRibbonMenu()
 		{
 			page.clickRegister();
 		}
@@ -34,6 +34,11 @@ namespace BookingSpecBindings.Bindings
 		public void ThenISeeThatIAmSignedIn()
 		{
 			Assert.AreEqual(page.SignInCheck(), "Your Account");
+		}
+		[Then(@"I see that I am not Signed In")]
+		public bool ThenISeeThatIAmNotSignedInAndNotRegistered()
+		{
+			return page.SignInbutton.Displayed;
 		}
 	}
 }

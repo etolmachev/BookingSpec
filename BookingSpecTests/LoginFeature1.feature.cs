@@ -328,7 +328,7 @@ this.ScenarioSetup(scenarioInfo);
                         "testmirantistest@gmail.com"});
             table9.AddRow(new string[] {
                         "Password",
-                        "1234qwER"});
+                        "1234qweR"});
 #line 98
  testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table9, "And ");
 #line 102
