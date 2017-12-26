@@ -75,10 +75,10 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(signPage.GetErrorText(), error);
 		}
-		[Then(@"I see that credential values are saved in Sign In PopUp fields")]
-		public void ThenISeeThatCredentialValuesAreSavedInSignInPopUpFields()
+		[Then(@"I see that credential values ""(.*)"" are saved in Sign In PopUp fields")]
+		public void ThenISeeThatCredentialValuesAreSavedInSignInPopUpFields(string email)
 		{
-			Assert.AreEqual(signPage.GetEmailText(), "testmirantistest@gmail.com");
+			Assert.AreEqual(signPage.GetEmailText(), email);
 		}
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)

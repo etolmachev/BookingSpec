@@ -30,12 +30,6 @@ namespace BookingSpecBindings.Bindings
 				}
 			}
 		}
-		[When(@"I wait while page popup is loading")]
-		public void WhenIWaitWhilePagePopupIsLoading()
-		{
-			forgotPage.waitLoading();
-		}
-
 		[Then(@"I wait while page popup is loading")]
 		public void ThenIWaitWhilePagePopupIsLoading()
 		{
