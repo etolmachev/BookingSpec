@@ -4,10 +4,11 @@ Scenario: Input valid credentials in order to Register
 	When I open browser
 	And I navigate to url "https://booking.com"
 	And I click Register button on Ribbon menu
+	When I remember "testmirantistest{{rnd::3}}@gmail.com" as "email"
 	And I set following parameters on Register Pop Up dialog
-	| Field    | Value                      |
-	| Email    | testmirantistest@gmail.com |
-	| Password | 1234qweR                   |
+	| Field    | Value              |
+	| Email    | {{context::email}} |
+	| Password | 1234qweR           |
 	And I click Get Started button on PopUp
 	Then I see that I am Signed In
 

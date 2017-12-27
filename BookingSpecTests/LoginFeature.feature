@@ -36,7 +36,7 @@ Scenario: Attempt to recover password with invalid email
 	And I click Sign In button on Ribbon menu
 	And I click Forgot Your Password button
 	And I set following parameters on Forgot Your Password Pop Up dialog
-		| Field    | Value                      |
+		| Field    | Value                     |
 		| Email    | estmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
 	Then I wait while page popup is loading
@@ -68,8 +68,8 @@ Scenario: Click on recover password and Sign In with old password
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
-	And I wait while page popup is loading
-	And I click button Back To Sign In on Forgot Your Password PopUp
+	Then I wait while page popup is loading
+	When I click button Back To Sign In on Forgot Your Password PopUp
 	And I set following parameters on Sign In Pop Up dialog
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
@@ -125,4 +125,5 @@ Scenario: Recover Password by use link from email
 		| Password | 1234qwER                   |
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In 
+	When I remember "testmirantistest{{rnd::3}}@gmail.com" as "email"
 	

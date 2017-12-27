@@ -19,7 +19,7 @@ namespace BookingSpecBindings.Bindings
 				switch (key)
 				{
 					case "Email":
-						signPage.TypeEmail(row["Value"]);
+						signPage.TypeEmail(Utils.Resolve(row["Value"]));
 						break;
 					case "Password":
 						signPage.TypePass(row["Value"]);

@@ -33,6 +33,10 @@ namespace BookingSpecBindings
 		{
 			Browser.Driver.Navigate().Refresh();
 		}
-
+		[When(@"I remember ""(.*)"" as ""(.*)""")]
+		public void WhenIRememberAs(string alias, string email)
+		{
+			ScenarioContext.Current.Set(Utils.Resolve(alias), email);
+		}
 	}
 }
