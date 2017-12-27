@@ -297,8 +297,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 89
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.Then("I see that credential values \"testmirantistest@mirantis.com\" are saved in Sign In" +
-                    " PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values \"testmirantistest@gmail.com\" are saved in Sign In Po" +
+                    "pUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
