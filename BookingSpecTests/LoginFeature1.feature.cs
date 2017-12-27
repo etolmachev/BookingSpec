@@ -161,10 +161,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 41
  testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
- testRunner.Then("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
-                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
+                    " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
