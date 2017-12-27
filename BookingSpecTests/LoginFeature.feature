@@ -39,8 +39,8 @@ Scenario: Attempt to recover password with invalid email
 		| Field    | Value                      |
 		| Email    | estmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
-	And I wait while page popup is loading
-	Then I see error message "Oops! We can't find a profile registered with that name." on Forgot Your Password PopUp
+	Then I wait while page popup is loading
+	And I see error message "Oops! We can't find a profile registered with that name." on Forgot Your Password PopUp
 
 Scenario: Cancel recover password and Sign in
 	When I open browser
