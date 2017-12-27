@@ -68,8 +68,8 @@ Scenario: Click on recover password and Sign In with old password
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
-	And I wait while page popup is loading
-	And I click button Back To Sign In on Forgot Your Password PopUp
+	Then I wait while page popup is loading
+	When I click button Back To Sign In on Forgot Your Password PopUp
 	And I set following parameters on Sign In Pop Up dialog
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
