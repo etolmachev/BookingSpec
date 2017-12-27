@@ -71,11 +71,22 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(signPage.GetErrorText(), error);
 		}
-		[Then(@"I see that credential values are saved in Sign In PopUp fields")]
-		public void ThenISeeThatCredentialValuesAreSavedInSignInPopUpFields()
+		[Then(@"I see that credential values: ""(.*)"" ""(.*)"" are ""(.*)"" in Sign In PopUp fields")]
+		public void ThenISeeThatCredentialValuesAreInSignInPopUpFields(string email, string pass, string key)
 		{
-			Assert.AreEqual(signPage.GetEmailText(), "testmirantistest@gmail.com");
-			Assert.AreEqual(signPage.GetPassText(), "1234qweR");
+			switch (key)
+			{
+				case "saved":
+					Assert.AreEqual(signPage.GetEmailText(), email);
+					Assert.AreEqual(signPage.GetPassText(), pass);
+					break;
+				case "not saved":
+					Assert.AreEqual(signPage.GetEmailText().Length, 0);
+					Assert.AreEqual(signPage.GetPassText().Length, 0);
+					break;
+				default:
+					throw new NotImplementedException();
+			}
 		}
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)
@@ -92,12 +103,6 @@ namespace BookingSpecBindings.Bindings
 		{
 			Console.WriteLine(signPage.PopUpButton.Displayed);
 			return signPage.PopUpButton.Displayed;
-		}
-		[Then(@"I see that credential values are not saved in Sign In PopUp fields")]
-		public void ThenISeeThatCredentialValuesAreNotSavedInSignInPopUpFields()
-		{
-			Assert.AreEqual(signPage.GetEmailText().Length, 0);
-			Assert.AreEqual(signPage.GetPassText().Length, 0);
 		}
 		[Then(@"I check that I am not Registered")]
 		public void ThenICheckThatIAmNotRegistered(Table table)

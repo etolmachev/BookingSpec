@@ -297,7 +297,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 89
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.Then("I see that credential values are \"saved\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"testmirantistest@mail.com\" \"1234qweR\" are \"saved\" " +
+                    "in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
@@ -338,7 +339,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 104
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.Then("I see that credential values are \"not saved\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"testmirantistest@mail.com\" \"1234qweR\" are \"not sav" +
+                    "ed\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107

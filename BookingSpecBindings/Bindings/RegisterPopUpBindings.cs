@@ -39,14 +39,14 @@ namespace BookingSpecBindings.Bindings
 		{
 			regPage.ClickToSubmit();
 		}
-		[Then(@"I see that credential values are ""(.*)"" in Register PopUp fields")]
-		public void ThenISeeThatCredentialValuesAreInRegisterPopUpFields(string key)
+		[Then(@"I see that credential values: ""(.*)"" ""(.*)"" are ""(.*)"" in Register PopUp fields")]
+		public void ThenISeeThatCredentialValuesAreInRegisterPopUpFields(string email, string pass, string key)
 		{
 			switch (key)
 			{
 				case "saved":
-					Assert.AreEqual(regPage.GetEmailText(), "testmirantistest@gmail.com");
-					Assert.AreEqual(regPage.GetPassText(), "1234qweR");
+					Assert.AreEqual(regPage.GetEmailText(), email);
+					Assert.AreEqual(regPage.GetPassText(), pass);
 					break;
 				case "not saved":
 					Assert.AreEqual(regPage.GetEmailText().Length, 0);

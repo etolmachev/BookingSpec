@@ -83,7 +83,7 @@ Scenario: Check that previous values in Register PopUp fields are saved
 		| Password | 1234qweR                   |
 	And I click on X button
 	And I click Register button on Ribbon menu
-	Then I see that credential values are "saved" in Register PopUp fields
+	Then I see that credential values: "testmirantistest@mail.com" "1234qweR" are "saved" in Register PopUp fields
 	When I click Get Started button on PopUp
 	Then I see that I am Signed In
 
@@ -98,6 +98,6 @@ Scenario: Check that previous values in Register PopUp fields are not saved
 	And I click on X button
 	And I refresh page
 	And  I click Register button on Ribbon menu
-	Then I see that credential values are "not saved" in Register PopUp fields
+	Then I see that credential values: "testmirantistest@mail.com" "1234qweR" are "not saved" in Register PopUp fields
 	When I click Get Started button on PopUp
 	Then I see error message "Please enter a valid email address." on Register PopUp
