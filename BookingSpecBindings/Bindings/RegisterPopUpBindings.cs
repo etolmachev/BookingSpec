@@ -24,7 +24,7 @@ namespace BookingSpecBindings.Bindings
 				switch (key)
 				{
 					case "Email":
-						regPage.TypeEmail(row["Value"]);
+						regPage.TypeEmail(Utils.Resolve(row["Value"]));
 						break;
 					case "Password":
 						regPage.TypePass(row["Value"]);

@@ -44,7 +44,7 @@ namespace BookingSpecBindings
 					return Context(result);
 					break;
 				default:
-					throw new NotImplementedException();
+					return result;
 			}
 		}
 	}

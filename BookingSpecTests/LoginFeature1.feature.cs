@@ -297,8 +297,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 89
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.Then("I see that credential values: \"testmirantistest@mail.com\" \"1234qweR\" are \"saved\" " +
-                    "in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"saved\"" +
+                    " in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
@@ -339,8 +339,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 104
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.Then("I see that credential values: \"testmirantistest@mail.com\" \"1234qweR\" are \"not sav" +
-                    "ed\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"not sa" +
+                    "ved\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
@@ -397,8 +397,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
  testRunner.Then("I see that I am Signed In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 128
- testRunner.When("I remember \"testmirantistest{{rnd::3}}@gmail.com\" as \"email\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

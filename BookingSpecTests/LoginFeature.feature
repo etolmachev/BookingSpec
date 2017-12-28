@@ -87,7 +87,7 @@ Scenario: Check that previous values in PopUp fields are saved
 		| Password | 1234qweR                   |
 	And I click on X button
 	And  I click Sign In button on Ribbon menu
-	Then I see that credential values: "testmirantistest@mail.com" "1234qweR" are "saved" in Sign In PopUp fields
+	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "saved" in Sign In PopUp fields
 	When I click Sign In button on PopUp
 	Then I see that I am Signed In 
 
@@ -102,7 +102,7 @@ Scenario: Check that previous values in PopUp fields are not saved
 	And I click on X button
 	And I refresh page
 	And  I click Sign In button on Ribbon menu
-	Then I see that credential values: "testmirantistest@mail.com" "1234qweR" are "not saved" in Sign In PopUp fields
+	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "not saved" in Sign In PopUp fields
 	When I click Sign In button on PopUp
 	Then I see error message "Please enter a valid email address." on Sign In PopUp
 
@@ -125,5 +125,4 @@ Scenario: Recover Password by use link from email
 		| Password | 1234qwER                   |
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In 
-	When I remember "testmirantistest{{rnd::3}}@gmail.com" as "email"
 	
