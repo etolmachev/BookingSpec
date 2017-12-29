@@ -98,7 +98,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Sign In\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
  testRunner.And(string.Format("I see message error with \"{0}\"", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -161,7 +161,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 41
  testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.Then("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Forgot Your Password\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
  testRunner.And("I see error message \"Oops! We can\'t find a profile registered with that name.\" on" +
                     " Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -244,7 +244,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 70
  testRunner.And("I click button Send on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.Then("I wait while page popup is loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Forgot Your Password\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
  testRunner.When("I click button Back To Sign In on Forgot Your Password PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

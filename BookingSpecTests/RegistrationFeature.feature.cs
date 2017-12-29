@@ -133,7 +133,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.And("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Registration\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
  testRunner.And(string.Format("I see message error with \"{0}\"", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -203,7 +203,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 56
  testRunner.And("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Registration\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
  testRunner.Then("I see error message \"You entered an email address/password combination that doesn" +
                     "\'t match. I forgot\" on Register PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -226,7 +226,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 62
  testRunner.Then("I check that I am not Registered", ((string)(null)), table5, "Then ");
 #line 66
- testRunner.Then("I wait while page popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Registration\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 67
  testRunner.And("I see error message \"You entered an email address/password combination that doesn" +
                     "\'t match. I forgot\" on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

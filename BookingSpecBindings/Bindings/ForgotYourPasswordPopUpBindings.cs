@@ -26,11 +26,6 @@ namespace BookingSpecBindings.Bindings
 				}
 			}
 		}
-		[Then(@"I wait while page popup is loading")]
-		public void ThenIWaitWhilePagePopupIsLoading()
-		{
-			forgotPage.waitLoading();
-		}
 		[Then(@"I see error message ""(.*)"" on Forgot Your Password PopUp")]
 		public void ThenISeeErrorMessageOnForgotYourPasswordPopUp(string error)
 		{

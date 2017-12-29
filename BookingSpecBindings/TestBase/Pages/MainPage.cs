@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using OpenQA.Selenium;
 
 namespace BookingSpecBindings.TestBase.Pages
 {
@@ -19,7 +21,6 @@ namespace BookingSpecBindings.TestBase.Pages
 			RegisterButton = new HtmlElement(By.XPath(RegisterButtonLocator));
 			AccountName = new HtmlElement(By.XPath(accountNameLocator));
 		}
-
 		public void clickSignIn()
 		{
 			SignInbutton.Click();
@@ -31,6 +32,21 @@ namespace BookingSpecBindings.TestBase.Pages
 		public string SignInCheck()
 		{
 			return AccountName.Text;
+		}
+		public bool waitLoading(string selector )
+		{
+			var el = new HtmlElement(By.CssSelector(selector));
+			int timeout = 30;
+			while (timeout > 0)
+			{
+				if (el.GetAttribute("style") != "display: block;")
+				{
+					return true;
+				}
+				timeout--;
+				Thread.Sleep(1000);
+			}
+			throw new Exception("Sign in popup didn't load in settings.");
 		}
 	}
 }

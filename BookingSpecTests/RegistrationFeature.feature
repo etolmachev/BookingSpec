@@ -21,7 +21,7 @@ Scenario Template: Attempt to Register using Invalid combinations of email and p
 		| Email    | <Email>    |
 		| Password | <Password> |
 	And I click Get Started button on PopUp
-	Then I wait while page popup is working
+	Then I wait while "Registration" popup is working
 	And I see message error with "<Message>"
 
 	Scenarios: 
@@ -54,7 +54,7 @@ Scenario: Attempt to register with already used email
 	| Email    | testmirantistest@gmail.com |
 	| Password | 12341234                   |
 	And I click Get Started button on PopUp
-	Then I wait while page popup is working
+	Then I wait while "Registration" popup is working
 	Then I see error message "You entered an email address/password combination that doesn't match. I forgot" on Register PopUp
 	When I click on X button
 	Then I see that I am not Signed In
@@ -63,7 +63,7 @@ Scenario: Attempt to register with already used email
 	| Field    | Value                      |
 	| Email    | testmirantistest@gmail.com |
 	| Password | 12341234                   |
-	Then I wait while page popup is working
+	Then I wait while "Registration" popup is working
 	And I see error message "You entered an email address/password combination that doesn't match. I forgot" on Sign In PopUp
 
 Scenario: Check maximum length for email field on Register PopUp

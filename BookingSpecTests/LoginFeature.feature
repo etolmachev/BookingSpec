@@ -9,7 +9,7 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 		| Email    | <Email>    |
 		| Password | <Password> |
 	And I click Sign In button on PopUp
-	Then I wait while page popup is working
+	Then I wait while "Sign In" popup is working
 	And I see message error with "<Message>"
 
 Scenarios: 
@@ -39,7 +39,7 @@ Scenario: Attempt to recover password with invalid email
 		| Field    | Value                     |
 		| Email    | estmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
-	Then I wait while page popup is loading
+	Then I wait while "Forgot Your Password" popup is working
 	And I see error message "Oops! We can't find a profile registered with that name." on Forgot Your Password PopUp
 
 Scenario: Cancel recover password and Sign in
@@ -68,7 +68,7 @@ Scenario: Click on recover password and Sign In with old password
 		| Field    | Value                      |
 		| Email    | testmirantistest@gmail.com |
 	And I click button Send on Forgot Your Password PopUp
-	Then I wait while page popup is loading
+	Then I wait while "Forgot Your Password" popup is working
 	When I click button Back To Sign In on Forgot Your Password PopUp
 	And I set following parameters on Sign In Pop Up dialog
 		| Field    | Value                      |

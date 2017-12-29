@@ -74,20 +74,5 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			return IForgot.Text;
 		}
-		public bool waitLoading(int timeout = 30)
-		{
-			var el = new HtmlElement(By.CssSelector(".user_access_signin_menu .form-loading"));
-
-			while (timeout > 0)
-			{
-				if (el.GetAttribute("style") != "display: block;")
-				{
-					return true;
-				}
-				timeout--;
-				Thread.Sleep(1000);
-			}
-			throw new Exception("Sign in popup didn't load in settings.");
-		}
 	}
 }

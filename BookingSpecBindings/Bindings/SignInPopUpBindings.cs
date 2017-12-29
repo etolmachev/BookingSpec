@@ -56,11 +56,6 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(signPage.GetEmailText().Length, charsCount);
 		}
-		[Then(@"I wait while page popup is working")]
-		public void ThenIWaitWhilePagePopupIsWorking()
-		{
-			signPage.waitLoading();
-		}
 		[When(@"I click Forgot Your Password button")]
 		public void WhenIClickForgotYourPasswordButton()
 		{
