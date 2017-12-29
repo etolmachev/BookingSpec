@@ -25,19 +25,19 @@ namespace BookingSpecBindings
 		{
 			return ScenarioContext.Current.Get<string>(key);
 		}
-		public static string Resolve(string email)
+		public static string Resolve(string input)
 		{
-			string result = email;
-			foreach (Match match in Regex.Matches(email, regexAll))
+			string result = input;
+			foreach (Match match in Regex.Matches(input, regexAll))
 			{
-				result = MainMethodResolve(email);
+				result = MainMethodResolve(input);
 			}
 			return result;
 		}
-		private static string MainMethodResolve(string email)
+		private static string MainMethodResolve(string input)
 		{
-			string key = Regex.Match(email, regexLeft).ToString();
-			string value = Regex.Match(email, regexRight).ToString();
+			string key = Regex.Match(input, regexLeft).ToString();
+			string value = Regex.Match(input, regexRight).ToString();
 
 			string mid = String.Empty;
 
@@ -53,8 +53,8 @@ namespace BookingSpecBindings
 					mid = "";
 					break;
 			}
-			string left = email.Substring(0, email.IndexOf(key) - 2);
-			string right = email.Substring(email.IndexOf(value) + value.Length + 2);
+			string left = input.Substring(0, input.IndexOf(key) - 2);
+			string right = input.Substring(input.IndexOf(value) + value.Length + 2);
 			return left + mid + right;
 		}
 	}
