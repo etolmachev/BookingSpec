@@ -62,13 +62,11 @@ namespace BookingSpecBindings.TestBase.Pages
 		}
 		public string GetEmailText()
 		{
-			string EmailValue = EmailField.GetAttribute("value");
-			return EmailValue;
+			return EmailField.GetAttribute("value");
 		}
 		public string GetPassText()
 		{
-			string PassValue = PassField.GetAttribute("value");
-			return PassValue;
+			return PassField.GetAttribute("value");
 		}
 		public string GetIForgotText()
 		{

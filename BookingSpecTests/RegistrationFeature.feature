@@ -59,7 +59,7 @@ Scenario: Attempt to register with already used email
 	When I click on X button
 	Then I see that I am not Signed In
 	When I click Sign In button on Ribbon menu
-	Then I check that I am not Registered
+	Then I check that I am not Registered by trying to Sign In
 	| Field    | Value                      |
 	| Email    | testmirantistest@gmail.com |
 	| Password | 12341234                   |

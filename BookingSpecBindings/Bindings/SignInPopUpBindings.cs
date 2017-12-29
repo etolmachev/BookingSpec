@@ -99,25 +99,25 @@ namespace BookingSpecBindings.Bindings
 			Console.WriteLine(signPage.PopUpButton.Displayed);
 			return signPage.PopUpButton.Displayed;
 		}
-		[Then(@"I check that I am not Registered")]
-		public void ThenICheckThatIAmNotRegistered(Table table)
+		[Then(@"I check that I am not Registered by trying to Sign In")]
+		public void ThenICheckThatIAmNotRegisteredByTryingToSignIn(Table table)
 		{
-			foreach (var row in table.Rows)
-			{
-				string key = row["Field"];
-				switch (key)
+				foreach (var row in table.Rows)
 				{
-					case "Email":
-						signPage.TypeEmail(row["Value"]);
-						break;
-					case "Password":
-						signPage.TypePass(row["Value"]);
-						break;
-					default:
-						throw new NotImplementedException();
+					string key = row["Field"];
+					switch (key)
+					{
+						case "Email":
+							signPage.TypeEmail(row["Value"]);
+							break;
+						case "Password":
+							signPage.TypePass(row["Value"]);
+							break;
+						default:
+							throw new NotImplementedException();
+					}
 				}
+				signPage.ClickToSubmit();
 			}
-			signPage.ClickToSubmit();
-		}
 	}
 }

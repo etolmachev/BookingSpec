@@ -224,7 +224,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "12341234"});
 #line 62
- testRunner.Then("I check that I am not Registered", ((string)(null)), table5, "Then ");
+ testRunner.Then("I check that I am not Registered by trying to Sign In", ((string)(null)), table5, "Then ");
 #line 66
  testRunner.Then("I wait while \"Sign In\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 67
