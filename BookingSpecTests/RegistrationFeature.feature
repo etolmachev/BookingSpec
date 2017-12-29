@@ -63,7 +63,7 @@ Scenario: Attempt to register with already used email
 	| Field    | Value                      |
 	| Email    | testmirantistest@gmail.com |
 	| Password | 12341234                   |
-	Then I wait while "Registration" popup is working
+	Then I wait while "Sign In" popup is working
 	And I see error message "You entered an email address/password combination that doesn't match. I forgot" on Sign In PopUp
 
 Scenario: Check maximum length for email field on Register PopUp

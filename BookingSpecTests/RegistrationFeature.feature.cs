@@ -226,7 +226,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 62
  testRunner.Then("I check that I am not Registered", ((string)(null)), table5, "Then ");
 #line 66
- testRunner.Then("I wait while \"Registration\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I wait while \"Sign In\" popup is working", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 67
  testRunner.And("I see error message \"You entered an email address/password combination that doesn" +
                     "\'t match. I forgot\" on Sign In PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
