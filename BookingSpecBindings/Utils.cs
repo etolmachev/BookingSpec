@@ -10,7 +10,6 @@ using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings
 {
-
 	static class Utils
 	{ 
 		public static string rnd(int length)
@@ -35,7 +34,6 @@ namespace BookingSpecBindings
 			}
 			return result;
 		}
-
 		private static string MainMethodResolve(string email)
 		{
 			string key = Regex.Match(email, regexLeft).ToString();
@@ -55,10 +53,8 @@ namespace BookingSpecBindings
 					mid = "";
 					break;
 			}
-
 			string left = email.Substring(0, email.IndexOf(key) - 2);
 			string right = email.Substring(email.IndexOf(value) + value.Length + 2);
-
 			return left + mid + right;
 		}
 	}
