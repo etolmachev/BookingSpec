@@ -38,5 +38,10 @@ namespace BookingSpecBindings
 		{
 			ScenarioContext.Current.Set(Utils.Resolve(alias), email);
 		}
+		[Then(@"I wait browser page to load")]
+		public void ThenIWaitBrowserPageToLoad()
+		{
+			Browser.WaitReadyState();
+		}
 	}
 }

@@ -81,6 +81,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccommodationSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccommodationSearch.feature</DependentUpon>
+    </Compile>
     <Compile Include="LoginFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +104,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AccommodationSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccommodationSearch.feature.cs</LastGenOutput>
+    </None>
     <None Include="App.config" />
     <None Include="LoginFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
