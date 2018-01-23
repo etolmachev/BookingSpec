@@ -66,11 +66,11 @@ namespace BookingSpecTests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Attempt to Sign In using Invalid combinations of email and password")]
-        [NUnit.Framework.TestCaseAttribute("testmirantistest@gmail.com", "wrongpass", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
-        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "1234qweR", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
+        [NUnit.Framework.TestCaseAttribute("{{config::email}}", "wrongpass", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
+        [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "{{config::password}}", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
         [NUnit.Framework.TestCaseAttribute("invalidEmail@g.com", "wrongpass", "You entered an email address/password combination that doesn\'t match. I forgot", null)]
-        [NUnit.Framework.TestCaseAttribute("", "1234qweR", "Please enter a valid email address.", null)]
-        [NUnit.Framework.TestCaseAttribute("testmirantistest@gmail.com", "", "Please add a password", null)]
+        [NUnit.Framework.TestCaseAttribute("", "{{config::password}}", "Please enter a valid email address.", null)]
+        [NUnit.Framework.TestCaseAttribute("{{config::email}}", "", "Please add a password", null)]
         [NUnit.Framework.TestCaseAttribute("", "", "Please enter a valid email address.", null)]
         public virtual void AttemptToSignInUsingInvalidCombinationsOfEmailAndPassword(string email, string password, string message, string[] exampleTags)
         {
@@ -190,7 +190,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table4.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
 #line 50
  testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table4, "And ");
 #line 53
@@ -203,10 +203,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table5.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table5.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 55
  testRunner.When("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table5, "When ");
 #line 59
@@ -238,7 +238,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table6.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
 #line 67
  testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table6, "And ");
 #line 70
@@ -253,10 +253,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table7.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}"});
             table7.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 73
  testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table7, "And ");
 #line 77
@@ -286,10 +286,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table8.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table8.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 84
  testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table8, "And ");
 #line 88
@@ -297,8 +297,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 89
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"saved\"" +
-                    " in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"{{config::email}}\" \"{{config::password}}\" are \"sav" +
+                    "ed\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
@@ -326,10 +326,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table9.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table9.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 98
  testRunner.And("I set following parameters on Sign In Pop Up dialog", ((string)(null)), table9, "And ");
 #line 102
@@ -339,8 +339,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 104
  testRunner.And("I click Sign In button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"not sa" +
-                    "ved\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"{{config::email}}\" \"{{config::password}}\" are \"not" +
+                    " saved\" in Sign In PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("I click Sign In button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
@@ -372,7 +372,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table10.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
 #line 116
  testRunner.And("I set following parameters on Forgot Your Password Pop Up dialog", ((string)(null)), table10, "And ");
 #line 119
@@ -387,7 +387,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table11.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table11.AddRow(new string[] {
                         "Password",
                         "1234qwER"});

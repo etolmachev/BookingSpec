@@ -14,6 +14,7 @@ namespace BookingSpecBindings.TestBase
 
 		private By _elementLocator;
 		private IWebElement _wrappedElement;
+		private IWebElement webElement;
 
 		public IWebElement WrappedElement
 		{
@@ -24,6 +25,11 @@ namespace BookingSpecBindings.TestBase
 		public HtmlElement(By thisElementLocator)
 		{
 			_elementLocator = thisElementLocator;
+		}
+
+		public HtmlElement(IWebElement webElement)
+		{
+			this.webElement = webElement;
 		}
 
 		private IWebElement GetWebElement()
@@ -85,7 +91,19 @@ namespace BookingSpecBindings.TestBase
 				throw new Exception(string.Format("Element isn't displayed after {0} seconds", timeout));
 			}
 		}
-
+		public void WaitElementDisappears(int timeout = 30)
+		{
+			int t = timeout;
+			while (t > 0 && WrappedElement.Displayed)
+			{
+				Thread.Sleep(TimeSpan.FromSeconds(1));
+				t--;
+			}
+			if (WrappedElement.Displayed)
+			{
+				throw new Exception(string.Format("Element displayed after {0} seconds", timeout));
+			}
+		}
 		internal void SendKeys()
 		{
 			throw new NotImplementedException();
