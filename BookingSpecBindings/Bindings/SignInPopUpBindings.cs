@@ -86,12 +86,12 @@ namespace BookingSpecBindings.Bindings
 		[When(@"I write password ""(.*)""")]
 		public void WhenIWritePassword(string pass)
 		{
-			signPage.TypePass(pass);
+			signPage.TypePass(Utils.Resolve(pass));
 		}
 		[When(@"I write email on Sign in PopUp ""(.*)""")]
 		public void WhenIWriteEmailOnSignInPopUp(string email)
 		{
-			signPage.TypeEmail(email);
+			signPage.TypeEmail(Utils.Resolve(email));
 		}
 		[Then(@"I see Sign In PopUp dialog")]
 		public bool ThenISeeSignInPopUpDialog()
