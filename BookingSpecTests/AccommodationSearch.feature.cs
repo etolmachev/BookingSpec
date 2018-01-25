@@ -93,8 +93,8 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Input invalid data in accommodation search calendar on main page")]
-        [NUnit.Framework.TestCaseAttribute("03", "15", "2018", "03", "15", "2020", "Reservations longer than 30 nights are not possible.", null)]
-        [NUnit.Framework.TestCaseAttribute("03", "15", "2005", "03", "15", "2005", "Select a check-in date that\'s in the future.", null)]
+        [NUnit.Framework.TestCaseAttribute("04", "15", "2018", "04", "15", "2020", "Reservations longer than 30 nights are not possible.", null)]
+        [NUnit.Framework.TestCaseAttribute("04", "15", "2005", "04", "15", "2005", "Select a check-in date that\'s in the future.", null)]
         public virtual void InputInvalidDataInAccommodationSearchCalendarOnMainPage(string monthIn, string monthDayIn, string yearIn, string monthOut, string monthDayOut, string yearOut, string message, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Input invalid data in accommodation search calendar on main page", exampleTags);
@@ -161,8 +161,8 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check that check-in date always earlier than check-out date")]
-        [NUnit.Framework.TestCaseAttribute("03", "25", "2018", "03", "15", "2018", null)]
-        [NUnit.Framework.TestCaseAttribute("03", "15", "2018", "03", "13", "2018", null)]
+        [NUnit.Framework.TestCaseAttribute("04", "25", "2018", "04", "15", "2018", null)]
+        [NUnit.Framework.TestCaseAttribute("04", "15", "2018", "04", "13", "2018", null)]
         public virtual void CheckThatCheck_InDateAlwaysEarlierThanCheck_OutDate(string monthIn, string monthDayIn, string yearIn, string monthOut, string monthDayOut, string yearOut, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that check-in date always earlier than check-out date", exampleTags);
@@ -214,11 +214,18 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
  testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table3.AddRow(new string[] {
+                        "Adults",
+                        "5"});
 #line 57
- testRunner.When("I click \"Adults\" and choose \"5\" in dropdown menu on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+ testRunner.When("I set following parameters in dropdown menus", ((string)(null)), table3, "When ");
+#line 60
  testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 59
+#line 61
  testRunner.And("I see that Search result is for \"Groups\" and \"5 adults\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -229,24 +236,31 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatSearchAccommodationChildrenDropdownMenuWorksProperly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that Search accommodation Children dropdown menu works properly", ((string[])(null)));
-#line 61
- this.ScenarioSetup(scenarioInfo);
-#line 62
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ this.ScenarioSetup(scenarioInfo);
 #line 64
+ testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 65
+ testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
  testRunner.When("I input data \"Issaquah, WA, United States\" in Destination Search field on main pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
- testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.When("I click \"Children\" and choose \"1\" in dropdown menu on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "Children",
+                        "1"});
 #line 69
+ testRunner.When("I set following parameters in dropdown menus", ((string)(null)), table4, "When ");
+#line 72
+ testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 73
  testRunner.And("I see that Search result is for \"Families\" and \"1 child\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -257,26 +271,34 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatSearchAccommodationRoomsDropdownMenuWorksProperly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that Search accommodation Rooms dropdown menu works properly", ((string[])(null)));
-#line 71
+#line 75
  this.ScenarioSetup(scenarioInfo);
-#line 72
+#line 76
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 77
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 78
  testRunner.When("I input data \"Issaquah, WA, United States\" in Destination Search field on main pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
- testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.When("I click \"Adults\" and choose \"5\" in dropdown menu on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
- testRunner.And("I click \"Rooms\" and choose \"3\" in dropdown menu on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
+ testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table5.AddRow(new string[] {
+                        "Adults",
+                        "5"});
+            table5.AddRow(new string[] {
+                        "Rooms",
+                        "3"});
+#line 81
+ testRunner.When("I set following parameters in dropdown menus", ((string)(null)), table5, "When ");
+#line 85
+ testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
  testRunner.And("I see that Search result contains offers with \"3\" rooms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -287,107 +309,34 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CheckThatSearchAccommodationOptionBuisnessTravelingWorksProperly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that Search accommodation option Buisness traveling works properly", ((string[])(null)));
-#line 82
+#line 88
 this.ScenarioSetup(scenarioInfo);
-#line 83
+#line 89
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 90
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 91
  testRunner.When("I input data \"Issaquah, WA, United States\" in Destination Search field on main pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 92
  testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.When("I click Yes for Buisness traveling on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
- testRunner.And("I click \"Adults\" and choose \"3\" in dropdown menu on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 91
- testRunner.And("I see that Search result is for \"Business Travelers\" and \"3 adults\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1Assurance that each checkbox filter of Accommodation search works properly")]
-        public virtual void _1AssuranceThatEachCheckboxFilterOfAccommodationSearchWorksProperly()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1Assurance that each checkbox filter of Accommodation search works properly", ((string[])(null)));
 #line 93
-this.ScenarioSetup(scenarioInfo);
-#line 94
- testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
- testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
  testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.When("I input data \"New York, New York State, USA\" in Destination Search field on main " +
-                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
- testRunner.And("I click on first autocomplete option that contains \"New York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
- testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
- testRunner.And("I wait browser page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
- testRunner.And("I click all buttons Show More to see every available filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Scenario Key",
-                        "Value"});
-            table3.AddRow(new string[] {
-                        "Vacation Homes",
-                        "amount",
-                        "On"});
-#line 102
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table3, "And ");
-#line 105
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table4.AddRow(new string[] {
-                        "Vacation Homes",
-                        "Off"});
-#line 107
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table4, "And ");
-#line 110
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Scenario Key",
-                        "Value"});
-            table5.AddRow(new string[] {
-                        "Wonderful: 9+",
-                        "amount",
-                        "On"});
-#line 111
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table5, "And ");
-#line 114
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
- testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.When("I click Yes for Buisness traveling on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table6.AddRow(new string[] {
-                        "Wonderful: 9+",
-                        "Off"});
-#line 116
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table6, "And ");
-#line 119
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "Adults",
+                        "3"});
+#line 95
+ testRunner.When("I set following parameters in dropdown menus", ((string)(null)), table6, "When ");
+#line 98
+ testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 99
+ testRunner.And("I see that Search result is for \"Business Travelers\" and \"3 adults\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -397,27 +346,25 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AssuranceThatEachCheckboxFilterOfAccommodationSearchWorksProperly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assurance that each checkbox filter of Accommodation search works properly", ((string[])(null)));
-#line 121
+#line 101
 this.ScenarioSetup(scenarioInfo);
-#line 122
+#line 102
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 123
+#line 103
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 104
  testRunner.And("I set my currency as \"U.S. Dollar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 105
  testRunner.When("I input data \"New York, New York State, USA\" in Destination Search field on main " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 106
  testRunner.And("I click on first autocomplete option that contains \"New York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 107
  testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 108
  testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 129
+#line 109
  testRunner.And("I wait browser page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
- testRunner.And("I click all buttons Show More to see every available filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -427,11 +374,9 @@ this.ScenarioSetup(scenarioInfo);
                         "US$61 - US$120 per night",
                         "amount",
                         "On"});
-#line 131
+#line 110
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table7, "And ");
-#line 134
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 113
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -440,10 +385,8 @@ this.ScenarioSetup(scenarioInfo);
             table8.AddRow(new string[] {
                         "US$61 - US$120 per night",
                         "Off"});
-#line 136
+#line 114
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table8, "And ");
-#line 139
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -453,11 +396,9 @@ this.ScenarioSetup(scenarioInfo);
                         "US$120 - US$180 per night",
                         "amount",
                         "On"});
-#line 140
+#line 117
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table9, "And ");
-#line 143
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 120
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -466,10 +407,8 @@ this.ScenarioSetup(scenarioInfo);
             table10.AddRow(new string[] {
                         "US$120 - US$180 per night",
                         "Off"});
-#line 145
+#line 121
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table10, "And ");
-#line 148
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -479,11 +418,9 @@ this.ScenarioSetup(scenarioInfo);
                         "US$180 - US$240 per night",
                         "amount",
                         "On"});
-#line 149
+#line 124
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table11, "And ");
-#line 152
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 127
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -492,10 +429,8 @@ this.ScenarioSetup(scenarioInfo);
             table12.AddRow(new string[] {
                         "US$180 - US$240 per night",
                         "Off"});
-#line 154
+#line 128
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table12, "And ");
-#line 157
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -505,11 +440,9 @@ this.ScenarioSetup(scenarioInfo);
                         "US$240 + per night",
                         "amount",
                         "On"});
-#line 158
+#line 131
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table13, "And ");
-#line 161
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
+#line 134
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -518,10 +451,8 @@ this.ScenarioSetup(scenarioInfo);
             table14.AddRow(new string[] {
                         "US$240 + per night",
                         "Off"});
-#line 163
+#line 135
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table14, "And ");
-#line 166
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -531,11 +462,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Wonderful: 9+",
                         "amount",
                         "On"});
-#line 167
+#line 138
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table15, "And ");
-#line 170
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
+#line 141
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -544,10 +473,8 @@ this.ScenarioSetup(scenarioInfo);
             table16.AddRow(new string[] {
                         "Wonderful: 9+",
                         "Off"});
-#line 172
+#line 142
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table16, "And ");
-#line 175
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -557,11 +484,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Very Good: 8+",
                         "amount",
                         "On"});
-#line 176
+#line 145
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table17, "And ");
-#line 179
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
+#line 148
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -570,10 +495,8 @@ this.ScenarioSetup(scenarioInfo);
             table18.AddRow(new string[] {
                         "Very Good: 8+",
                         "Off"});
-#line 181
+#line 149
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table18, "And ");
-#line 184
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -583,11 +506,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Good: 7+",
                         "amount",
                         "On"});
-#line 185
+#line 152
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table19, "And ");
-#line 188
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 155
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -596,10 +517,8 @@ this.ScenarioSetup(scenarioInfo);
             table20.AddRow(new string[] {
                         "Good: 7+",
                         "Off"});
-#line 190
+#line 156
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table20, "And ");
-#line 193
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -609,11 +528,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Pleasant: 6+",
                         "amount",
                         "On"});
-#line 194
+#line 159
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table21, "And ");
-#line 197
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
+#line 162
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -622,10 +539,8 @@ this.ScenarioSetup(scenarioInfo);
             table22.AddRow(new string[] {
                         "Pleasant: 6+",
                         "Off"});
-#line 199
+#line 163
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table22, "And ");
-#line 202
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -635,11 +550,9 @@ this.ScenarioSetup(scenarioInfo);
                         "1 star",
                         "amount",
                         "On"});
-#line 203
+#line 166
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table23, "And ");
-#line 206
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
+#line 169
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -648,10 +561,8 @@ this.ScenarioSetup(scenarioInfo);
             table24.AddRow(new string[] {
                         "1 star",
                         "Off"});
-#line 208
+#line 170
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table24, "And ");
-#line 211
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -661,11 +572,9 @@ this.ScenarioSetup(scenarioInfo);
                         "2 stars",
                         "amount",
                         "On"});
-#line 212
+#line 173
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table25, "And ");
-#line 215
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 216
+#line 176
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -674,10 +583,8 @@ this.ScenarioSetup(scenarioInfo);
             table26.AddRow(new string[] {
                         "2 stars",
                         "Off"});
-#line 217
+#line 177
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table26, "And ");
-#line 220
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -687,11 +594,9 @@ this.ScenarioSetup(scenarioInfo);
                         "3 stars",
                         "amount",
                         "On"});
-#line 221
+#line 180
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table27, "And ");
-#line 224
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
+#line 183
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -700,10 +605,8 @@ this.ScenarioSetup(scenarioInfo);
             table28.AddRow(new string[] {
                         "3 stars",
                         "Off"});
-#line 226
+#line 184
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table28, "And ");
-#line 229
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -713,11 +616,9 @@ this.ScenarioSetup(scenarioInfo);
                         "4 stars",
                         "amount",
                         "On"});
-#line 230
+#line 187
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table29, "And ");
-#line 233
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
+#line 190
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -726,10 +627,8 @@ this.ScenarioSetup(scenarioInfo);
             table30.AddRow(new string[] {
                         "4 stars",
                         "Off"});
-#line 235
+#line 191
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table30, "And ");
-#line 238
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -739,11 +638,9 @@ this.ScenarioSetup(scenarioInfo);
                         "5 stars",
                         "amount",
                         "On"});
-#line 239
+#line 194
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table31, "And ");
-#line 242
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
+#line 197
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -752,10 +649,8 @@ this.ScenarioSetup(scenarioInfo);
             table32.AddRow(new string[] {
                         "5 stars",
                         "Off"});
-#line 244
+#line 198
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table32, "And ");
-#line 247
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -765,11 +660,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Unrated",
                         "amount",
                         "On"});
-#line 248
+#line 201
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table33, "And ");
-#line 251
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 252
+#line 204
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -778,10 +671,8 @@ this.ScenarioSetup(scenarioInfo);
             table34.AddRow(new string[] {
                         "Unrated",
                         "Off"});
-#line 253
+#line 205
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table34, "And ");
-#line 256
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -791,11 +682,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Front Desk Open 24/7",
                         "amount",
                         "On"});
-#line 257
+#line 208
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table35, "And ");
-#line 260
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 261
+#line 211
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -804,10 +693,8 @@ this.ScenarioSetup(scenarioInfo);
             table36.AddRow(new string[] {
                         "Front Desk Open 24/7",
                         "Off"});
-#line 262
+#line 212
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table36, "And ");
-#line 265
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -817,11 +704,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Hotels",
                         "amount",
                         "On"});
-#line 266
+#line 215
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table37, "And ");
-#line 269
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
+#line 218
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
@@ -830,10 +715,8 @@ this.ScenarioSetup(scenarioInfo);
             table38.AddRow(new string[] {
                         "Hotels",
                         "Off"});
-#line 271
+#line 219
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table38, "And ");
-#line 274
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -843,11 +726,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Apartments",
                         "amount",
                         "On"});
-#line 275
+#line 222
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table39, "And ");
-#line 278
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
+#line 225
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
@@ -856,10 +737,8 @@ this.ScenarioSetup(scenarioInfo);
             table40.AddRow(new string[] {
                         "Apartments",
                         "Off"});
-#line 280
+#line 226
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table40, "And ");
-#line 283
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -869,11 +748,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Vacation Homes",
                         "amount",
                         "On"});
-#line 284
+#line 229
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table41, "And ");
-#line 287
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 288
+#line 232
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
@@ -882,10 +759,8 @@ this.ScenarioSetup(scenarioInfo);
             table42.AddRow(new string[] {
                         "Vacation Homes",
                         "Off"});
-#line 289
+#line 233
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table42, "And ");
-#line 292
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -895,11 +770,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Hostels",
                         "amount",
                         "On"});
-#line 293
+#line 236
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table43, "And ");
-#line 296
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 297
+#line 239
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
@@ -908,10 +781,8 @@ this.ScenarioSetup(scenarioInfo);
             table44.AddRow(new string[] {
                         "Hostels",
                         "Off"});
-#line 298
+#line 240
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table44, "And ");
-#line 301
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -921,11 +792,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Bed and Breakfasts",
                         "amount",
                         "On"});
-#line 302
+#line 243
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table45, "And ");
-#line 305
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 306
+#line 246
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
@@ -934,10 +803,8 @@ this.ScenarioSetup(scenarioInfo);
             table46.AddRow(new string[] {
                         "Bed and Breakfasts",
                         "Off"});
-#line 307
+#line 247
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table46, "And ");
-#line 310
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -947,11 +814,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Guesthouses",
                         "amount",
                         "On"});
-#line 311
+#line 250
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table47, "And ");
-#line 314
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 315
+#line 253
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
@@ -960,10 +825,8 @@ this.ScenarioSetup(scenarioInfo);
             table48.AddRow(new string[] {
                         "Guesthouses",
                         "Off"});
-#line 316
+#line 254
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table48, "And ");
-#line 319
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -973,11 +836,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Homestays",
                         "amount",
                         "On"});
-#line 320
+#line 257
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table49, "And ");
-#line 323
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 324
+#line 260
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
@@ -986,10 +847,8 @@ this.ScenarioSetup(scenarioInfo);
             table50.AddRow(new string[] {
                         "Homestays",
                         "Off"});
-#line 325
+#line 261
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table50, "And ");
-#line 328
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -999,11 +858,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Family-Friendly Properties",
                         "amount",
                         "On"});
-#line 329
+#line 264
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table51, "And ");
-#line 332
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 333
+#line 267
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1012,10 +869,8 @@ this.ScenarioSetup(scenarioInfo);
             table52.AddRow(new string[] {
                         "Family-Friendly Properties",
                         "Off"});
-#line 334
+#line 268
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table52, "And ");
-#line 337
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1025,11 +880,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Fitness Center",
                         "amount",
                         "On"});
-#line 338
+#line 271
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table53, "And ");
-#line 341
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 342
+#line 274
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1038,10 +891,8 @@ this.ScenarioSetup(scenarioInfo);
             table54.AddRow(new string[] {
                         "Fitness Center",
                         "Off"});
-#line 343
+#line 275
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table54, "And ");
-#line 346
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1051,11 +902,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Massage",
                         "amount",
                         "On"});
-#line 347
+#line 278
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table55, "And ");
-#line 350
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 351
+#line 281
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1064,10 +913,8 @@ this.ScenarioSetup(scenarioInfo);
             table56.AddRow(new string[] {
                         "Massage",
                         "Off"});
-#line 352
+#line 282
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table56, "And ");
-#line 355
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1077,11 +924,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Bicycle Rental (additional charge)",
                         "amount",
                         "On"});
-#line 356
+#line 285
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table57, "And ");
-#line 359
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 360
+#line 288
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1090,10 +935,8 @@ this.ScenarioSetup(scenarioInfo);
             table58.AddRow(new string[] {
                         "Bicycle Rental (additional charge)",
                         "Off"});
-#line 361
+#line 289
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table58, "And ");
-#line 364
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1103,11 +946,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Library",
                         "amount",
                         "On"});
-#line 365
+#line 292
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table59, "And ");
-#line 368
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 369
+#line 295
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1116,10 +957,8 @@ this.ScenarioSetup(scenarioInfo);
             table60.AddRow(new string[] {
                         "Library",
                         "Off"});
-#line 370
+#line 296
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table60, "And ");
-#line 373
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1129,11 +968,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Fitness",
                         "amount",
                         "On"});
-#line 374
+#line 299
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table61, "And ");
-#line 377
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 378
+#line 302
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1142,10 +979,8 @@ this.ScenarioSetup(scenarioInfo);
             table62.AddRow(new string[] {
                         "Fitness",
                         "Off"});
-#line 379
+#line 303
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table62, "And ");
-#line 382
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1155,11 +990,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Great Value Today",
                         "amount",
                         "On"});
-#line 383
+#line 306
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table63, "And ");
-#line 386
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 387
+#line 309
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1168,10 +1001,8 @@ this.ScenarioSetup(scenarioInfo);
             table64.AddRow(new string[] {
                         "Great Value Today",
                         "Off"});
-#line 388
+#line 310
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table64, "And ");
-#line 391
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1181,11 +1012,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Free cancellation",
                         "amount",
                         "On"});
-#line 392
+#line 313
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table65, "And ");
-#line 395
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 396
+#line 316
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1194,10 +1023,8 @@ this.ScenarioSetup(scenarioInfo);
             table66.AddRow(new string[] {
                         "Free cancellation",
                         "Off"});
-#line 397
+#line 317
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table66, "And ");
-#line 400
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1207,11 +1034,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Book without credit card",
                         "amount",
                         "On"});
-#line 401
+#line 320
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table67, "And ");
-#line 404
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 405
+#line 323
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1220,10 +1045,8 @@ this.ScenarioSetup(scenarioInfo);
             table68.AddRow(new string[] {
                         "Book without credit card",
                         "Off"});
-#line 406
+#line 324
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table68, "And ");
-#line 409
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1233,11 +1056,9 @@ this.ScenarioSetup(scenarioInfo);
                         "No prepayment",
                         "amount",
                         "On"});
-#line 410
+#line 327
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table69, "And ");
-#line 413
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 414
+#line 330
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1246,10 +1067,8 @@ this.ScenarioSetup(scenarioInfo);
             table70.AddRow(new string[] {
                         "No prepayment",
                         "Off"});
-#line 415
+#line 331
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table70, "And ");
-#line 418
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1259,11 +1078,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Breakfast included",
                         "amount",
                         "On"});
-#line 419
+#line 334
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table71, "And ");
-#line 422
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 423
+#line 337
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1272,10 +1089,8 @@ this.ScenarioSetup(scenarioInfo);
             table72.AddRow(new string[] {
                         "Breakfast included",
                         "Off"});
-#line 424
+#line 338
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table72, "And ");
-#line 427
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1285,11 +1100,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Great breakfast available",
                         "amount",
                         "On"});
-#line 428
+#line 341
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table73, "And ");
-#line 431
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 432
+#line 344
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1298,10 +1111,8 @@ this.ScenarioSetup(scenarioInfo);
             table74.AddRow(new string[] {
                         "Great breakfast available",
                         "Off"});
-#line 433
+#line 345
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table74, "And ");
-#line 436
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1311,11 +1122,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Kitchen facilities",
                         "amount",
                         "On"});
-#line 437
+#line 348
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table75, "And ");
-#line 440
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 441
+#line 351
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1324,10 +1133,8 @@ this.ScenarioSetup(scenarioInfo);
             table76.AddRow(new string[] {
                         "Kitchen facilities",
                         "Off"});
-#line 442
+#line 352
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table76, "And ");
-#line 445
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1337,11 +1144,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Empire State Building",
                         "amount",
                         "On"});
-#line 446
+#line 355
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table77, "And ");
-#line 449
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 450
+#line 358
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1350,10 +1155,8 @@ this.ScenarioSetup(scenarioInfo);
             table78.AddRow(new string[] {
                         "Empire State Building",
                         "Off"});
-#line 451
+#line 359
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table78, "And ");
-#line 454
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1363,11 +1166,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Times Square",
                         "amount",
                         "On"});
-#line 455
+#line 362
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table79, "And ");
-#line 458
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 459
+#line 365
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1376,10 +1177,8 @@ this.ScenarioSetup(scenarioInfo);
             table80.AddRow(new string[] {
                         "Times Square",
                         "Off"});
-#line 460
+#line 366
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table80, "And ");
-#line 463
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1389,11 +1188,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Brooklyn Bridge",
                         "amount",
                         "On"});
-#line 464
+#line 369
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table81, "And ");
-#line 467
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 468
+#line 372
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1402,10 +1199,8 @@ this.ScenarioSetup(scenarioInfo);
             table82.AddRow(new string[] {
                         "Brooklyn Bridge",
                         "Off"});
-#line 469
+#line 373
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table82, "And ");
-#line 472
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1415,11 +1210,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Central Park",
                         "amount",
                         "On"});
-#line 473
+#line 376
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table83, "And ");
-#line 476
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 477
+#line 379
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1428,10 +1221,8 @@ this.ScenarioSetup(scenarioInfo);
             table84.AddRow(new string[] {
                         "Central Park",
                         "Off"});
-#line 478
+#line 380
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table84, "And ");
-#line 481
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1441,11 +1232,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Top of the Rock",
                         "amount",
                         "On"});
-#line 482
+#line 383
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table85, "And ");
-#line 485
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 486
+#line 386
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1454,10 +1243,8 @@ this.ScenarioSetup(scenarioInfo);
             table86.AddRow(new string[] {
                         "Top of the Rock",
                         "Off"});
-#line 487
+#line 387
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table86, "And ");
-#line 490
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1467,11 +1254,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Twin beds",
                         "amount",
                         "On"});
-#line 491
+#line 390
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table87, "And ");
-#line 494
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 495
+#line 393
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1480,10 +1265,8 @@ this.ScenarioSetup(scenarioInfo);
             table88.AddRow(new string[] {
                         "Twin beds",
                         "Off"});
-#line 496
+#line 394
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table88, "And ");
-#line 499
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1493,11 +1276,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Double bed",
                         "amount",
                         "On"});
-#line 500
+#line 397
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table89, "And ");
-#line 503
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 504
+#line 400
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1506,10 +1287,8 @@ this.ScenarioSetup(scenarioInfo);
             table90.AddRow(new string[] {
                         "Double bed",
                         "Off"});
-#line 505
+#line 401
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table90, "And ");
-#line 508
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1519,11 +1298,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Smoking allowed",
                         "amount",
                         "On"});
-#line 509
+#line 404
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table91, "And ");
-#line 512
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 513
+#line 407
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1532,10 +1309,8 @@ this.ScenarioSetup(scenarioInfo);
             table92.AddRow(new string[] {
                         "Smoking allowed",
                         "Off"});
-#line 514
+#line 408
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table92, "And ");
-#line 517
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1545,11 +1320,9 @@ this.ScenarioSetup(scenarioInfo);
                         "No smoking allowed",
                         "amount",
                         "On"});
-#line 518
+#line 411
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table93, "And ");
-#line 521
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 522
+#line 414
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1558,10 +1331,8 @@ this.ScenarioSetup(scenarioInfo);
             table94.AddRow(new string[] {
                         "No smoking allowed",
                         "Off"});
-#line 523
+#line 415
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table94, "And ");
-#line 526
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1571,11 +1342,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Family Rooms",
                         "amount",
                         "On"});
-#line 527
+#line 418
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table95, "And ");
-#line 530
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 531
+#line 421
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1584,10 +1353,8 @@ this.ScenarioSetup(scenarioInfo);
             table96.AddRow(new string[] {
                         "Family Rooms",
                         "Off"});
-#line 532
+#line 422
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table96, "And ");
-#line 535
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1597,11 +1364,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Pet Friendly",
                         "amount",
                         "On"});
-#line 536
+#line 425
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table97, "And ");
-#line 539
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 540
+#line 428
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1610,10 +1375,8 @@ this.ScenarioSetup(scenarioInfo);
             table98.AddRow(new string[] {
                         "Pet Friendly",
                         "Off"});
-#line 541
+#line 429
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table98, "And ");
-#line 544
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1623,11 +1386,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Facilities for Disabled Guests",
                         "amount",
                         "On"});
-#line 545
+#line 432
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table99, "And ");
-#line 548
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 549
+#line 435
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1636,10 +1397,8 @@ this.ScenarioSetup(scenarioInfo);
             table100.AddRow(new string[] {
                         "Facilities for Disabled Guests",
                         "Off"});
-#line 550
+#line 436
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table100, "And ");
-#line 553
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1649,11 +1408,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Free WiFi",
                         "amount",
                         "On"});
-#line 554
+#line 439
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table101, "And ");
-#line 557
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 558
+#line 442
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1662,10 +1419,8 @@ this.ScenarioSetup(scenarioInfo);
             table102.AddRow(new string[] {
                         "Free WiFi",
                         "Off"});
-#line 559
+#line 443
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table102, "And ");
-#line 562
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1675,11 +1430,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Restaurant",
                         "amount",
                         "On"});
-#line 563
+#line 446
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table103, "And ");
-#line 566
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 567
+#line 449
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1688,10 +1441,8 @@ this.ScenarioSetup(scenarioInfo);
             table104.AddRow(new string[] {
                         "Restaurant",
                         "Off"});
-#line 568
+#line 450
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table104, "And ");
-#line 571
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1701,11 +1452,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Parking",
                         "amount",
                         "On"});
-#line 572
+#line 453
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table105, "And ");
-#line 575
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 576
+#line 456
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1714,10 +1463,8 @@ this.ScenarioSetup(scenarioInfo);
             table106.AddRow(new string[] {
                         "Parking",
                         "Off"});
-#line 577
+#line 457
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table106, "And ");
-#line 580
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1727,11 +1474,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Free Parking",
                         "amount",
                         "On"});
-#line 581
+#line 460
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table107, "And ");
-#line 584
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 585
+#line 463
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1740,10 +1485,8 @@ this.ScenarioSetup(scenarioInfo);
             table108.AddRow(new string[] {
                         "Free Parking",
                         "Off"});
-#line 586
+#line 464
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table108, "And ");
-#line 589
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1753,11 +1496,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Room Service",
                         "amount",
                         "On"});
-#line 590
+#line 467
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table109, "And ");
-#line 593
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 594
+#line 470
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1766,10 +1507,8 @@ this.ScenarioSetup(scenarioInfo);
             table110.AddRow(new string[] {
                         "Room Service",
                         "Off"});
-#line 595
+#line 471
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table110, "And ");
-#line 598
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1779,11 +1518,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Spa",
                         "amount",
                         "On"});
-#line 599
+#line 474
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table111, "And ");
-#line 602
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 603
+#line 477
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1792,10 +1529,8 @@ this.ScenarioSetup(scenarioInfo);
             table112.AddRow(new string[] {
                         "Spa",
                         "Off"});
-#line 604
+#line 478
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table112, "And ");
-#line 607
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1805,11 +1540,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Airport Shuttle",
                         "amount",
                         "On"});
-#line 608
+#line 481
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table113, "And ");
-#line 611
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 612
+#line 484
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1818,10 +1551,8 @@ this.ScenarioSetup(scenarioInfo);
             table114.AddRow(new string[] {
                         "Airport Shuttle",
                         "Off"});
-#line 613
+#line 485
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table114, "And ");
-#line 616
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1831,11 +1562,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Swimming Pool",
                         "amount",
                         "On"});
-#line 617
+#line 488
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table115, "And ");
-#line 620
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 621
+#line 491
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1844,10 +1573,8 @@ this.ScenarioSetup(scenarioInfo);
             table116.AddRow(new string[] {
                         "Swimming Pool",
                         "Off"});
-#line 622
+#line 492
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table116, "And ");
-#line 625
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1857,11 +1584,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Air conditioning",
                         "amount",
                         "On"});
-#line 626
+#line 495
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table117, "And ");
-#line 629
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 630
+#line 498
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1870,10 +1595,8 @@ this.ScenarioSetup(scenarioInfo);
             table118.AddRow(new string[] {
                         "Air conditioning",
                         "Off"});
-#line 631
+#line 499
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table118, "And ");
-#line 634
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1883,11 +1606,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Bathtub",
                         "amount",
                         "On"});
-#line 635
+#line 502
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table119, "And ");
-#line 638
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 639
+#line 505
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1896,10 +1617,8 @@ this.ScenarioSetup(scenarioInfo);
             table120.AddRow(new string[] {
                         "Bathtub",
                         "Off"});
-#line 640
+#line 506
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table120, "And ");
-#line 643
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1909,11 +1628,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Coffee machine",
                         "amount",
                         "On"});
-#line 644
+#line 509
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table121, "And ");
-#line 647
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 648
+#line 512
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1922,10 +1639,8 @@ this.ScenarioSetup(scenarioInfo);
             table122.AddRow(new string[] {
                         "Coffee machine",
                         "Off"});
-#line 649
+#line 513
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table122, "And ");
-#line 652
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1935,11 +1650,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Electric kettle",
                         "amount",
                         "On"});
-#line 653
+#line 516
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table123, "And ");
-#line 656
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 657
+#line 519
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1948,10 +1661,8 @@ this.ScenarioSetup(scenarioInfo);
             table124.AddRow(new string[] {
                         "Electric kettle",
                         "Off"});
-#line 658
+#line 520
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table124, "And ");
-#line 661
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -1961,11 +1672,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Flat-screen TV",
                         "amount",
                         "On"});
-#line 662
+#line 523
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table125, "And ");
-#line 665
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 666
+#line 526
  testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1974,45 +1683,39 @@ this.ScenarioSetup(scenarioInfo);
             table126.AddRow(new string[] {
                         "Flat-screen TV",
                         "Off"});
-#line 667
+#line 527
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table126, "And ");
-#line 670
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Assurance that Accommodation search filters are working properly together")]
-        [NUnit.Framework.IgnoreAttribute()]
         public virtual void AssuranceThatAccommodationSearchFiltersAreWorkingProperlyTogether()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assurance that Accommodation search filters are working properly together", new string[] {
-                        "ignore"});
-#line 674
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assurance that Accommodation search filters are working properly together", ((string[])(null)));
+#line 531
 this.ScenarioSetup(scenarioInfo);
-#line 675
+#line 532
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 676
+#line 533
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 677
+#line 534
  testRunner.And("I set my currency as \"U.S. Dollar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 678
- testRunner.When("I input data \"Issaquah, WA, United States\" in Destination Search field on main pa" +
-                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 679
- testRunner.And("I click on first autocomplete option that contains \"Issaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 680
+#line 535
+ testRunner.When("I input data \"New York, New York State, USA\" in Destination Search field on main " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 536
+ testRunner.And("I click on first autocomplete option that contains \"New York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
  testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 681
+#line 538
  testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 682
+#line 539
  testRunner.And("I wait browser page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 683
- testRunner.And("I see that I am on Search Result page and see that offered accommodation is in \"I" +
-                    "ssaquah\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 684
- testRunner.And("I click all buttons Show More to see every available filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 540
+ testRunner.And("I see that I am on Search Result page and see that offered accommodation is in \"N" +
+                    "ew York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -2020,69 +1723,41 @@ this.ScenarioSetup(scenarioInfo);
             table127.AddRow(new string[] {
                         "US$61 - US$120 per night",
                         "On"});
-#line 685
+            table127.AddRow(new string[] {
+                        "3 stars",
+                        "On"});
+            table127.AddRow(new string[] {
+                        "Good: 7+",
+                        "On"});
+            table127.AddRow(new string[] {
+                        "Hotels",
+                        "On"});
+            table127.AddRow(new string[] {
+                        "Only show available properties",
+                        "On"});
+            table127.AddRow(new string[] {
+                        "Free WiFi",
+                        "On"});
+#line 541
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table127, "And ");
-#line 688
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table128.AddRow(new string[] {
-                        "3 stars",
-                        "On"});
-#line 689
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table128, "And ");
-#line 692
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table129.AddRow(new string[] {
-                        "Good: 7+",
-                        "On"});
-#line 693
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table129, "And ");
-#line 696
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table130.AddRow(new string[] {
-                        "Front Desk Open 24/7",
-                        "On"});
-#line 697
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table130, "And ");
-#line 700
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table131.AddRow(new string[] {
-                        "Hotels",
-                        "On"});
-#line 701
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table131, "And ");
-#line 704
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table132.AddRow(new string[] {
-                        "Only show available properties",
-                        "On"});
-#line 705
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table132, "And ");
-#line 708
- testRunner.And("I wait while search page loading", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 709
- testRunner.Then("I see that search result contains only offers with selected filters \"RUB 6,800 - " +
-                    "RUB 10,000 per night\" \"3 stars\" \"Good: 7+\" \"Front Desk Open 24/7\" \"Hotels\" \"Only" +
-                    " show available properties\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "Price",
+                        "61 120"});
+            table128.AddRow(new string[] {
+                        "Stars",
+                        "3"});
+            table128.AddRow(new string[] {
+                        "Rating",
+                        "7"});
+            table128.AddRow(new string[] {
+                        "Free Wifi",
+                        "WiFi"});
+#line 549
+ testRunner.Then("I see that search result contains offers with selected options only", ((string)(null)), table128, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

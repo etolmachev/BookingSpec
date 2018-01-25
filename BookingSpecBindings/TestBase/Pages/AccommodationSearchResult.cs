@@ -90,7 +90,15 @@ namespace BookingSpecBindings.TestBase.Pages
 			{
 			}
 		}
-
+		public void ClickAllButtonsShowMore()
+		{
+			int t = 10;
+			while (t > 0 && ClickShowMore())
+			{
+				t--;
+				Thread.Sleep(2000);
+			}
+		}
 		public int FilteredAmount()
 		{
 			string fullHeader = DestinationContainer.Text;

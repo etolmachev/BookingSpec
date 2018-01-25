@@ -119,7 +119,6 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(page.GetDateError(error), error);
 		}
-
 		[Then(@"I see destination error message ""(.*)"" on main page")]
 		public void ThenISeeDestinationErrorMessageOnMainPage(string error)
 		{
@@ -130,28 +129,32 @@ namespace BookingSpecBindings.Bindings
 		{
 			page.BuisnessButton();
 		}
-		[When(@"I click ""(.*)"" and choose ""(.*)"" in dropdown menu on main page")]
-		public void WhenIClickAndChooseInDropdownMenuOnMainPage(string key, int count)
+		[When(@"I set following parameters in dropdown menus")]
+		public void WhenISetFollowingParametersInDropdownMenus(Table table)
 		{
-			switch (key)
+			foreach (var row in table.Rows)
 			{
-				case "Adults":
-					page.dropdownAdults.Click();
-					page.DropdownAmount(key,count);
-					page.dropdownAdults.Click();
-					break;
-				case "Children":
-					page.dropdownChildren.Click();
-					page.DropdownAmount(key, count);
-					page.dropdownChildren.Click();
-					break;
-				case "Rooms":
-					page.dropdownRooms.Click();
-					page.DropdownAmount(key, count);
-					page.dropdownRooms.Click();
-					break;
-				default:
-					throw new NotImplementedException();
+				string key = row["Field"];
+				switch (key)
+				{
+					case "Adults":
+						page.dropdownAdults.Click();
+						page.DropdownAmount(key, row["Value"]);
+						page.dropdownAdults.Click();
+						break;
+					case "Children":
+						page.dropdownChildren.Click();
+						page.DropdownAmount(key, row["Value"]);
+						page.dropdownChildren.Click();
+						break;
+					case "Rooms":
+						page.dropdownRooms.Click();
+						page.DropdownAmount(key, row["Value"]);
+						page.dropdownRooms.Click();
+						break;
+					default:
+						throw new NotImplementedException();
+				}
 			}
 		}
 		[When(@"I set the calendar for the current date plus one year")]

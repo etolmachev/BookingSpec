@@ -38,7 +38,6 @@ namespace BookingSpecBindings
 		{
 			string key = Regex.Match(input, regexLeft).ToString();
 			string value = Regex.Match(input, regexRight).ToString();
-
 			string mid = String.Empty;
 
 			switch (key)

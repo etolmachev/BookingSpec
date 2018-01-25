@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using BookingSpecBindings.TestBase;
@@ -31,26 +32,19 @@ namespace BookingSpecBindings.Bindings
 		{
 			searchPage.RoomChecker(count);
 		}
-
-		[Then(@"I click all buttons Show More to see every available filter")]
-		public void ThenIClickAllButtonsShowMoreToSeeEveryAvailableFilter()
-		{
-			int t = 10;
-			while (t > 0 && searchPage.ClickShowMore())
-			{
-				t--;
-				Thread.Sleep(2000);
-			}
-		}
 		[Then(@"I set following parameters in filter checkboxes on search result page")]
 		public void ThenISetFollowingParametersInFilterCheckboxesOnSearchResultPage(Table table)
 		{
 			foreach (var row in table.Rows)
 			{
+				searchPage.ClickShowMore();
 				string key = row["Field"];
 				Checkbox checkbox;
 				switch (key)
 				{
+					case "Only show available properties":
+						Browser.Driver.FindElement(By.CssSelector("a[data-id='oos-1']")).Click();
+						break;
 					case "US$61 - US$120 per night":
 					case "US$120 - US$180 per night":
 					case "US$180 - US$240 per night":
@@ -117,6 +111,7 @@ namespace BookingSpecBindings.Bindings
 							ScenarioContext.Current.Set(checkbox.getAmountOffers(), row["Scenario Key"]);
 						}
 						checkbox.CheckboxSelector(row["Value"]);
+						searchPage.WaitFilter();
 						break;
 					default:
 						throw new NotImplementedException();
@@ -128,11 +123,28 @@ namespace BookingSpecBindings.Bindings
 		{
 			Assert.AreEqual(searchPage.FilteredAmount(), ScenarioContext.Current.Get<int>(key));
 		}
-		[Then(@"I wait while search page loading")]
-		public void ThenIWaitWhileSearchPageLoading()
+		[Then(@"I see that search result contains offers with selected options only")]
+		public void ThenISeeThatSearchResultContainsOffersWithSelectedOptionsOnly(Table table)
 		{
-			searchPage.WaitFilter();
+			ExpectedSearch expected = new ExpectedSearch(table);
+			List<ActualSearch> seResults = GetActualSearches();
+			foreach (var se in seResults)
+			{
+				if(expected.Comparator(se) == false)
+				Assert.Fail();
+			}
+			Assert.IsTrue(true);
 		}
-
+		public List<ActualSearch> GetActualSearches() 
+		{ 
+			string PropertyBlockLocator = ".sr_property_block";
+			IReadOnlyCollection<IWebElement> seElements = Browser.Driver.FindElements(By.CssSelector(PropertyBlockLocator));
+			List<ActualSearch> seResults = new List<ActualSearch>();
+			foreach (var se in seElements)
+			{
+				seResults.Add(new ActualSearch(se));
+			}
+			return seResults;
+		}
 	}
 }

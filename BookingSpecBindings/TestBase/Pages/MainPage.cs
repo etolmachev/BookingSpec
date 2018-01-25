@@ -8,7 +8,6 @@ namespace BookingSpecBindings.TestBase.Pages
 {
 	public class MainPage
 	{
-
 		private string signInButtonLocator = "//span[contains(text(), \'Sign in\')]";
 		private string RegisterButtonLocator = "//span[contains(text(), 'Register') or contains(text(), 'Create Account')]";
 		private string accountNameLocator = "//span[contains (text(), 'Your Account')]";
@@ -75,9 +74,7 @@ namespace BookingSpecBindings.TestBase.Pages
 			dropdownAge = new HtmlElement(By.CssSelector(dropdownAgeLocator));
 			currencySelector = new HtmlElement(By.CssSelector(currencySelectLocator));
 			currencyLoading = new HtmlElement(By.CssSelector(currencyLoadingLocator));
-
 		}
-
 		public void waitCurrency()
 		{
 			currencyLoading.WaitElementDisappears();
@@ -107,7 +104,7 @@ namespace BookingSpecBindings.TestBase.Pages
 			Autocomplete = new HtmlElement(By.XPath("//b[contains(text(), '"+desiredDestination+"')]"));
 			Autocomplete.Click();
 		}
-		public void DropdownAmount(string key, int amount)
+		public void DropdownAmount(string key, string amount)
 		{
 			switch (key)
 			{
