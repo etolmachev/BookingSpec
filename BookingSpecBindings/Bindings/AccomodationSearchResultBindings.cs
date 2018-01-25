@@ -65,7 +65,6 @@ namespace BookingSpecBindings.Bindings
 					case "Apartments":
 					case "Vacation Homes":
 					case "Hostels":
-					case "Bed and Breakfasts":
 					case "Guesthouses":
 					case "Homestays":
 					case "Family Friendly Properties":

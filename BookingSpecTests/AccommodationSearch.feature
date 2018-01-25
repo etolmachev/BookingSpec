@@ -241,34 +241,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field   | Value |
 	| Hostels | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field              | Scenario Key | Value |
-	| Bed and Breakfasts | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field              | Value |
-	| Bed and Breakfasts | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field       | Scenario Key | Value |
-	| Guesthouses | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field       | Value |
-	| Guesthouses | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field     | Scenario Key | Value |
-	| Homestays | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field     | Value |
-	| Homestays | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field                      | Scenario Key | Value |
-	| Family-Friendly Properties | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field                      | Value |
-	| Family-Friendly Properties | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field          | Scenario Key | Value |
 	| Fitness Center | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
@@ -291,13 +263,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Bicycle Rental (additional charge) | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field   | Scenario Key | Value |
-	| Library | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field   | Value |
-	| Library | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field   | Scenario Key | Value |
 	| Fitness | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
@@ -317,13 +282,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I set following parameters in filter checkboxes on search result page
 	| Field             | Value |
 	| Free cancellation | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field                    | Scenario Key | Value |
-	| Book without credit card | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field                    | Value |
-	| Book without credit card | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field         | Scenario Key | Value |
 	| No prepayment | amount       | On    |
@@ -513,13 +471,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I set following parameters in filter checkboxes on search result page
 	| Field          | Value |
 	| Coffee machine | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field           | Scenario Key | Value |
-	| Electric kettle | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field           | Value |
-	| Electric kettle | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field          | Scenario Key | Value |
 	| Flat-screen TV | amount       | On    |

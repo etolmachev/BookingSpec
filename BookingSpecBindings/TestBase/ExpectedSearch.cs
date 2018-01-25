@@ -40,7 +40,6 @@ namespace BookingSpecBindings.TestBase
 		public bool Comparator(ActualSearch search)
 		{
 			string[] prices = Price.Split(' ');
-			Console.WriteLine(prices[0]+" "+ prices[1]+ " "+search.Price," "+ search.Rating+ " "+ Rating+ " "+ Stars+" "+ search.Stars);
 			if ((Int32.Parse(prices[0]) <= Int32.Parse(search.Price) && Int32.Parse(search.Price) <= Int32.Parse(prices[1])) || Price == "*")
 			{
 				if ((Double.Parse(search.Rating) >= Double.Parse(Rating)) || Rating == "*")

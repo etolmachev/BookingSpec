@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace BookingSpecBindings.TestBase
 {
@@ -20,7 +21,6 @@ namespace BookingSpecBindings.TestBase
 			get { return GetWebElement(); }
 			private set { _wrappedElement = value; }
 		}
-
 		public HtmlElement(By thisElementLocator)
 		{
 			_elementLocator = thisElementLocator;

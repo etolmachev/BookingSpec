@@ -2,6 +2,7 @@
 using System.Linq;
 using BookingSpecBindings.TestBase;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Int32 = System.Int32;
 
 namespace BookingSpecBindings
@@ -34,12 +35,14 @@ namespace BookingSpecBindings
 				case "On":
 					if (!IsCheckboxSelected())
 					{
+						if (!checkboxElement.Enabled) break;
 						checkboxElement.Click();
 					}
 					break;
 				case "Off":
 					if (IsCheckboxSelected())
 					{
+						if(!checkboxElement.Enabled) break;
 						checkboxElement.Click();
 					}
 					break;
