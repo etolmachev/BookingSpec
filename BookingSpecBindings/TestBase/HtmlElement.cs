@@ -15,6 +15,7 @@ namespace BookingSpecBindings.TestBase
 
 		private By _elementLocator;
 		private IWebElement _wrappedElement;
+		private IWebElement webElement;
 
 		public IWebElement WrappedElement
 		{

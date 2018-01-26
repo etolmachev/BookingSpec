@@ -74,7 +74,9 @@ namespace BookingSpecBindings.TestBase.Pages
 			dropdownAge = new HtmlElement(By.CssSelector(dropdownAgeLocator));
 			currencySelector = new HtmlElement(By.CssSelector(currencySelectLocator));
 			currencyLoading = new HtmlElement(By.CssSelector(currencyLoadingLocator));
+
 		}
+
 		public void waitCurrency()
 		{
 			currencyLoading.WaitElementDisappears();
@@ -148,7 +150,6 @@ namespace BookingSpecBindings.TestBase.Pages
 		}
 		public void setCalendarDate()
 		{
-			
 			checkinMonth.SendKeys(DateTime.Today.Month.ToString());
 			checkinMonthDay.SendKeys(DateTime.Today.Day.ToString());
 			checkinYear.SendKeys((DateTime.Today.Year + 1).ToString());
@@ -168,6 +169,7 @@ namespace BookingSpecBindings.TestBase.Pages
 		public void BuisnessButton()
 		{
 			radioBuisnessButon.Click();
+		}
 		}
 		public bool waitLoading(string selector)
 		{
