@@ -86,16 +86,6 @@ namespace BookingSpecBindings.TestBase.Pages
 			currencySelector.Click();
 		}
 
-		public void waitCurrency()
-		{
-			currencyLoading.WaitElementDisappears();
-		}
-
-		public void CurrencyMenuClick()
-		{
-			currencySelector.Click();
-		}
-
 		public void clickSignIn()
 		{
 			SignInbutton.Click();
