@@ -45,10 +45,10 @@ namespace BookingSpecBindings.Bindings
 					case "Only show available properties":
 						Browser.Driver.FindElement(By.CssSelector("a[data-id='oos-1']")).Click();
 						break;
-					case "US$61 - US$120 per night":
+					case "US$62 - US$120 per night":
 					case "US$120 - US$180 per night":
-					case "US$180 - US$240 per night":
-					case "US$240 + per night":
+					case "US$180 - US$250 per night":
+					case "US$250 + per night":
 					case "Wonderful: 9+":
 					case "Very Good: 8+":
 					case "Good: 7+":

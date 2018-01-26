@@ -371,7 +371,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table7.AddRow(new string[] {
-                        "US$61 - US$120 per night",
+                        "US$62 - US$120 per night",
                         "amount",
                         "On"});
 #line 110
@@ -383,7 +383,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table8.AddRow(new string[] {
-                        "US$61 - US$120 per night",
+                        "US$62 - US$120 per night",
                         "Off"});
 #line 114
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table8, "And ");
@@ -415,7 +415,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table11.AddRow(new string[] {
-                        "US$180 - US$240 per night",
+                        "US$180 - US$250 per night",
                         "amount",
                         "On"});
 #line 124
@@ -427,7 +427,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table12.AddRow(new string[] {
-                        "US$180 - US$240 per night",
+                        "US$180 - US$250 per night",
                         "Off"});
 #line 128
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table12, "And ");
@@ -437,7 +437,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table13.AddRow(new string[] {
-                        "US$240 + per night",
+                        "US$250 + per night",
                         "amount",
                         "On"});
 #line 131
@@ -1567,7 +1567,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table113.AddRow(new string[] {
-                        "US$61 - US$120 per night",
+                        "US$62 - US$120 per night",
                         "On"});
             table113.AddRow(new string[] {
                         "3 stars",
@@ -1592,7 +1592,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table114.AddRow(new string[] {
                         "Price",
-                        "61 120"});
+                        "62 120"});
             table114.AddRow(new string[] {
                         "Stars",
                         "3"});
