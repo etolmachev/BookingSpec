@@ -34,6 +34,19 @@ namespace BookingSpecBindings
 			}
 			return result;
 		}
+
+		private static string Config(string field)
+		{
+			switch (field)
+			{
+				case "email":
+					return Manager.config.Email;
+				case "password":
+					return Manager.config.Password;
+					default:
+						throw new NotImplementedException();
+			}
+		}
 		private static string MainMethodResolve(string input)
 		{
 			string key = Regex.Match(input, regexLeft).ToString();
@@ -43,6 +56,9 @@ namespace BookingSpecBindings
 
 			switch (key)
 			{
+				case "config":
+					mid = Config(value);
+					break;
 				case "rnd":
 					mid = rnd(Int32.Parse(value));
 					break;

@@ -88,7 +88,7 @@ this.ScenarioSetup(scenarioInfo);
                         "{{context::email}}"});
             table1.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 8
  testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table1, "And ");
 #line 12
@@ -161,10 +161,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table3.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table3.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 41
  testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table3, "And ");
 #line 45
@@ -194,7 +194,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table4.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table4.AddRow(new string[] {
                         "Password",
                         "12341234"});
@@ -219,7 +219,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table5.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table5.AddRow(new string[] {
                         "Password",
                         "12341234"});
@@ -282,10 +282,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table7.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table7.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 82
  testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table7, "And ");
 #line 86
@@ -293,8 +293,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 87
  testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
- testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"saved\"" +
-                    " in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"{{config::email}}\" \"{{config::password}}\" are \"sav" +
+                    "ed\" in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
  testRunner.When("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
@@ -322,10 +322,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Value"});
             table8.AddRow(new string[] {
                         "Email",
-                        "testmirantistest@gmail.com"});
+                        "{{config::email}}"});
             table8.AddRow(new string[] {
                         "Password",
-                        "1234qweR"});
+                        "{{config::password}}"});
 #line 96
  testRunner.And("I set following parameters on Register Pop Up dialog", ((string)(null)), table8, "And ");
 #line 100
@@ -335,8 +335,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 102
  testRunner.And("I click Register button on Ribbon menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
- testRunner.Then("I see that credential values: \"testmirantistest@gmail.com\" \"1234qweR\" are \"not sa" +
-                    "ved\" in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see that credential values: \"{{config::email}}\" \"{{config::password}}\" are \"not" +
+                    " saved\" in Register PopUp fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
  testRunner.When("I click Get Started button on PopUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
