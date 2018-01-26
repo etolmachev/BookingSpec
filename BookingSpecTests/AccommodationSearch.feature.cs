@@ -449,7 +449,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table14.AddRow(new string[] {
-                        "US$240 + per night",
+                        "US$250 + per night",
                         "Off"});
 #line 135
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table14, "And ");

@@ -134,7 +134,7 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
 	| Field              | Value |
-	| US$240 + per night | Off   |
+	| US$250 + per night | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field         | Scenario Key | Value |
 	| Wonderful: 9+ | amount       | On    |
