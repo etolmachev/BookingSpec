@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using BookingSpecBindings.TestBase;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings
@@ -9,6 +11,7 @@ namespace BookingSpecBindings
 	[Binding]
 	public class CommonBindings
 	{
+
 		[When(@"I open browser")]
 		public void IOpenBrowser()
 		{
@@ -22,6 +25,12 @@ namespace BookingSpecBindings
 		public void GivenNavigateToUrl(string url)
 		{
 			Browser.Driver.Navigate().GoToUrl(url);
+			try
+			{
+				Browser.Driver.FindElement(By.XPath("//button[contains(text(), 'Allow')]")).Click();
+			}
+			catch (Exception e)
+			{}
 		}
 		[Then(@"I wait for (.*) seconds")]
 		public void IWait(int seconds)
