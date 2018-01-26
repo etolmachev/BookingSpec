@@ -65,7 +65,7 @@ namespace BookingSpecBindings.TestBase.Pages
 			checkOutMonthDay = new HtmlElement(By.CssSelector(checkOutMonthDayLocator));
 			checkOutMonth = new HtmlElement(By.CssSelector(checkOutMonthLocator));
 			searchField = new HtmlElement(By.CssSelector(searchFieldLocator));
-			searchButton= new HtmlElement(By.XPath(searchButtonLocator));
+			searchButton = new HtmlElement(By.XPath(searchButtonLocator));
 			dropdownAdults = new HtmlElement(By.CssSelector(dropdownAdultsLocator));
 			dropdownChildren = new HtmlElement(By.CssSelector(dropdownChildrenLocator));
 			dropdownRooms = new HtmlElement(By.CssSelector(dropdownRoomsLocator));
@@ -81,38 +81,45 @@ namespace BookingSpecBindings.TestBase.Pages
 		{
 			currencyLoading.WaitElementDisappears();
 		}
+
 		public void CurrencyMenuClick()
 		{
 			currencySelector.Click();
 		}
+
 		public void clickSignIn()
 		{
 			SignInbutton.Click();
 		}
+
 		public void clickRegister()
 		{
 			RegisterButton.Click();
 		}
+
 		public string SignInCheck()
 		{
 			return AccountName.Text;
 		}
+
 		public void clickSearch()
 		{
 			searchButton.Click();
 		}
+
 		public void AutocompleteSelector(string desiredDestination)
 		{
-			Autocomplete = new HtmlElement(By.XPath("//b[contains(text(), '"+desiredDestination+"')]"));
+			Autocomplete = new HtmlElement(By.XPath("//b[contains(text(), '" + desiredDestination + "')]"));
 			Autocomplete.Click();
 		}
+
 		public void DropdownAmount(string key, string amount)
 		{
 			switch (key)
 			{
 				case "Adults":
-				ChooseAmount = new HtmlElement(dropdownAdults.FindElement(By.CssSelector("option[value='" + amount + "']")));
-				ChooseAmount.Click();
+					ChooseAmount = new HtmlElement(dropdownAdults.FindElement(By.CssSelector("option[value='" + amount + "']")));
+					ChooseAmount.Click();
 					break;
 				case "Children":
 					ChooseAmount = new HtmlElement(dropdownChildren.FindElement(By.CssSelector("option[value='" + amount + "']")));
@@ -123,31 +130,32 @@ namespace BookingSpecBindings.TestBase.Pages
 					ChooseAmount.Click();
 					break;
 			}
-			
+
 		}
 
 		public void checkWorkOfCalendarAutocompletion()
 		{
-		string pattern = "(\\d+)(,)";
-		calendarDataType = new HtmlElement(By.CssSelector(".sb-dates__col [data-placeholder = 'Check-in Date']"));
-		string checkInDate = calendarDataType.GetAttribute("textContent");
-		calendarDataType = new HtmlElement(By.CssSelector(".sb-dates__col [data-placeholder = 'Check-out Date']"));
-		string checkOutDate = calendarDataType.GetAttribute("textContent");
-		Regex reg = new Regex(pattern);
-		MatchCollection matchesIn = Regex.Matches(checkInDate, pattern);
+			string pattern = "(\\d+)(,)";
+			calendarDataType = new HtmlElement(By.CssSelector(".sb-dates__col [data-placeholder = 'Check-in Date']"));
+			string checkInDate = calendarDataType.GetAttribute("textContent");
+			calendarDataType = new HtmlElement(By.CssSelector(".sb-dates__col [data-placeholder = 'Check-out Date']"));
+			string checkOutDate = calendarDataType.GetAttribute("textContent");
+			Regex reg = new Regex(pattern);
+			MatchCollection matchesIn = Regex.Matches(checkInDate, pattern);
 			foreach (Match match in matchesIn)
-		{
-			checkInDate = match.Groups[1].Value;
-			break;
-		}
-		MatchCollection matchesOut = Regex.Matches(checkOutDate, pattern);
+			{
+				checkInDate = match.Groups[1].Value;
+				break;
+			}
+			MatchCollection matchesOut = Regex.Matches(checkOutDate, pattern);
 			foreach (Match match in matchesOut)
-		{
-			checkOutDate = match.Groups[1].Value;
-			break;
+			{
+				checkOutDate = match.Groups[1].Value;
+				break;
+			}
+			Assert.That(Int32.Parse(checkOutDate) - Int32.Parse(checkInDate) == 1);
 		}
-		Assert.That(Int32.Parse(checkOutDate) - Int32.Parse(checkInDate) == 1);
-		}
+
 		public void setCalendarDate()
 		{
 			checkinMonth.SendKeys(DateTime.Today.Month.ToString());
@@ -156,21 +164,24 @@ namespace BookingSpecBindings.TestBase.Pages
 			Browser.Driver.FindElement(By.XPath("//span[contains(text(),'Accommodations')]")).Click();
 			checkWorkOfCalendarAutocompletion();
 		}
+
 		public string GetDestinationError()
 		{
 			return errorDestination.Text;
 		}
+
 		public string GetDateError(string error)
 		{
 			var newError = string.Format("//div[contains(text(), \"{0}\")]", error);
 			var el = new HtmlElement(By.XPath(newError));
 			return el.Text;
 		}
+
 		public void BuisnessButton()
 		{
 			radioBuisnessButon.Click();
 		}
-		}
+
 		public bool waitLoading(string selector)
 		{
 			var el = new HtmlElement(By.CssSelector(selector));
