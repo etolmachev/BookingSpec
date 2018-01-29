@@ -123,18 +123,18 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| US$120 - US$180 per night | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field                     | Scenario Key | Value |
-	| US$180 - US$250 per night | amount       | On    |
+	| US$180 - US$240 per night | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
 	| Field                     | Value |
-	| US$180 - US$250 per night | Off   |
+	| US$180 - US$240 per night | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field              | Scenario Key | Value |
-	| US$250 + per night | amount       | On    |
+	| US$240 + per night | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
 	| Field              | Value |
-	| US$250 + per night | Off   |
+	| US$240 + per night | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field         | Scenario Key | Value |
 	| Wonderful: 9+ | amount       | On    |

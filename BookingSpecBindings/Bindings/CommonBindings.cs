@@ -25,12 +25,11 @@ namespace BookingSpecBindings
 		public void GivenNavigateToUrl(string url)
 		{
 			Browser.Driver.Navigate().GoToUrl(url);
-			try
+			Browser.WaitReadyState();
+			if (isElementPresent(By.CssSelector(".notify-asking-reject")))
 			{
-				Browser.Driver.FindElement(By.XPath("//button[contains(text(), 'Allow')]")).Click();
+				Browser.Driver.FindElement(By.CssSelector(".notify-asking-reject")).Click();
 			}
-			catch (Exception e)
-			{}
 		}
 		[Then(@"I wait for (.*) seconds")]
 		public void IWait(int seconds)
@@ -51,6 +50,24 @@ namespace BookingSpecBindings
 		public void ThenIWaitBrowserPageToLoad()
 		{
 			Browser.WaitReadyState();
+		}
+		public bool isElementPresent(By selector)
+		{
+			Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
+			bool returnVal = true;
+			try
+			{
+				Browser.Driver.FindElement(selector);
+			}
+			catch (NoSuchElementException e)
+			{
+				returnVal = false;
+			}
+			finally
+			{
+				Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+			}
+			return returnVal;
 		}
 	}
 }
