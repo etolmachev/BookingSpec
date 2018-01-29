@@ -255,13 +255,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field   | Value |
 	| Massage | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field                              | Scenario Key | Value |
-	| Bicycle Rental (additional charge) | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field                              | Value |
-	| Bicycle Rental (additional charge) | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field   | Scenario Key | Value |
 	| Fitness | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
@@ -296,13 +289,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I set following parameters in filter checkboxes on search result page
 	| Field              | Value |
 	| Breakfast included | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field                     | Scenario Key | Value |
-	| Great breakfast available | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field                     | Value |
-	| Great breakfast available | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field              | Scenario Key | Value |
 	| Kitchen facilities | amount       | On    |

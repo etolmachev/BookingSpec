@@ -72,7 +72,7 @@ namespace BookingSpecBindings.Bindings
 					case "Fitness":
 					case "Massage":
 					case "Library":
-					case "Bicycle Rental (additional charge)":
+					case "Bicycle Rental":
 					case "Great Value Today":
 					case "Free cancellation":
 					case "Book without credit card":

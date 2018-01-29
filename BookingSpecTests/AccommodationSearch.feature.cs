@@ -833,7 +833,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table49.AddRow(new string[] {
-                        "Bicycle Rental (additional charge)",
+                        "Fitness",
                         "amount",
                         "On"});
 #line 257
@@ -845,7 +845,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table50.AddRow(new string[] {
-                        "Bicycle Rental (additional charge)",
+                        "Fitness",
                         "Off"});
 #line 261
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table50, "And ");
@@ -855,7 +855,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table51.AddRow(new string[] {
-                        "Fitness",
+                        "Great Value Today",
                         "amount",
                         "On"});
 #line 264
@@ -867,7 +867,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table52.AddRow(new string[] {
-                        "Fitness",
+                        "Great Value Today",
                         "Off"});
 #line 268
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table52, "And ");
@@ -877,7 +877,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table53.AddRow(new string[] {
-                        "Great Value Today",
+                        "Free cancellation",
                         "amount",
                         "On"});
 #line 271
@@ -889,7 +889,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table54.AddRow(new string[] {
-                        "Great Value Today",
+                        "Free cancellation",
                         "Off"});
 #line 275
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table54, "And ");
@@ -899,7 +899,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table55.AddRow(new string[] {
-                        "Free cancellation",
+                        "No prepayment",
                         "amount",
                         "On"});
 #line 278
@@ -911,7 +911,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table56.AddRow(new string[] {
-                        "Free cancellation",
+                        "No prepayment",
                         "Off"});
 #line 282
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table56, "And ");
@@ -921,7 +921,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table57.AddRow(new string[] {
-                        "No prepayment",
+                        "Breakfast included",
                         "amount",
                         "On"});
 #line 285
@@ -933,7 +933,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table58.AddRow(new string[] {
-                        "No prepayment",
+                        "Breakfast included",
                         "Off"});
 #line 289
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table58, "And ");
@@ -943,7 +943,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table59.AddRow(new string[] {
-                        "Breakfast included",
+                        "Kitchen facilities",
                         "amount",
                         "On"});
 #line 292
@@ -955,7 +955,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table60.AddRow(new string[] {
-                        "Breakfast included",
+                        "Kitchen facilities",
                         "Off"});
 #line 296
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table60, "And ");
@@ -965,7 +965,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table61.AddRow(new string[] {
-                        "Great breakfast available",
+                        "Empire State Building",
                         "amount",
                         "On"});
 #line 299
@@ -977,7 +977,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table62.AddRow(new string[] {
-                        "Great breakfast available",
+                        "Empire State Building",
                         "Off"});
 #line 303
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table62, "And ");
@@ -987,7 +987,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table63.AddRow(new string[] {
-                        "Kitchen facilities",
+                        "Times Square",
                         "amount",
                         "On"});
 #line 306
@@ -999,7 +999,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table64.AddRow(new string[] {
-                        "Kitchen facilities",
+                        "Times Square",
                         "Off"});
 #line 310
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table64, "And ");
@@ -1009,7 +1009,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table65.AddRow(new string[] {
-                        "Empire State Building",
+                        "Brooklyn Bridge",
                         "amount",
                         "On"});
 #line 313
@@ -1021,7 +1021,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table66.AddRow(new string[] {
-                        "Empire State Building",
+                        "Brooklyn Bridge",
                         "Off"});
 #line 317
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table66, "And ");
@@ -1031,7 +1031,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table67.AddRow(new string[] {
-                        "Times Square",
+                        "Central Park",
                         "amount",
                         "On"});
 #line 320
@@ -1043,7 +1043,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table68.AddRow(new string[] {
-                        "Times Square",
+                        "Central Park",
                         "Off"});
 #line 324
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table68, "And ");
@@ -1053,7 +1053,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table69.AddRow(new string[] {
-                        "Brooklyn Bridge",
+                        "Top of the Rock",
                         "amount",
                         "On"});
 #line 327
@@ -1065,7 +1065,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table70.AddRow(new string[] {
-                        "Brooklyn Bridge",
+                        "Top of the Rock",
                         "Off"});
 #line 331
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table70, "And ");
@@ -1075,7 +1075,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table71.AddRow(new string[] {
-                        "Central Park",
+                        "Twin beds",
                         "amount",
                         "On"});
 #line 334
@@ -1087,7 +1087,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table72.AddRow(new string[] {
-                        "Central Park",
+                        "Twin beds",
                         "Off"});
 #line 338
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table72, "And ");
@@ -1097,7 +1097,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table73.AddRow(new string[] {
-                        "Top of the Rock",
+                        "Double bed",
                         "amount",
                         "On"});
 #line 341
@@ -1109,7 +1109,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table74.AddRow(new string[] {
-                        "Top of the Rock",
+                        "Double bed",
                         "Off"});
 #line 345
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table74, "And ");
@@ -1119,7 +1119,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table75.AddRow(new string[] {
-                        "Twin beds",
+                        "Smoking allowed",
                         "amount",
                         "On"});
 #line 348
@@ -1131,7 +1131,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table76.AddRow(new string[] {
-                        "Twin beds",
+                        "Smoking allowed",
                         "Off"});
 #line 352
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table76, "And ");
@@ -1141,7 +1141,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table77.AddRow(new string[] {
-                        "Double bed",
+                        "No smoking allowed",
                         "amount",
                         "On"});
 #line 355
@@ -1153,7 +1153,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table78.AddRow(new string[] {
-                        "Double bed",
+                        "No smoking allowed",
                         "Off"});
 #line 359
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table78, "And ");
@@ -1163,7 +1163,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table79.AddRow(new string[] {
-                        "Smoking allowed",
+                        "Family Rooms",
                         "amount",
                         "On"});
 #line 362
@@ -1175,7 +1175,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table80.AddRow(new string[] {
-                        "Smoking allowed",
+                        "Family Rooms",
                         "Off"});
 #line 366
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table80, "And ");
@@ -1185,7 +1185,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table81.AddRow(new string[] {
-                        "No smoking allowed",
+                        "Pet Friendly",
                         "amount",
                         "On"});
 #line 369
@@ -1197,7 +1197,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table82.AddRow(new string[] {
-                        "No smoking allowed",
+                        "Pet Friendly",
                         "Off"});
 #line 373
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table82, "And ");
@@ -1207,7 +1207,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table83.AddRow(new string[] {
-                        "Family Rooms",
+                        "Facilities for Disabled Guests",
                         "amount",
                         "On"});
 #line 376
@@ -1219,7 +1219,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table84.AddRow(new string[] {
-                        "Family Rooms",
+                        "Facilities for Disabled Guests",
                         "Off"});
 #line 380
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table84, "And ");
@@ -1229,7 +1229,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table85.AddRow(new string[] {
-                        "Pet Friendly",
+                        "Free WiFi",
                         "amount",
                         "On"});
 #line 383
@@ -1241,7 +1241,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table86.AddRow(new string[] {
-                        "Pet Friendly",
+                        "Free WiFi",
                         "Off"});
 #line 387
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table86, "And ");
@@ -1251,7 +1251,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table87.AddRow(new string[] {
-                        "Facilities for Disabled Guests",
+                        "Restaurant",
                         "amount",
                         "On"});
 #line 390
@@ -1263,7 +1263,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table88.AddRow(new string[] {
-                        "Facilities for Disabled Guests",
+                        "Restaurant",
                         "Off"});
 #line 394
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table88, "And ");
@@ -1273,7 +1273,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table89.AddRow(new string[] {
-                        "Free WiFi",
+                        "Parking",
                         "amount",
                         "On"});
 #line 397
@@ -1285,7 +1285,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table90.AddRow(new string[] {
-                        "Free WiFi",
+                        "Parking",
                         "Off"});
 #line 401
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table90, "And ");
@@ -1295,7 +1295,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table91.AddRow(new string[] {
-                        "Restaurant",
+                        "Free Parking",
                         "amount",
                         "On"});
 #line 404
@@ -1307,7 +1307,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table92.AddRow(new string[] {
-                        "Restaurant",
+                        "Free Parking",
                         "Off"});
 #line 408
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table92, "And ");
@@ -1317,7 +1317,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table93.AddRow(new string[] {
-                        "Parking",
+                        "Room Service",
                         "amount",
                         "On"});
 #line 411
@@ -1329,7 +1329,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table94.AddRow(new string[] {
-                        "Parking",
+                        "Room Service",
                         "Off"});
 #line 415
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table94, "And ");
@@ -1339,7 +1339,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table95.AddRow(new string[] {
-                        "Free Parking",
+                        "Spa",
                         "amount",
                         "On"});
 #line 418
@@ -1351,7 +1351,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table96.AddRow(new string[] {
-                        "Free Parking",
+                        "Spa",
                         "Off"});
 #line 422
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table96, "And ");
@@ -1361,7 +1361,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table97.AddRow(new string[] {
-                        "Room Service",
+                        "Airport Shuttle",
                         "amount",
                         "On"});
 #line 425
@@ -1373,7 +1373,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table98.AddRow(new string[] {
-                        "Room Service",
+                        "Airport Shuttle",
                         "Off"});
 #line 429
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table98, "And ");
@@ -1383,7 +1383,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table99.AddRow(new string[] {
-                        "Spa",
+                        "Swimming Pool",
                         "amount",
                         "On"});
 #line 432
@@ -1395,7 +1395,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table100.AddRow(new string[] {
-                        "Spa",
+                        "Swimming Pool",
                         "Off"});
 #line 436
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table100, "And ");
@@ -1405,7 +1405,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table101.AddRow(new string[] {
-                        "Airport Shuttle",
+                        "Air conditioning",
                         "amount",
                         "On"});
 #line 439
@@ -1417,7 +1417,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table102.AddRow(new string[] {
-                        "Airport Shuttle",
+                        "Air conditioning",
                         "Off"});
 #line 443
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table102, "And ");
@@ -1427,7 +1427,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table103.AddRow(new string[] {
-                        "Swimming Pool",
+                        "Bathtub",
                         "amount",
                         "On"});
 #line 446
@@ -1439,7 +1439,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table104.AddRow(new string[] {
-                        "Swimming Pool",
+                        "Bathtub",
                         "Off"});
 #line 450
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table104, "And ");
@@ -1449,7 +1449,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table105.AddRow(new string[] {
-                        "Air conditioning",
+                        "Coffee machine",
                         "amount",
                         "On"});
 #line 453
@@ -1461,7 +1461,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table106.AddRow(new string[] {
-                        "Air conditioning",
+                        "Coffee machine",
                         "Off"});
 #line 457
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table106, "And ");
@@ -1471,7 +1471,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Scenario Key",
                         "Value"});
             table107.AddRow(new string[] {
-                        "Bathtub",
+                        "Flat-screen TV",
                         "amount",
                         "On"});
 #line 460
@@ -1483,54 +1483,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Field",
                         "Value"});
             table108.AddRow(new string[] {
-                        "Bathtub",
+                        "Flat-screen TV",
                         "Off"});
 #line 464
  testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table108, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Scenario Key",
-                        "Value"});
-            table109.AddRow(new string[] {
-                        "Coffee machine",
-                        "amount",
-                        "On"});
-#line 467
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table109, "And ");
-#line 470
- testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table110.AddRow(new string[] {
-                        "Coffee machine",
-                        "Off"});
-#line 471
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table110, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Scenario Key",
-                        "Value"});
-            table111.AddRow(new string[] {
-                        "Flat-screen TV",
-                        "amount",
-                        "On"});
-#line 474
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table111, "And ");
-#line 477
- testRunner.And("I see that displayed \"amount\" of options equal to amount displayed on filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table112.AddRow(new string[] {
-                        "Flat-screen TV",
-                        "Off"});
-#line 478
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table112, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1540,70 +1496,70 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AssuranceThatAccommodationSearchFiltersAreWorkingProperlyTogether()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assurance that Accommodation search filters are working properly together", ((string[])(null)));
-#line 482
+#line 468
 this.ScenarioSetup(scenarioInfo);
-#line 483
+#line 469
  testRunner.When("I open browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 484
+#line 470
  testRunner.And("I navigate to url \"https://booking.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 485
+#line 471
  testRunner.And("I set my currency as \"U.S. Dollar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 486
+#line 472
  testRunner.When("I input data \"New York, New York State, USA\" in Destination Search field on main " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 487
+#line 473
  testRunner.And("I click on first autocomplete option that contains \"New York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 488
+#line 474
  testRunner.And("I set the calendar for the current date plus one year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 489
+#line 475
  testRunner.Then("I click button Search on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 490
+#line 476
  testRunner.And("I wait browser page to load", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 491
+#line 477
  testRunner.And("I see that I am on Search Result page and see that offered accommodation is in \"N" +
                     "ew York\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "US$62 - US$120 per night",
                         "On"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "3 stars",
                         "On"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "Good: 7+",
                         "On"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "Hotels",
                         "On"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "Only show available properties",
                         "On"});
-            table113.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "Free WiFi",
                         "On"});
-#line 492
- testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table113, "And ");
+#line 478
+ testRunner.And("I set following parameters in filter checkboxes on search result page", ((string)(null)), table109, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table114.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "Price",
                         "62 120"});
-            table114.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "Stars",
                         "3"});
-            table114.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "Rating",
                         "7"});
-            table114.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "Free Wifi",
                         "WiFi"});
-#line 500
- testRunner.Then("I see that search result contains offers with selected options only", ((string)(null)), table114, "Then ");
+#line 486
+ testRunner.Then("I see that search result contains offers with selected options only", ((string)(null)), table110, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

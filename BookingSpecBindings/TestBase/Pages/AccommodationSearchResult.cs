@@ -111,7 +111,9 @@ namespace BookingSpecBindings.TestBase.Pages
 				amount = match.Groups[2].Value;
 				break;
 			}
+			if(amount != null)
 			return Int32.Parse(amount);
+			return (1);
 		}
 	}
 }
