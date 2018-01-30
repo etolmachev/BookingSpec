@@ -9,14 +9,13 @@ namespace BookingSpecBindings
 {
 	class Checkbox : HtmlElement
 	{
-		private IWebElement checkboxElement;
 		private string xpath = "//a[div/span[contains (text(),\"{0}\")]]";
 		public Checkbox(string checkboxName) : base(By.XPath(checkboxName))
 		{
 			try
 			{
 				var elements = Browser.Driver.FindElements(By.XPath(String.Format(xpath, checkboxName)));
-				checkboxElement = elements.First(el => el.Displayed);
+				this.WrappedElement = elements.First(el => el.Displayed);
 			}
 			catch (Exception e)
 			{
@@ -25,7 +24,7 @@ namespace BookingSpecBindings
 		}
 		public bool IsCheckboxSelected()
 		{
-			return checkboxElement.GetAttribute("aria-checked") == "true";
+			return this.WrappedElement.GetAttribute("aria-checked") == "true";
 		}
 		public void CheckboxSelector(string expState)
 		{
@@ -34,15 +33,15 @@ namespace BookingSpecBindings
 				case "On":
 					if (!IsCheckboxSelected())
 					{
-						if (!checkboxElement.Enabled) break;
-						checkboxElement.Click();
+						if (!this.WrappedElement.Enabled) break;
+						this.WrappedElement.Click();
 					}
 					break;
 				case "Off":
 					if (IsCheckboxSelected())
 					{
-						if(!checkboxElement.Enabled) break;
-						checkboxElement.Click();
+						if(!this.WrappedElement.Enabled) break;
+						this.WrappedElement.Click();
 					}
 					break;
 				default:
@@ -51,7 +50,7 @@ namespace BookingSpecBindings
 		}
 		public int getAmountOffers()
 		{
-				string myStr = checkboxElement.FindElement(By.XPath(".//span[@class='filter_count filter_count__inline' or @class='filter_count']")).Text;
+				string myStr = this.WrappedElement.FindElement(By.XPath(".//span[@class='filter_count filter_count__inline' or @class='filter_count']")).Text;
 				if (myStr.Contains("("))
 				{
 					myStr = myStr.Trim('(', ')');

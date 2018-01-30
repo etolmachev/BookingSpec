@@ -9,22 +9,17 @@ Scenario: Input valid data in order to Search accommodation on main page
 	Then I click button Search on main page
 	And I see that I am on Search Result page and see that offered accommodation is in "New York"
 
-Scenario Template: Input invalid data in accommodation search calendar on main page
+Scenario: Input invalid data in accommodation search calendar on main page
 	When I open browser
 	And I navigate to url "https://booking.com"
 	When I set following parameters in calendar on main page
-		| Field     | Month      | MonthDay      | Year      |
-		| Check In  | <MonthIn>  | <MonthDayIn>  | <YearIn>  |
-		| Check Out | <MonthOut> | <MonthDayOut> | <YearOut> |
+		| Field     | Month | MonthDay | Year |
+		| Check In  | 04    | 15       | 2018 |
+		| Check Out | 04    | 15       | 2020 |
 	When I input data "Issaquah, WA, United States" in Destination Search field on main page
 	And I click on first autocomplete option that contains "Issaquah"
 	Then I click button Search on main page
-	And I see date error message "<Message>" on main page
-	
-	Scenarios: 
-		| MonthIn | MonthDayIn | YearIn | MonthOut | MonthDayOut | YearOut | Message                                              |
-		| 04      | 15         | 2018   | 04       | 15          | 2020    | Reservations longer than 30 nights are not possible. |
-		| 04      | 15         | 2005   | 04       | 15          | 2005    | Select a check-in date that's in the future.         |
+	And I see date error message "Reservations longer than 30 nights are not possible." on main page
 
 	Scenario: Input invalid data in Destination Search accommodation field on main page
 	When I open browser
@@ -32,6 +27,7 @@ Scenario Template: Input invalid data in accommodation search calendar on main p
 	When I input data "sfsadfasdf" in Destination Search field on main page
 	And I set the calendar for the current date plus one year
 	Then I click button Search on main page
+	And I wait browser page to load
 	And I see destination error message "Sorry, we don't recognize that name." on main page
 
 Scenario Template: Check that check-in date always earlier than check-out date
