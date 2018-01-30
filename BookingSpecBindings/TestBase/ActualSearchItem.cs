@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace BookingSpecBindings.TestBase
 {
-	public class ActualSearch
+	public class ActualSearchItem
 	{
 		private string PropertyBlockLocator = ".sr_property_block";
 		private string PriceLocator = "//b[contains (text(), 'US$')]";
@@ -20,7 +20,7 @@ namespace BookingSpecBindings.TestBase
 		public string Rating;
 		public string FreeWIFI;
 
-		public ActualSearch(IWebElement element)
+		public ActualSearchItem(IWebElement element)
 		{
 			Price = element.FindElement(By.XPath(PriceLocator)).Text.Substring(3);
 			Stars = element.FindElement(By.XPath(StarsLocator)).Text;

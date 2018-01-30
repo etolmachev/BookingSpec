@@ -8,14 +8,14 @@ using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.TestBase
 {
-	public class ExpectedSearch
+	public class ExpectedSearchItem
 	{
 		private string Price = "*";
 		private string Stars = "*";
 		private string Rating ="*";
 		private string FreeWIFI = "*";
 
-		public ExpectedSearch(Table table)
+		public ExpectedSearchItem(Table table)
 		{
 			foreach (var row in table.Rows)
 			{
@@ -34,19 +34,21 @@ namespace BookingSpecBindings.TestBase
 					case "Free Wifi":
 						FreeWIFI = row["Value"].ToLower();
 						break;
+					default:
+					throw new NotImplementedException();
 				}
 			}
 		}
-		public bool Comparator(ActualSearch search)
+		public bool Comparator(ActualSearchItem searchItem)
 		{
 			string[] prices = Price.Split(' ');
-			if ((Int32.Parse(prices[0]) <= Int32.Parse(search.Price) && Int32.Parse(search.Price) <= Int32.Parse(prices[1])) || Price == "*")
+			if ((Int32.Parse(prices[0]) <= Int32.Parse(searchItem.Price) && Int32.Parse(searchItem.Price) <= Int32.Parse(prices[1])) || Price == "*")
 			{
-				if ((Double.Parse(search.Rating) >= Double.Parse(Rating)) || Rating == "*")
+				if ((Double.Parse(searchItem.Rating) >= Double.Parse(Rating)) || Rating == "*")
 				{
-					if ((Stars == search.Stars.Substring(0, 1)) || Stars == "*")
+					if ((Stars == searchItem.Stars.Substring(0, 1)) || Stars == "*")
 					{
-						if ((search.FreeWIFI.Contains(FreeWIFI)) || FreeWIFI == "*")
+						if ((searchItem.FreeWIFI.Contains(FreeWIFI)) || FreeWIFI == "*")
 						return true;
 					}
 				}

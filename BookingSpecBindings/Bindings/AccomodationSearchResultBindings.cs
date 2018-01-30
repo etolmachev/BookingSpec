@@ -46,9 +46,12 @@ namespace BookingSpecBindings.Bindings
 						Browser.Driver.FindElement(By.CssSelector("a[data-id='oos-1']")).Click();
 						break;
 					case "US$62 - US$120 per night":
+					case "US$61 - US$120 per night":
 					case "US$120 - US$180 per night":
 					case "US$180 - US$240 per night":
+					case "US$180 - US$250 per night":
 					case "US$240 + per night":
+					case "US$250 + per night":
 					case "Wonderful: 9+":
 					case "Very Good: 8+":
 					case "Good: 7+":
@@ -96,6 +99,7 @@ namespace BookingSpecBindings.Bindings
 					case "Parking":
 					case "Free Parking":
 					case "Room Service":
+					case "Family Rooms":
 					case "Spa":
 					case "Airport Shuttle":
 					case "Swimming Pool":
@@ -125,23 +129,22 @@ namespace BookingSpecBindings.Bindings
 		[Then(@"I see that search result contains offers with selected options only")]
 		public void ThenISeeThatSearchResultContainsOffersWithSelectedOptionsOnly(Table table)
 		{
-			ExpectedSearch expected = new ExpectedSearch(table);
-			List<ActualSearch> seResults = GetActualSearches();
+			ExpectedSearchItem expected = new ExpectedSearchItem(table);
+			List<ActualSearchItem> seResults = GetActualSearches();
 			foreach (var se in seResults)
 			{
 				if(expected.Comparator(se) == false)
 				Assert.Fail();
 			}
-			Assert.IsTrue(true);
 		}
-		public List<ActualSearch> GetActualSearches() 
+		public List<ActualSearchItem> GetActualSearches() 
 		{ 
 			string PropertyBlockLocator = ".sr_property_block";
 			IReadOnlyCollection<IWebElement> seElements = Browser.Driver.FindElements(By.CssSelector(PropertyBlockLocator));
-			List<ActualSearch> seResults = new List<ActualSearch>();
+			List<ActualSearchItem> seResults = new List<ActualSearchItem>();
 			foreach (var se in seElements)
 			{
-				seResults.Add(new ActualSearch(se));
+				seResults.Add(new ActualSearchItem(se));
 			}
 			return seResults;
 		}

@@ -91,10 +91,10 @@
     <Compile Include="Bindings\SignInPopUpBindings.cs" />
     <Compile Include="Checkbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestBase\ActualSearch.cs" />
+    <Compile Include="TestBase\ActualSearchItem.cs" />
     <Compile Include="TestBase\Browser.cs" />
     <Compile Include="TestBase\Cleanup.cs" />
-    <Compile Include="TestBase\ExpectedSearch.cs" />
+    <Compile Include="TestBase\ExpectedSearchItem.cs" />
     <Compile Include="TestBase\HtmlElement.cs" />
     <Compile Include="TestBase\Pages\AccommodationSearchResult.cs" />
     <Compile Include="TestBase\Pages\ForgotYourPasswordPopUp.cs" />

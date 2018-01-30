@@ -7,21 +7,20 @@ using Int32 = System.Int32;
 
 namespace BookingSpecBindings
 {
-	class Checkbox
+	class Checkbox : HtmlElement
 	{
-		private HtmlElement checkboxElement;
+		private IWebElement checkboxElement;
 		private string xpath = "//a[div/span[contains (text(),\"{0}\")]]";
-		public Checkbox(string checkboxName)
+		public Checkbox(string checkboxName) : base(By.XPath(checkboxName))
 		{
-			
 			try
 			{
 				var elements = Browser.Driver.FindElements(By.XPath(String.Format(xpath, checkboxName)));
-				checkboxElement = new HtmlElement(elements.First(el => el.Displayed));
+				checkboxElement = elements.First(el => el.Displayed);
 			}
 			catch (Exception e)
 			{
-				checkboxElement = new HtmlElement(By.XPath(String.Format(xpath, checkboxName)));
+				this.WrappedElement = Browser.Driver.FindElement(By.XPath(String.Format(xpath, checkboxName)));
 			}
 		}
 		public bool IsCheckboxSelected()
@@ -46,6 +45,8 @@ namespace BookingSpecBindings
 						checkboxElement.Click();
 					}
 					break;
+				default:
+					throw new NotImplementedException();
 			}
 		}
 		public int getAmountOffers()

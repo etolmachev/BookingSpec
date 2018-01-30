@@ -109,11 +109,11 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I wait browser page to load
 	And I set following parameters in filter checkboxes on search result page
 	| Field                    | Scenario Key | Value |
-	| US$62 - US$120 per night | amount       | On    |
+	| US$61 - US$120 per night | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
 	| Field                    | Value |
-	| US$62 - US$120 per night | Off   |
+	| US$61 - US$120 per night | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field                     | Scenario Key | Value |
 	| US$120 - US$180 per night | amount       | On    |
@@ -332,34 +332,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field           | Value |
 	| Top of the Rock | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field     | Scenario Key | Value |
-	| Twin beds | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field     | Value |
-	| Twin beds | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field      | Scenario Key | Value |
-	| Double bed | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field      | Value |
-	| Double bed | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field           | Scenario Key | Value |
-	| Smoking allowed | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field           | Value |
-	| Smoking allowed | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field              | Scenario Key | Value |
-	| No smoking allowed | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field              | Value |
-	| No smoking allowed | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field        | Scenario Key | Value |
 	| Family Rooms | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
@@ -388,33 +360,12 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field     | Value |
 	| Free WiFi | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field      | Scenario Key | Value |
-	| Restaurant | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field      | Value |
-	| Restaurant | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field   | Scenario Key | Value |
 	| Parking | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
 	And I set following parameters in filter checkboxes on search result page
 	| Field   | Value |
 	| Parking | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field        | Scenario Key | Value |
-	| Free Parking | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field        | Value |
-	| Free Parking | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field        | Scenario Key | Value |
-	| Room Service | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field        | Value |
-	| Room Service | Off   |
 	And I set following parameters in filter checkboxes on search result page
 	| Field | Scenario Key | Value |
 	| Spa   | amount       | On    |
@@ -477,7 +428,7 @@ Scenario: Assurance that Accommodation search filters are working properly toget
 	And I see that I am on Search Result page and see that offered accommodation is in "New York"
 	And I set following parameters in filter checkboxes on search result page
 	| Field                          | Value |
-	| US$62 - US$120 per night       | On    |
+	| US$61 - US$120 per night       | On    |
 	| 3 stars                        | On    |
 	| Good: 7+                       | On    |
 	| Hotels                         | On    |
@@ -485,7 +436,7 @@ Scenario: Assurance that Accommodation search filters are working properly toget
 	| Free WiFi                      | On    |
 	Then I see that search result contains offers with selected options only
 	| Field     | Value  |
-	| Price     | 62 120 |
+	| Price     | 61 120 |
 	| Stars     | 3      |
 	| Rating    | 7      |
 	| Free Wifi | WiFi   |

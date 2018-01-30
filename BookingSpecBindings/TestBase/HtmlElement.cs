@@ -20,7 +20,7 @@ namespace BookingSpecBindings.TestBase
 		public IWebElement WrappedElement
 		{
 			get { return GetWebElement(); }
-			private set { _wrappedElement = value; }
+			protected set { _wrappedElement = value; }
 		}
 		public HtmlElement(By thisElementLocator)
 		{

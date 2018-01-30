@@ -34,8 +34,7 @@ namespace BookingSpecBindings.TestBase.Pages
 		}
 		public void CategoryCheck(string category)
 		{
-			category = "Top Picks for " + category;
-			Assert.AreEqual(SelectedCategory.Text, category);
+			Assert.AreEqual(SelectedCategory.Text, "Top Picks for " + category);
 		}
 		public void RoomChecker(string count)
 		{
@@ -111,7 +110,7 @@ namespace BookingSpecBindings.TestBase.Pages
 				amount = match.Groups[2].Value;
 				break;
 			}
-			if(amount != null)
+			if(amount != "")
 			return Int32.Parse(amount);
 			return (1);
 		}
