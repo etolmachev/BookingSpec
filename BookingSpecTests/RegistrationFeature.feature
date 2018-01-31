@@ -6,9 +6,9 @@ Scenario: Input valid credentials in order to Register
 	And I click Register button on Ribbon menu
 	When I remember "testmirantistest+{{rnd::3}}@gmail.com" as "email"
 	And I set following parameters on Register Pop Up dialog
-	| Field    | Value              |
-	| Email    | {{context::email}} |
-	| Password | 1234qweR           |
+	| Field    | Value                |
+	| Email    | {{context::email}}   |
+	| Password | {{config::password}} |
 	And I click Get Started button on PopUp
 	Then I see that I am Signed In
 
@@ -39,9 +39,9 @@ Scenario: Try to register as already registered user
 	And I click Register button on Ribbon menu
 	When I remember "testmirantistest+{{rnd::3}}@gmail.com" as "email"
 	And I set following parameters on Register Pop Up dialog
-	| Field    | Value                      |
-	| Email    | testmirantistest@gmail.com |
-	| Password | 1234qweR                   |
+	| Field    | Value                |
+	| Email    | {{config::email}}    |
+	| Password | {{config::password}} |
 	And I click Get Started button on PopUp
 	Then I see that I am Signed In
 
@@ -50,9 +50,9 @@ Scenario: Attempt to register with already used email
 	And I navigate to url "https://booking.com"
 	And I click Register button on Ribbon menu
 	And I set following parameters on Register Pop Up dialog
-	| Field    | Value                      |
-	| Email    | testmirantistest@gmail.com |
-	| Password | 12341234                   |
+	| Field    | Value             |
+	| Email    | {{config::email}} |
+	| Password | 12341234          |
 	And I click Get Started button on PopUp
 	Then I wait while "Registration" popup is working
 	Then I see error message "You entered an email address/password combination that doesn't match. I forgot" on Register PopUp
@@ -60,9 +60,9 @@ Scenario: Attempt to register with already used email
 	Then I see that I am not Signed In
 	When I click Sign In button on Ribbon menu
 	Then I check that I am not Registered by trying to Sign In
-	| Field    | Value                      |
-	| Email    | testmirantistest@gmail.com |
-	| Password | 12341234                   |
+	| Field    | Value             |
+	| Email    | {{config::email}} |
+	| Password | 12341234          |
 	Then I wait while "Sign In" popup is working
 	And I see error message "You entered an email address/password combination that doesn't match. I forgot" on Sign In PopUp
 
@@ -80,12 +80,12 @@ Scenario: Check that previous values in Register PopUp fields are saved
 	And I navigate to url "https://booking.com"
 	And I click Register button on Ribbon menu
 	And I set following parameters on Register Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}}    |
+		| Password | {{config::password}} |
 	And I click on X button
 	And I click Register button on Ribbon menu
-	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "saved" in Register PopUp fields
+	Then I see that credential values: "{{config::email}}" "{{config::password}}" are "saved" in Register PopUp fields
 	When I click Get Started button on PopUp
 	Then I see that I am Signed In
 
@@ -94,12 +94,12 @@ Scenario: Check that previous values in Register PopUp fields are not saved
 	And I navigate to url "https://booking.com"
 	And I click Register button on Ribbon menu
 	And I set following parameters on Register Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}}    |
+		| Password | {{config::password}} |
 	And I click on X button
 	And I refresh page
 	And  I click Register button on Ribbon menu
-	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "not saved" in Register PopUp fields
+	Then I see that credential values: "{{config::email}}" "{{config::password}}" are "not saved" in Register PopUp fields
 	When I click Get Started button on PopUp
 	Then I see error message "Please enter a valid email address." on Register PopUp
