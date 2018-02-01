@@ -139,19 +139,6 @@ namespace BookingSpecBindings.TestBase.Pages
 			DateTime checkInDate = DateTime.Parse(calendarDataType.GetAttribute("textContent"));
 			calendarDataType = new HtmlElement(By.CssSelector(".sb-dates__col [data-placeholder = 'Check-out Date']"));
 			DateTime checkOutDate = DateTime.Parse(calendarDataType.GetAttribute("textContent"));
-			//			string pattern = "(\\d+)(,)";Regex reg = new Regex(pattern);
-			//			MatchCollection matchesIn = Regex.Matches(checkInDate, pattern);
-			//			foreach (Match match in matchesIn)
-			//			{
-			//				checkInDate = match.Groups[1].Value;
-			//				break;
-			//			}
-			//			MatchCollection matchesOut = Regex.Matches(checkOutDate, pattern);
-			//			foreach (Match match in matchesOut)
-			//			{
-			//				checkOutDate = match.Groups[1].Value;
-			//				break;
-			//			}
 			Assert.That(checkOutDate.Month.CompareTo(checkInDate.Month) == 0);
 			Assert.That(checkOutDate.Day - checkInDate.Day == 1);
 			Assert.That(checkOutDate.Year.CompareTo(checkInDate.Year) == 0);
@@ -159,11 +146,17 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		public void setCalendarDate()
 		{
-			checkinMonth.SendKeys(DateTime.Today.Month.ToString());
-			checkinMonthDay.SendKeys(DateTime.Today.Day.ToString());
-			checkinYear.SendKeys((DateTime.Today.Year + 1).ToString());
-			Browser.Driver.FindElement(By.XPath("//span[contains(text(),'Accommodations')]")).Click();
-			checkWorkOfCalendarAutocompletion();
+			string InMonth = DateTime.Today.Month.ToString();
+			string InDay = DateTime.Today.Day.ToString();
+			string OutDay = (DateTime.Today.Day + 1).ToString();
+			string InYear = (DateTime.Today.Year + 1).ToString();
+			checkinMonth.SendKeys(InMonth);
+			checkinMonthDay.SendKeys(InDay);
+			checkinYear.SendKeys(InYear);
+			checkOutMonth.SendKeys(InMonth);
+			checkOutMonthDay.SendKeys(OutDay);
+			checkinYear.SendKeys(InYear);
+			Thread.Sleep(2000);
 		}
 
 		public string GetDestinationError()
