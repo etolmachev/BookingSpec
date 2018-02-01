@@ -258,27 +258,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field             | Value |
 	| Great Value Today | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field             | Scenario Key | Value |
-	| Free cancellation | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field             | Value |
-	| Free cancellation | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field         | Scenario Key | Value |
-	| No prepayment | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field         | Value |
-	| No prepayment | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field              | Scenario Key | Value |
-	| Breakfast included | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field              | Value |
-	| Breakfast included | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field              | Scenario Key | Value |
 	| Kitchen facilities | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
