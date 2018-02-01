@@ -146,17 +146,13 @@ namespace BookingSpecBindings.TestBase.Pages
 
 		public void setCalendarDate()
 		{
-			string InMonth = DateTime.Today.Month.ToString();
-			string InDay = DateTime.Today.Day.ToString();
-			string OutDay = (DateTime.Today.Day + 1).ToString();
+			string InMonth = DateTime.Today.Month.ToString("d2");
+			string InDay = DateTime.Today.Day.ToString("d2");
 			string InYear = (DateTime.Today.Year + 1).ToString();
+			checkinMonthDay.SendKeys(InDay); 
+			checkinYear.SendKeys(InYear);
 			checkinMonth.SendKeys(InMonth);
-			checkinMonthDay.SendKeys(InDay);
-			checkinYear.SendKeys(InYear);
-			checkOutMonth.SendKeys(InMonth);
-			checkOutMonthDay.SendKeys(OutDay);
-			checkinYear.SendKeys(InYear);
-			Thread.Sleep(2000);
+			Browser.Driver.FindElement(By.CssSelector(".c2-calendar-close-button-icon")).Click();
 		}
 
 		public string GetDestinationError()
