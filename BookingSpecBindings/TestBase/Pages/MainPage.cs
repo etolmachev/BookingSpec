@@ -152,7 +152,10 @@ namespace BookingSpecBindings.TestBase.Pages
 			checkinMonthDay.SendKeys(InDay); 
 			checkinYear.SendKeys(InYear);
 			checkinMonth.SendKeys(InMonth);
-			Browser.Driver.FindElement(By.CssSelector(".c2-calendar-close-button-icon")).Click();
+			if (Utils.isElementPresent(By.CssSelector(".c2-calendar-close-button-icon")))
+			{
+				Browser.Driver.FindElement(By.CssSelector(".c2-calendar-close-button-icon")).Click();
+			}
 		}
 
 		public string GetDestinationError()

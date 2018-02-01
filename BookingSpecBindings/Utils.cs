@@ -6,6 +6,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using BookingSpecBindings.TestBase;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings
@@ -55,6 +57,24 @@ namespace BookingSpecBindings
 			string left = input.Substring(0, input.IndexOf(key) - 2);
 			string right = input.Substring(input.IndexOf(value) + value.Length + 2);
 			return left + mid + right;
+		}
+		public static bool isElementPresent(By selector)
+		{
+			Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
+			bool returnVal = true;
+			try
+			{
+				Browser.Driver.FindElement(selector);
+			}
+			catch (NoSuchElementException e)
+			{
+				returnVal = false;
+			}
+			finally
+			{
+				Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+			}
+			return returnVal;
 		}
 	}
 }

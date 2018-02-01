@@ -26,7 +26,7 @@ namespace BookingSpecBindings
 		{
 			Browser.Driver.Navigate().GoToUrl(url);
 			Browser.WaitReadyState();
-			if (isElementPresent(By.CssSelector(".notify-asking-reject")))
+			if (Utils.isElementPresent(By.CssSelector(".notify-asking-reject")))
 			{
 				Browser.Driver.FindElement(By.CssSelector(".notify-asking-reject")).Click();
 			}
@@ -50,24 +50,6 @@ namespace BookingSpecBindings
 		public void ThenIWaitBrowserPageToLoad()
 		{
 			Browser.WaitReadyState();
-		}
-		public bool isElementPresent(By selector)
-		{
-			Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
-			bool returnVal = true;
-			try
-			{
-				Browser.Driver.FindElement(selector);
-			}
-			catch (NoSuchElementException e)
-			{
-				returnVal = false;
-			}
-			finally
-			{
-				Browser.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-			}
-			return returnVal;
 		}
 	}
 }
