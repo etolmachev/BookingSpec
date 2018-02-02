@@ -369,13 +369,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	And I set following parameters in filter checkboxes on search result page
 	| Field          | Value |
 	| Coffee machine | Off   |
-	And I set following parameters in filter checkboxes on search result page
-	| Field          | Scenario Key | Value |
-	| Flat-screen TV | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field          | Value |
-	| Flat-screen TV | Off   |
 
 Scenario: Assurance that Accommodation search filters are working properly together
 	When I open browser
