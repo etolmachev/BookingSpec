@@ -209,13 +209,6 @@ Scenario: Assurance that each checkbox filter of Accommodation search works prop
 	| Field  | Value |
 	| Hotels | Off   |
 	And I set following parameters in filter checkboxes on search result page
-	| Field      | Scenario Key | Value |
-	| Apartments | amount       | On    |
-	And I see that displayed "amount" of options equal to amount displayed on filter
-	And I set following parameters in filter checkboxes on search result page
-	| Field      | Value |
-	| Apartments | Off   |
-	And I set following parameters in filter checkboxes on search result page
 	| Field          | Scenario Key | Value |
 	| Vacation Homes | amount       | On    |
 	And I see that displayed "amount" of options equal to amount displayed on filter
