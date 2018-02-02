@@ -8,8 +8,8 @@ namespace BookingSpecBindings.TestBase.Pages
 {
 	public class MainPage
 	{
-		private string signInButtonLocator = "//span[contains(text(), \'Sign in\')]";
-		private string RegisterButtonLocator = "//span[contains(text(), 'Register') or contains(text(), 'Create Account')]";
+		private string signInButtonLocator = "//span[contains(text(), 'Sign in') or contains(text(), 'Log in')]";
+		private string RegisterButtonLocator = "//span[contains(text(), 'Register') or contains(text(), 'Create Account') or contains(text(), 'Sign up')]";
 		private string accountNameLocator = "//span[contains (text(), 'Your Account')]";
 		private string searchFieldLocator = "input[type = 'search']";
 		private string checkinYearLocator = "input[name='checkin_year']";

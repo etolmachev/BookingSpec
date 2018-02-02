@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using BookingSpecBindings.TestBase;
 using BookingSpecBindings.TestBase.Pages;
 using NUnit.Framework;
@@ -71,6 +72,7 @@ namespace BookingSpecBindings.Bindings
 		public void WhenIInputDataInDestinationSearchFieldOnMainPage(string destination)
 		{
 			page.searchField.SendKeys(destination);
+			Thread.Sleep(1500);
 		}
 		[When(@"I click on first autocomplete option that contains ""(.*)""")]
 		public void WhenIClickOnFirstAutocompleteOptionThatContains(string desiredDestination)
