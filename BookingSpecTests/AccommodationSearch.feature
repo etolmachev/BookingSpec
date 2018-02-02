@@ -25,7 +25,6 @@ Scenario: Input invalid data in accommodation search calendar on main page
 	When I open browser
 	And I navigate to url "https://booking.com"
 	When I input data "sfsadfasdf" in Destination Search field on main page
-	And I set the calendar for the current date plus one year
 	Then I click button Search on main page
 	And I wait browser page to load
 	And I see destination error message "Sorry, we don't recognize that name." on main page
