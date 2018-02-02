@@ -1,6 +1,8 @@
 ﻿using System;
+using BookingSpecBindings.TestBase;
 using BookingSpecBindings.TestBase.Pages;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace BookingSpecBindings.Bindings
@@ -96,8 +98,11 @@ namespace BookingSpecBindings.Bindings
 		[Then(@"I see Sign In PopUp dialog")]
 		public bool ThenISeeSignInPopUpDialog()
 		{
-			Console.WriteLine(signPage.PopUpButton.Displayed);
-			return signPage.PopUpButton.Displayed;
+			if (Utils.isElementPresent(By.CssSelector("form.js-user-access-form--signin input[value='Sign in']")))
+			{return true;}
+			if (Utils.isElementPresent(By.CssSelector("input[value='Log in']")))
+			return true;
+			return false;
 		}
 		[Then(@"I check that I am not Registered by trying to Sign In")]
 		public void ThenICheckThatIAmNotRegisteredByTryingToSignIn(Table table)
