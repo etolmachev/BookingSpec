@@ -13,13 +13,13 @@ Scenario Template: Attempt to Sign In using Invalid combinations of email and pa
 	And I see message error with "<Message>"
 
 Scenarios: 
-		| Email                      | Password  | Message                                                                        |
-		| testmirantistest@gmail.com | wrongpass | You entered an email address/password combination that doesn't match. I forgot |
-		| invalidEmail@g.com         | 1234qweR  | You entered an email address/password combination that doesn't match. I forgot |
-		| invalidEmail@g.com         | wrongpass | You entered an email address/password combination that doesn't match. I forgot |
-		|                            | 1234qweR  | Please enter a valid email address.                                            |
-		| testmirantistest@gmail.com |           | Please add a password                                                          |
-		|                            |           | Please enter a valid email address.                                            |
+		| Email              | Password             | Message                                                                        |
+		| {{config::email}}  | wrongpass            | You entered an email address/password combination that doesn't match. I forgot |
+		| invalidEmail@g.com | {{config::password}} | You entered an email address/password combination that doesn't match. I forgot |
+		| invalidEmail@g.com | wrongpass            | You entered an email address/password combination that doesn't match. I forgot |
+		|                    | {{config::password}} | Please enter a valid email address.                                            |
+		| {{config::email}}  |                      | Please add a password                                                          |
+		|                    |                      | Please enter a valid email address.                                            |
 
 Scenario: Check maximum length for email field on Sign In
 	When I open browser
@@ -48,14 +48,14 @@ Scenario: Cancel recover password and Sign in
 	And I click Sign In button on Ribbon menu
 	And I click Forgot Your Password button
 	And I set following parameters on Forgot Your Password Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
+		| Field | Value             |
+		| Email | {{config::email}} |
 	And I click button Cancel on Forgot Your Password PopUp
 	Then I see Sign In PopUp dialog
 	When I set following parameters on Sign In Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}}    |
+		| Password | {{config::password}} |
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In
 
@@ -65,15 +65,15 @@ Scenario: Click on recover password and Sign In with old password
 	And I click Sign In button on Ribbon menu
 	And I click Forgot Your Password button
 	And I set following parameters on Forgot Your Password Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
+		| Field | Value             |
+		| Email | {{config::email}} |
 	And I click button Send on Forgot Your Password PopUp
 	Then I wait while "Forgot Your Password" popup is working
 	When I click button Back To Sign In on Forgot Your Password PopUp
 	And I set following parameters on Sign In Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}     |
+		| Password | {{config::password}} |
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In 
 
@@ -82,12 +82,12 @@ Scenario: Check that previous values in PopUp fields are saved
 	And I navigate to url "https://booking.com"
 	And I click Sign In button on Ribbon menu
 	And I set following parameters on Sign In Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}}    |
+		| Password | {{config::password}} |
 	And I click on X button
 	And  I click Sign In button on Ribbon menu
-	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "saved" in Sign In PopUp fields
+	Then I see that credential values: "{{config::email}}" "{{config::password}}" are "saved" in Sign In PopUp fields
 	When I click Sign In button on PopUp
 	Then I see that I am Signed In 
 
@@ -96,13 +96,13 @@ Scenario: Check that previous values in PopUp fields are not saved
 	And I navigate to url "https://booking.com"
 	And I click Sign In button on Ribbon menu
 	And I set following parameters on Sign In Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qweR                   |
+		| Field    | Value                |
+		| Email    | {{config::email}}    |
+		| Password | {{config::password}} |
 	And I click on X button
 	And I refresh page
 	And  I click Sign In button on Ribbon menu
-	Then I see that credential values: "testmirantistest@gmail.com" "1234qweR" are "not saved" in Sign In PopUp fields
+	Then I see that credential values: "{{config::email}}" "{{config::password}}" are "not saved" in Sign In PopUp fields
 	When I click Sign In button on PopUp
 	Then I see error message "Please enter a valid email address." on Sign In PopUp
 
@@ -114,15 +114,15 @@ Scenario: Recover Password by use link from email
 	And I click Sign In button on Ribbon menu
 	And I click Forgot Your Password button
 	And I set following parameters on Forgot Your Password Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
+		| Field | Value             |
+		| Email | {{config::email}} |
 	And I click button Send on Forgot Your Password PopUp
 	And I click on the link in email
 	And I change my password "1234qwER"
 	And I set following parameters on Sign In Pop Up dialog
-		| Field    | Value                      |
-		| Email    | testmirantistest@gmail.com |
-		| Password | 1234qwER                   |
+		| Field    | Value             |
+		| Email    | {{config::email}} |
+		| Password | 1234qwER          |
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In 
 	

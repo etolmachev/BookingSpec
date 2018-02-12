@@ -7,7 +7,7 @@ Scenario: Input valid credentials to Sign In
 	When I open browser
 	And I navigate to url "https://booking.com"
 	When I click Sign In button on Ribbon menu
-	And I write email on Sign in PopUp "testmirantistest@gmail.com"
-	And I write password "1234qweR"
+	And I write email on Sign in PopUp "{{config::email}}"
+	And I write password "{{config::password}}"
 	And I click Sign In button on PopUp
 	Then I see that I am Signed In
