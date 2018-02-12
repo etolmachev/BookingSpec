@@ -46,7 +46,10 @@ namespace BookingSpecBindings.TestBase.Pages
 		}
 		public void ClickToSubmit()
 		{
-			PopUpButton.Click();
+			if(Utils.isElementPresent(By.CssSelector(popUpButtonLocator)))
+			{ PopUpButton.Click();}
+			else
+			{ Browser.Driver.FindElement(By.CssSelector("input[value='Log in']")).Click();}
 		}
 		public void CloseSignInPopUp()
 		{

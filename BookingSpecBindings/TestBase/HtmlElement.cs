@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace BookingSpecBindings.TestBase
 {
@@ -14,16 +15,26 @@ namespace BookingSpecBindings.TestBase
 
 		private By _elementLocator;
 		private IWebElement _wrappedElement;
+		private IWebElement webElement;
 
 		public IWebElement WrappedElement
 		{
 			get { return GetWebElement(); }
-			private set { _wrappedElement = value; }
+			protected set { _wrappedElement = value; }
 		}
-
 		public HtmlElement(By thisElementLocator)
 		{
 			_elementLocator = thisElementLocator;
+		}
+
+		public HtmlElement(IWebElement element)
+		{
+			WrappedElement = element;
+		}
+
+		public string GetLocator()
+		{
+			return _locatorString;
 		}
 
 		private IWebElement GetWebElement()
@@ -44,6 +55,11 @@ namespace BookingSpecBindings.TestBase
 			}
 
 			return _wrappedElement;
+		}
+
+		internal string FindElement(object getAttribute)
+		{
+			throw new NotImplementedException();
 		}
 
 		private void GetThisElement()
@@ -85,7 +101,19 @@ namespace BookingSpecBindings.TestBase
 				throw new Exception(string.Format("Element isn't displayed after {0} seconds", timeout));
 			}
 		}
-
+		public void WaitElementDisappears(int timeout = 30)
+		{
+			int t = timeout;
+			while (t > 0 && WrappedElement.Displayed)
+			{
+				Thread.Sleep(TimeSpan.FromSeconds(1));
+				t--;
+			}
+			if (WrappedElement.Displayed)
+			{
+				throw new Exception(string.Format("Element displayed after {0} seconds", timeout));
+			}
+		}
 		internal void SendKeys()
 		{
 			throw new NotImplementedException();
